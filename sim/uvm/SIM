@@ -1,0 +1,5 @@
+simv \
+-l simv.log \
++UVM_VERBOSITY=HIGH \
++UVM_TESTNAME=testcase_wb  
+

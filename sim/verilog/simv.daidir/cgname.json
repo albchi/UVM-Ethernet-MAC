@@ -1,0 +1,56 @@
+{
+    "std": [
+        "std",
+        "reYIK",
+        "module",
+        1
+    ],
+    "fault_sm": [
+        "fault_sm",
+        "zk6Si",
+        "module",
+        2
+    ],
+    "generic_fifo_ctrl_0000": [
+        "generic_fifo_ctrl_0000",
+        "NY7Gb",
+        "module",
+        3
+    ],
+    "rx_dequeue": [
+        "rx_dequeue",
+        "ZGc5j",
+        "module",
+        4
+    ],
+    "sync_clk_wb": [
+        "sync_clk_wb",
+        "UjwLm",
+        "module",
+        5
+    ],
+    "tx_enqueue": [
+        "tx_enqueue",
+        "iNPR2",
+        "module",
+        6
+    ],
+    "wishbone_if": [
+        "wishbone_if",
+        "s4ZT9",
+        "module",
+        7
+    ],
+    "tb": [
+        "tb",
+        "g7hgQ",
+        "module",
+        8
+    ],
+    "...MASTER...": [
+        "SIM",
+        "amcQw",
+        "module",
+        9
+    ]
+}

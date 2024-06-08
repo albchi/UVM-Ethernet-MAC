@@ -1,0 +1,5 @@
+
+export VCS_HOME=/usr/synopsys/vcs/U-2023.03-SP2
+export VERDI_HOME=/usr/synopsys/verdi/U-2023.03-SP2-2
+PATH=$VCS_HOME/bin:$VERDI_HOME/bin:$PATH
+
