@@ -13,10 +13,13 @@ vcs \
 +incdir+../../testbench/uvm \
 ../../testbench/uvm/intf_rst.sv \
 ../../testbench/uvm/intf_wb.sv \
+../../testbench/uvm/intf_pkt_tx.sv \
 ../../testbench/uvm/tb_top_xge_mac.v \
 ../../testbench/uvm/tb_prog.sv  \
+../../testcases/testcase_base.sv \
 ../../testcases/testcase_wb.sv \
-../../testcases/testcase_reset.sv 
+../../testcases/testcase_reset.sv  \
+../../testcases/testcase_loopback.sv 
 
 
 

@@ -1,0 +1,9 @@
+{"vcs1":{"timestamp_begin":1718051811.132107113, "rt":21.34, "ut":15.64, "st":0.54}}
+{"vcselab":{"timestamp_begin":1718051833.324089833, "rt":1.11, "ut":0.29, "st":0.07}}
+{"link":{"timestamp_begin":1718051834.962100955, "rt":1.99, "ut":0.62, "st":0.19}}
+{"SNPS_VCS_INTERNAL_ROOT_START_TIME": 1718051800.635980270}
+{"VCS_COMP_START_TIME": 1718051800.635980270}
+{"VCS_COMP_END_TIME": 1718051837.836113958}
+{"VCS_USER_OPTIONS": "-full64 +vcs+lic+wait -sverilog -l vcs.log -override_timescale=1ps/1ps -ntb_opts uvm-1.1 -debug_access+all -kdb ../../rtl/verilog/fault_sm.v ../../rtl/verilog/generic_fifo_ctrl.v ../../rtl/verilog/generic_fifo.v ../../rtl/verilog/generic_mem_medium.v ../../rtl/verilog/generic_mem_small.v ../../rtl/verilog/meta_sync_single.v ../../rtl/verilog/meta_sync.v ../../rtl/verilog/rx_data_fifo.v ../../rtl/verilog/rx_dequeue.v ../../rtl/verilog/rx_enqueue.v ../../rtl/verilog/rx_hold_fifo.v ../../rtl/verilog/sync_clk_core.v ../../rtl/verilog/sync_clk_wb.v ../../rtl/verilog/sync_clk_xgmii_tx.v ../../rtl/verilog/tx_data_fifo.v ../../rtl/verilog/tx_dequeue.v ../../rtl/verilog/tx_enqueue.v ../../rtl/verilog/tx_hold_fifo.v ../../rtl/verilog/wishbone_if.v ../../rtl/verilog/xge_mac.v +incdir+../../rtl/include +incdir+../../testcases +incdir+../../testbench/uvm ../../testbench/uvm/intf_rst.sv ../../testbench/uvm/intf_wb.sv ../../testbench/uvm/intf_pkt_tx.sv ../../testbench/uvm/tb_top_xge_mac.v ../../testbench/uvm/tb_prog.sv ../../testcases/testcase_base.sv ../../testcases/testcase_wb.sv ../../testcases/testcase_reset.sv ../../testcases/testcase_loopback.sv"}
+{"vcs1": {"peak_mem": 517484}}
+{"vcselab": {"peak_mem": 223944}}

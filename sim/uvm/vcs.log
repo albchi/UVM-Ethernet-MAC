@@ -7,10 +7,11 @@ Command: vcs -full64 +vcs+lic+wait -sverilog -l vcs.log -override_timescale=1ps/
 ../../rtl/verilog/tx_data_fifo.v ../../rtl/verilog/tx_dequeue.v ../../rtl/verilog/tx_enqueue.v \
 ../../rtl/verilog/tx_hold_fifo.v ../../rtl/verilog/wishbone_if.v ../../rtl/verilog/xge_mac.v \
 +incdir+../../rtl/include +incdir+../../testcases +incdir+../../testbench/uvm ../../testbench/uvm/intf_rst.sv \
-../../testbench/uvm/intf_wb.sv ../../testbench/uvm/tb_top_xge_mac.v ../../testbench/uvm/tb_prog.sv \
-../../testcases/testcase_wb.sv ../../testcases/testcase_reset.sv
+../../testbench/uvm/intf_wb.sv ../../testbench/uvm/intf_pkt_tx.sv ../../testbench/uvm/tb_top_xge_mac.v \
+../../testbench/uvm/tb_prog.sv ../../testcases/testcase_base.sv ../../testcases/testcase_wb.sv \
+../../testcases/testcase_reset.sv ../../testcases/testcase_loopback.sv
                          Chronologic VCS (TM)
-       Version U-2023.03-SP2_Full64 -- Fri Jun  7 16:42:05 2024
+       Version U-2023.03-SP2_Full64 -- Mon Jun 10 13:36:51 2024
 
                     Copyright (c) 1991 - 2023 Synopsys, Inc.
    This software and the associated documentation are proprietary to Synopsys,
@@ -404,14 +405,23 @@ Parsing included file '../../rtl/include/defines.v'.
 Back to file '../../rtl/verilog/xge_mac.v'.
 Parsing design file '../../testbench/uvm/intf_rst.sv'
 Parsing design file '../../testbench/uvm/intf_wb.sv'
+Parsing design file '../../testbench/uvm/intf_pkt_tx.sv'
 Parsing design file '../../testbench/uvm/tb_top_xge_mac.v'
 Parsing included file '../../rtl/include/timescale.v'.
 Back to file '../../testbench/uvm/tb_top_xge_mac.v'.
 Parsing included file '../../rtl/include/defines.v'.
 Back to file '../../testbench/uvm/tb_top_xge_mac.v'.
 Parsing design file '../../testbench/uvm/tb_prog.sv'
-Parsing design file '../../testcases/testcase_wb.sv'
+Parsing design file '../../testcases/testcase_base.sv'
 Parsing included file '../../testbench/uvm/env.sv'.
+Parsing included file '../../testbench/uvm/agent_pkt_tx.sv'.
+Parsing included file '../../testbench/uvm/data_pkt_tx.sv'.
+Back to file '../../testbench/uvm/agent_pkt_tx.sv'.
+Parsing included file '../../testbench/uvm/driver_pkt_tx.sv'.
+Back to file '../../testbench/uvm/agent_pkt_tx.sv'.
+Parsing included file '../../testbench/uvm/monitor_pkt_tx.sv'.
+Back to file '../../testbench/uvm/agent_pkt_tx.sv'.
+Back to file '../../testbench/uvm/env.sv'.
 Parsing included file '../../testbench/uvm/agent_reset.sv'.
 Parsing included file '../../testbench/uvm/data_reset.sv'.
 Back to file '../../testbench/uvm/agent_reset.sv'.
@@ -428,7 +438,16 @@ Back to file '../../testbench/uvm/agent_wb.sv'.
 Back to file '../../testbench/uvm/env.sv'.
 Parsing included file '../../testbench/uvm/sequence_wb.sv'.
 Back to file '../../testbench/uvm/env.sv'.
-Back to file '../../testcases/testcase_wb.sv'.
+Back to file '../../testcases/testcase_base.sv'.
+Parsing design file '../../testcases/testcase_wb.sv'
+
+Note-[SV-LCM-PPWI] Package previously wildcard imported
+../../testcases/testcase_wb.sv, 1
+$unit
+  Package 'uvm_pkg' already wildcard imported. 
+  Ignoring uvm_pkg::*
+  See the SystemVerilog LRM(1800-2005), section 19.2.1.
+
 Parsing design file '../../testcases/testcase_reset.sv'
 
 Note-[SV-LCM-PPWI] Package previously wildcard imported
@@ -438,52 +457,43 @@ $unit
   Ignoring uvm_pkg::*
   See the SystemVerilog LRM(1800-2005), section 19.2.1.
 
+Parsing design file '../../testcases/testcase_loopback.sv'
+
+Note-[SV-LCM-PPWI] Package previously wildcard imported
+../../testcases/testcase_loopback.sv, 1
+$unit
+  Package 'uvm_pkg' already wildcard imported. 
+  Ignoring uvm_pkg::*
+  See the SystemVerilog LRM(1800-2005), section 19.2.1.
+
+Parsing included file '../../testbench/uvm/sequence_pkt_tx.sv'.
+Back to file '../../testcases/testcase_loopback.sv'.
 Top Level Modules:
        uvm_custom_install_recording
        uvm_custom_install_verdi_recording
        tb_top_xge_mac
        tb_prog
 TimeScale is 1 ps / 1 ps
-
-Warning-[ETLIIC] Extended this/super lookup
-../../testbench/uvm/sequence_reset.sv, 33
-"\this .paddr"
-  A member 'paddr' is not found in the randomized object. It is present in the
-  class of the method containing the randomize-with call.In inline 
-  constraints, this/super refers to the object being randomized. VCS supports 
-  an extended lookup in the class of the method, where randomize call is 
-  present, for backwards compatibility. This may be removed in the future.
-  If you intend to access the this/super of the containing method in a 
-  portable way, you may want to create a local object aliased to this/super. 
-  To promote this warning to error, use '-error=ETLIIC'.
-
-
-Warning-[ETLIIC] Extended this/super lookup
-../../testbench/uvm/sequence_reset.sv, 33
-"\this .pdata"
-  A member 'pdata' is not found in the randomized object. It is present in the
-  class of the method containing the randomize-with call.In inline 
-  constraints, this/super refers to the object being randomized. VCS supports 
-  an extended lookup in the class of the method, where randomize call is 
-  present, for backwards compatibility. This may be removed in the future.
-  If you intend to access the this/super of the containing method in a 
-  portable way, you may want to create a local object aliased to this/super. 
-  To promote this warning to error, use '-error=ETLIIC'.
-
 Starting vcs inline pass...
 
 Notice: Ports coerced to inout, use -notice for details
-17 modules and 0 UDP read.
+18 modules and 0 UDP read.
 recompiling package vcs_paramclassrepository
+recompiling package uvm_pkg
+recompiling module uvm_custom_install_recording
 recompiling module uvm_custom_install_verdi_recording
-Both modules done.
-	However, due to incremental compilation, only 2 modules need to be compiled. 
+4 of 18 modules done
+	However, due to incremental compilation, only 4 modules need to be compiled. 
 rm -f _cuarc*.so _csrc*.so pre_vcsobj_*.so share_vcsobj_*.so
+g++ -w  -pipe -DVCS -DUVM_DPI_DO_TYPE_CHECK -fPIC -O -I/usr/synopsys/vcs/U-2023.03-SP2/include \
+-c /usr/synopsys/vcs/U-2023.03-SP2/etc/uvm-1.1/dpi/uvm_dpi.cc
+g++ -w  -pipe -DVCS -DUVM_DPI_DO_TYPE_CHECK -fPIC -O -I/usr/synopsys/vcs/U-2023.03-SP2/include \
+-c /usr/synopsys/vcs/U-2023.03-SP2/etc/uvm-1.1/verdi/dpi/uvm_verdi_dpi.cpp
 if [ -x ../simv ]; then chmod a-x ../simv; fi
 g++  -o ../simv      -rdynamic  -Wl,-rpath='$ORIGIN'/simv.daidir -Wl,-rpath=./simv.daidir \
 -Wl,-rpath=/usr/synopsys/vcs/U-2023.03-SP2/linux64/lib -L/usr/synopsys/vcs/U-2023.03-SP2/linux64/lib \
 -Wl,-rpath-link=./  /usr/lib64/libnuma.so.1 uvm_dpi.o uvm_verdi_dpi.o   objs/amcQw_d.o \
-_8181_archive_1.so _prev_archive_1.so   SIM_l.o      rmapats_mop.o rmapats.o rmar.o \
+_2555_archive_1.so _prev_archive_1.so   SIM_l.o      rmapats_mop.o rmapats.o rmar.o \
 rmar_nd.o  rmar_llvm_0_1.o rmar_llvm_0_0.o            -lvirsim -lerrorinf -lsnpsmalloc \
 -lvfs    -lvcsnew -lsimprofile -luclinative /usr/synopsys/vcs/U-2023.03-SP2/linux64/lib/vcs_tls.o \
 -Wl,-whole-archive  -lvcsucli    -Wl,-no-whole-archive       ./../simv.daidir/vc_hdrs.o \
@@ -491,5 +501,5 @@ _vcs_pli_stub_.o   /usr/synopsys/vcs/U-2023.03-SP2/linux64/lib/vcs_save_restore_
 /usr/synopsys/verdi/U-2023.03-SP2-2/share/PLI/VCS/LINUX64/pli.a -ldl  -lc -lm -lpthread \
 -ldl 
 ../simv up to date
-CPU time: 12.426 seconds to compile + .385 seconds to elab + .529 seconds to link
+CPU time: 16.228 seconds to compile + .386 seconds to elab + .882 seconds to link
 Verdi KDB elaboration done and the database successfully generated: 0 error(s), 0 warning(s)

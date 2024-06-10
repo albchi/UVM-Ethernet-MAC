@@ -1,7 +1,7 @@
-Command: /home/sf10274/AlbertLand/0UVMgetinfo/lab-project-10gEthernetMAC/sim/uvm/./simv -l simv.log +UVM_VERBOSITY=HIGH +UVM_TESTNAME=testcase_wb
+Command: /home/sf10274/AlbertLand/0UVMgetinfo/lab-project-10gEthernetMAC/sim/uvm/./simv -l simv.log +UVM_VERBOSITY=HIGH +UVM_TESTNAME=testcase_reset
 Chronologic VCS simulator copyright 1991-2023
 Contains Synopsys proprietary information.
-Compiler version U-2023.03-SP2_Full64; Runtime version U-2023.03-SP2_Full64;  Jun  7 16:42 2024
+Compiler version U-2023.03-SP2_Full64; Runtime version U-2023.03-SP2_Full64;  Jun 10 13:37 2024
 ----------------------------------------------------------------
 UVM-1.1d.Synopsys
 (C) 2007-2013 Mentor Graphics Corporation
@@ -30,31 +30,44 @@ FSDB Dumper for VCS, Release Verdi_U-2023.03-SP2-2, Linux x86_64/64bit, 11/22/20
 *Verdi* : Begin traversing the scopes, layer (0).
 *Verdi* : End of traversing.
 XAC hello from tb_prog
-UVM_INFO @ 0: reporter [RNTST] Running test testcase_wb...
+UVM_INFO @ 0: reporter [RNTST] Running test testcase_reset...
 UVM_INFO @ 0: reporter [UVMTOP] UVM testbench topology:
 --------------------------------------------------------------
 Name                       Type                    Size  Value
 --------------------------------------------------------------
-uvm_test_top               testcase_wb             -     @458 
-  env_0                    env                     -     @466 
-    agent_reset_0          agent_reset             -     @481 
-      driver_reset_0       driver_reset            -     @624 
-        rsp_port           uvm_analysis_port       -     @641 
-        seq_item_port      uvm_seq_item_pull_port  -     @632 
-      sequencer_reset_0    uvm_sequencer           -     @501 
-        rsp_export         uvm_analysis_export     -     @509 
-        seq_item_export    uvm_seq_item_pull_imp   -     @615 
+uvm_test_top               testcase_reset          -     @459 
+  env_0                    env                     -     @467 
+    agent_pkt_tx_0         agent_pkt_tx            -     @502 
+      driver_pkt_tx_0      driver_pkt_tx           -     @637 
+        rsp_port           uvm_analysis_port       -     @654 
+        seq_item_port      uvm_seq_item_pull_port  -     @645 
+      monitor_pkt_tx_0     monitor_pkt_tx          -     @663 
+        ap_tx_mon          uvm_analysis_port       -     @672 
+      sequencer_pkt_tx_0   uvm_sequencer           -     @514 
+        rsp_export         uvm_analysis_export     -     @522 
+        seq_item_export    uvm_seq_item_pull_imp   -     @628 
         arbitration_queue  array                   0     -    
         lock_queue         array                   0     -    
         num_last_reqs      integral                32    'd1  
         num_last_rsps      integral                32    'd1  
-    agent_wb_0             agent_wb                -     @489 
-      driver_wb_0          driver_wb               -     @783 
-        rsp_port           uvm_analysis_port       -     @800 
-        seq_item_port      uvm_seq_item_pull_port  -     @791 
-      sequencer_wb_0       uvm_sequencer           -     @660 
-        rsp_export         uvm_analysis_export     -     @668 
-        seq_item_export    uvm_seq_item_pull_imp   -     @774 
+    agent_reset_0          agent_reset             -     @486 
+      driver_reset_0       driver_reset            -     @814 
+        rsp_port           uvm_analysis_port       -     @831 
+        seq_item_port      uvm_seq_item_pull_port  -     @822 
+      sequencer_reset_0    uvm_sequencer           -     @691 
+        rsp_export         uvm_analysis_export     -     @699 
+        seq_item_export    uvm_seq_item_pull_imp   -     @805 
+        arbitration_queue  array                   0     -    
+        lock_queue         array                   0     -    
+        num_last_reqs      integral                32    'd1  
+        num_last_rsps      integral                32    'd1  
+    agent_wb_0             agent_wb                -     @494 
+      driver_wb_0          driver_wb               -     @973 
+        rsp_port           uvm_analysis_port       -     @990 
+        seq_item_port      uvm_seq_item_pull_port  -     @981 
+      sequencer_wb_0       uvm_sequencer           -     @850 
+        rsp_export         uvm_analysis_export     -     @858 
+        seq_item_export    uvm_seq_item_pull_imp   -     @964 
         arbitration_queue  array                   0     -    
         lock_queue         array                   0     -    
         num_last_reqs      integral                32    'd1  
@@ -66,84 +79,187 @@ uvm_test_top               testcase_wb             -     @458
 
   No instance or type overrides are registered with this factory
 
-All types registered with the factory: 53 total
+All types registered with the factory: 61 total
 (types without type names will not be printed)
 
   Type Name
   ---------
+  agent_pkt_tx
   agent_reset
   agent_wb
+  data_pkt_tx
   data_reset
   data_wb
+  driver_pkt_tx
   driver_reset
   driver_wb
   env
+  monitor_pkt_tx
+  sequence_pkt_tx
   sequence_reset
   sequence_wb
   snps_uvm_reg_bank_group
   snps_uvm_reg_map
+  testcase_base
+  testcase_loopback
   testcase_reset
   testcase_wb
 (*) Types with no associated type name will be printed as <unknown>
 
 ####
 
+UVM_INFO @ 0: reporter [UVMTOP] UVM testbench topology:
+--------------------------------------------------------------
+Name                       Type                    Size  Value
+--------------------------------------------------------------
+uvm_test_top               testcase_reset          -     @459 
+  env_0                    env                     -     @467 
+    agent_pkt_tx_0         agent_pkt_tx            -     @502 
+      driver_pkt_tx_0      driver_pkt_tx           -     @637 
+        rsp_port           uvm_analysis_port       -     @654 
+        seq_item_port      uvm_seq_item_pull_port  -     @645 
+      monitor_pkt_tx_0     monitor_pkt_tx          -     @663 
+        ap_tx_mon          uvm_analysis_port       -     @672 
+      sequencer_pkt_tx_0   uvm_sequencer           -     @514 
+        rsp_export         uvm_analysis_export     -     @522 
+        seq_item_export    uvm_seq_item_pull_imp   -     @628 
+        arbitration_queue  array                   0     -    
+        lock_queue         array                   0     -    
+        num_last_reqs      integral                32    'd1  
+        num_last_rsps      integral                32    'd1  
+    agent_reset_0          agent_reset             -     @486 
+      driver_reset_0       driver_reset            -     @814 
+        rsp_port           uvm_analysis_port       -     @831 
+        seq_item_port      uvm_seq_item_pull_port  -     @822 
+      sequencer_reset_0    uvm_sequencer           -     @691 
+        rsp_export         uvm_analysis_export     -     @699 
+        seq_item_export    uvm_seq_item_pull_imp   -     @805 
+        arbitration_queue  array                   0     -    
+        lock_queue         array                   0     -    
+        num_last_reqs      integral                32    'd1  
+        num_last_rsps      integral                32    'd1  
+    agent_wb_0             agent_wb                -     @494 
+      driver_wb_0          driver_wb               -     @973 
+        rsp_port           uvm_analysis_port       -     @990 
+        seq_item_port      uvm_seq_item_pull_port  -     @981 
+      sequencer_wb_0       uvm_sequencer           -     @850 
+        rsp_export         uvm_analysis_export     -     @858 
+        seq_item_export    uvm_seq_item_pull_imp   -     @964 
+        arbitration_queue  array                   0     -    
+        lock_queue         array                   0     -    
+        num_last_reqs      integral                32    'd1  
+        num_last_rsps      integral                32    'd1  
+--------------------------------------------------------------
+
+
+#### Factory Configuration (*)
+
+  No instance or type overrides are registered with this factory
+
+All types registered with the factory: 61 total
+(types without type names will not be printed)
+
+  Type Name
+  ---------
+  agent_pkt_tx
+  agent_reset
+  agent_wb
+  data_pkt_tx
+  data_reset
+  data_wb
+  driver_pkt_tx
+  driver_reset
+  driver_wb
+  env
+  monitor_pkt_tx
+  sequence_pkt_tx
+  sequence_reset
+  sequence_wb
+  snps_uvm_reg_bank_group
+  snps_uvm_reg_map
+  testcase_base
+  testcase_loopback
+  testcase_reset
+  testcase_wb
+(*) Types with no associated type name will be printed as <unknown>
+
+####
+
+UVM_INFO ../../testbench/uvm/driver_pkt_tx.sv(25) @ 0: uvm_test_top.env_0.agent_pkt_tx_0.driver_pkt_tx_0 [DRIVER CLASS] HIERARCHY: %m
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(35) @ 0: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [monitor_pkt_tx_0] HIERARCHY: $unit::\monitor_pkt_tx::run_phase 
 UVM_INFO ../../testbench/uvm/driver_reset.sv(25) @ 0: uvm_test_top.env_0.agent_reset_0.driver_reset_0 [DRIVER CLASS] HIERARCHY: %m
 UVM_INFO ../../testbench/uvm/driver_wb.sv(25) @ 0: uvm_test_top.env_0.agent_wb_0.driver_wb_0 [DRIVER CLASS] HIERARCHY: %m
-UVM_INFO ../../testbench/uvm/sequence_wb.sv(24) @ 0: uvm_test_top.env_0.agent_wb_0.sequencer_wb_0@@sequence_wb_0 [XAC Hey from WB Sequence aka Generator] producing stim in body!
-XAC Hey from Sequence aka Generator start_item producing addr=ab data=00112233
-UVM_INFO ../../testbench/uvm/driver_wb.sv(31) @ 0: uvm_test_top.env_0.agent_wb_0.driver_wb_0 [XAC WB DRIVER run_phase received this packet ] ---------------------------------------------------------------------------------------------------------
-Name                           Type      Size  Value                                                     
----------------------------------------------------------------------------------------------------------
-req                            data_wb   -     @856                                                      
-  adr                          integral  8     'hab                                                      
-  dat_i                        integral  32    'h112233                                                  
-  dat_o                        integral  32    'h0                                                       
-  cyc                          integral  1     'h1                                                       
-  we                           integral  1     'h1                                                       
-  stb                          integral  1     'h1                                                       
-  begin_time                   time      64    0                                                         
-  depth                        int       32    'd2                                                       
-  parent sequence (name)       string    13    sequence_wb_0                                             
-  parent sequence (full name)  string    58    uvm_test_top.env_0.agent_wb_0.sequencer_wb_0.sequence_wb_0
-  sequencer                    string    44    uvm_test_top.env_0.agent_wb_0.sequencer_wb_0              
----------------------------------------------------------------------------------------------------------
+UVM_INFO ../../testbench/uvm/sequence_reset.sv(18) @ 0: uvm_test_top.env_0.agent_reset_0.sequencer_reset_0@@sequence_reset_0 [Hey from RESET Sequence aka Generator] producing stim in body!
+UVM_INFO ../../testbench/uvm/driver_reset.sv(31) @ 0: uvm_test_top.env_0.agent_reset_0.driver_reset_0 [XAC RESET DRIVER run_phase received this packet ] --------------------------------------------------------------------------------------------------------------------
+Name                           Type        Size  Value                                                              
+--------------------------------------------------------------------------------------------------------------------
+req                            data_reset  -     @1064                                                              
+  reset_                       integral    1     'h0                                                                
+  cycles                       integral    32    'h3                                                                
+  begin_time                   time        64    0                                                                  
+  depth                        int         32    'd2                                                                
+  parent sequence (name)       string      16    sequence_reset_0                                                   
+  parent sequence (full name)  string      67    uvm_test_top.env_0.agent_reset_0.sequencer_reset_0.sequence_reset_0
+  sequencer                    string      50    uvm_test_top.env_0.agent_reset_0.sequencer_reset_0                 
+--------------------------------------------------------------------------------------------------------------------
 
-XAC Hey from Sequence aka Generator start_item producing addr=ba data=33001122
-UVM_INFO ../../testbench/uvm/driver_wb.sv(31) @ 16000: uvm_test_top.env_0.agent_wb_0.driver_wb_0 [XAC WB DRIVER run_phase received this packet ] ---------------------------------------------------------------------------------------------------------
-Name                           Type      Size  Value                                                     
----------------------------------------------------------------------------------------------------------
-req                            data_wb   -     @861                                                      
-  adr                          integral  8     'hba                                                      
-  dat_i                        integral  32    'h33001122                                                
-  dat_o                        integral  32    'h0                                                       
-  cyc                          integral  1     'h1                                                       
-  we                           integral  1     'h1                                                       
-  stb                          integral  1     'h1                                                       
-  begin_time                   time      64    16000                                                     
-  depth                        int       32    'd2                                                       
-  parent sequence (name)       string    13    sequence_wb_0                                             
-  parent sequence (full name)  string    58    uvm_test_top.env_0.agent_wb_0.sequencer_wb_0.sequence_wb_0
-  sequencer                    string    44    uvm_test_top.env_0.agent_wb_0.sequencer_wb_0              
----------------------------------------------------------------------------------------------------------
+UVM_INFO ../../testbench/uvm/driver_reset.sv(38) @ 0: uvm_test_top.env_0.agent_reset_0.driver_reset_0 [XAC RESET DRIVER right before wait] --------------------------------------------------------------------------------------------------------------------
+Name                           Type        Size  Value                                                              
+--------------------------------------------------------------------------------------------------------------------
+req                            data_reset  -     @1064                                                              
+  reset_                       integral    1     'h0                                                                
+  cycles                       integral    32    'h3                                                                
+  begin_time                   time        64    0                                                                  
+  depth                        int         32    'd2                                                                
+  parent sequence (name)       string      16    sequence_reset_0                                                   
+  parent sequence (full name)  string      67    uvm_test_top.env_0.agent_reset_0.sequencer_reset_0.sequence_reset_0
+  sequencer                    string      50    uvm_test_top.env_0.agent_reset_0.sequencer_reset_0                 
+--------------------------------------------------------------------------------------------------------------------
 
+UVM_INFO ../../testbench/uvm/driver_reset.sv(46) @ 16000: uvm_test_top.env_0.agent_reset_0.driver_reset_0 [XAC RESET DRIVER right after wait] --------------------------------------------------------------------------------------------------------------------
+Name                           Type        Size  Value                                                              
+--------------------------------------------------------------------------------------------------------------------
+req                            data_reset  -     @1064                                                              
+  reset_                       integral    1     'h0                                                                
+  cycles                       integral    32    'h3                                                                
+  begin_time                   time        64    0                                                                  
+  depth                        int         32    'd2                                                                
+  parent sequence (name)       string      16    sequence_reset_0                                                   
+  parent sequence (full name)  string      67    uvm_test_top.env_0.agent_reset_0.sequencer_reset_0.sequence_reset_0
+  sequencer                    string      50    uvm_test_top.env_0.agent_reset_0.sequencer_reset_0                 
+--------------------------------------------------------------------------------------------------------------------
+
+CMD SEND_PKT
+CMD SEND_PKT
+CMD SEND_PKT
+CMD SEND_PKT
+CMD SEND_PKT
+CMD SEND_PKT
+CMD SEND_PKT
+CMD SEND_PKT
+CMD SEND_PKT
+CMD SEND_PKT
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(57) @ 5016000: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [monitor_pkt_tx_0] REPORT: Captured 0 packets
 
 --- UVM Report Summary ---
 
 ** Report counts by severity
-UVM_INFO :    7
+UVM_INFO :   12
 UVM_WARNING :    0
 UVM_ERROR :    0
 UVM_FATAL :    0
 ** Report counts by id
-[DRIVER CLASS]     2
+[DRIVER CLASS]     3
+[Hey from RESET Sequence aka Generator]     1
 [RNTST]     1
-[UVMTOP]     1
-[XAC Hey from WB Sequence aka Generator]     1
-[XAC WB DRIVER run_phase received this packet ]     2
+[UVMTOP]     2
+[XAC RESET DRIVER right after wait]     1
+[XAC RESET DRIVER right before wait]     1
+[XAC RESET DRIVER run_phase received this packet ]     1
+[monitor_pkt_tx_0]     2
 $finish called from file "/usr/synopsys/vcs/U-2023.03-SP2/etc/uvm-1.1/base/uvm_root.svh", line 437.
-$finish at simulation time                35200
+$finish at simulation time              5016000
            V C S   S i m u l a t i o n   R e p o r t 
-Time: 35200 ps
-CPU Time:      0.470 seconds;       Data structure size:   0.6Mb
-Fri Jun  7 16:42:20 2024
+Time: 5016000 ps
+CPU Time:      0.490 seconds;       Data structure size:   0.7Mb
+Mon Jun 10 13:37:22 2024

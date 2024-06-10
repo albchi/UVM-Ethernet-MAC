@@ -25,22 +25,25 @@ class driver_reset extends uvm_driver #(data_reset);
       `uvm_info("DRIVER CLASS", "HIERARCHY: %m", UVM_HIGH);
 
       forever begin
+
       seq_item_port.get_next_item(req);
 
-      `uvm_info("XAC DRIVER run_phase received this packet ", req.sprint(), UVM_HIGH);
+      `uvm_info("XAC RESET DRIVER run_phase received this packet ", req.sprint(), UVM_HIGH);
 
-      vi.wb_rst_i <= 1'b0;
-      vi.reset_xgmii_rx_n <= 1'b0;
-      vi.reset_xgmii_tx_n <= 1'b0;
-      vi.reset_156m25_n <= 1'b0;
+      vi.wb_rst_i <= req.reset_; // 1'b0;
+      vi.reset_xgmii_rx_n <= req.reset_; // 1'b0;
+      vi.reset_xgmii_tx_n <= req.reset_; // 1'b0;
+      vi.reset_156m25_n <= req.reset_; // 1'b0;
       // vi.reset_156m25_n <= req.reset_;
+`uvm_info("XAC RESET DRIVER right before wait", req.sprint(), UVM_HIGH);
 
-      @(posedge vi.clk_156m25);
+      repeat(req.cycles) @(posedge vi.clk_156m25);
       // vi.reset_156m25_n <= req.reset_;
-      vi.wb_rst_i <= 1'b1;
-      vi.reset_xgmii_rx_n <= 1'b1;
-      vi.reset_xgmii_tx_n <= 1'b1;
-      vi.reset_156m25_n <= 1'b1;
+      vi.wb_rst_i <= ~req.reset_; // 1'b1;
+      vi.reset_xgmii_rx_n <= ~req.reset_; // <= 1'b1;
+      vi.reset_xgmii_tx_n <= ~req.reset_; // 1'b1;
+      vi.reset_156m25_n <= ~req.reset_; // 1'b1;
+`uvm_info("XAC RESET DRIVER right after wait", req.sprint(), UVM_HIGH);
 
 
       seq_item_port.item_done();

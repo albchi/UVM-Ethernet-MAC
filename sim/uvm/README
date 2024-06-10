@@ -1,2 +1,15 @@
-compile : COMP
-run : RUN
+To compile:
+
+   COMP
+
+
+To simulate:
+   SIM
+
+To pick test
+
+   edit SIM
+
+   +UVM_TESTNAME=testcase_loopbac
+   +UVM_TESTNAME=testcase_wb.
+

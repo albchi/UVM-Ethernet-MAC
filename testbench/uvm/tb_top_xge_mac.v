@@ -21,17 +21,17 @@ reg           clk_xgmii_tx;
 reg           clk_wb; //xac+
 
 
-// xac- reg           reset_156m25_n;
-// xac -reg           reset_xgmii_rx_n;
-// xac -reg           reset_xgmii_tx_n;
+reg           reset_156m25_n;
+reg           reset_xgmii_rx_n;
+reg           reset_xgmii_tx_n;
 
 reg           pkt_rx_ren;
 
-reg  [63:0]   pkt_tx_data;
-reg           pkt_tx_val;
-reg           pkt_tx_sop;
-reg           pkt_tx_eop;
-reg  [2:0]    pkt_tx_mod;
+// xac- reg  [63:0]   pkt_tx_data;
+// xac- reg           pkt_tx_val;
+// xac- reg           pkt_tx_sop;
+// xac- reg           pkt_tx_eop;
+// xac- reg  [2:0]    pkt_tx_mod;
 
 integer       tx_count;
 integer       rx_count;
@@ -71,6 +71,7 @@ wire                    xaui_tx_l3_n;
 wire                    xaui_tx_l3_p;
 
    
+intf_pkt_tx intf_pkt_tx_0(clk_156m25);
 intf_rst intf_rst_0(clk_156m25);
 intf_wb intf_wb_0(clk_wb);
 // assign clk_156m25 = intf.clk_156m25;
@@ -93,7 +94,7 @@ xge_mac dut(/*AUTOINST*/
             .pkt_rx_mod                 (pkt_rx_mod[2:0]),
             .pkt_rx_sop                 (pkt_rx_sop),
             .pkt_rx_val                 (pkt_rx_val),
-            .pkt_tx_full                (pkt_tx_full),
+            .pkt_tx_full                (intf_pkt_tx_0.pkt_tx_full), // (pkt_tx_full),
             .wb_ack_o                   (wb_ack_o),
             .wb_dat_o                   (wb_dat_o[31:0]),
             .wb_int_o                   (wb_int_o),
@@ -105,15 +106,19 @@ xge_mac dut(/*AUTOINST*/
             .clk_xgmii_rx               (clk_xgmii_rx),
             .clk_xgmii_tx               (clk_xgmii_tx),
             .pkt_rx_ren                 (pkt_rx_ren),
-            .pkt_tx_data                (pkt_tx_data[63:0]),
-            .pkt_tx_eop                 (pkt_tx_eop),
-            .pkt_tx_mod                 (pkt_tx_mod[2:0]),
-            .pkt_tx_sop                 (pkt_tx_sop),
-            .pkt_tx_val                 (pkt_tx_val),
-            // xac- .reset_156m25_n             (reset_156m25_n),
+            .pkt_tx_data                (intf_pkt_tx_0.pkt_tx_data), // (pkt_tx_data[63:0]),
+            .pkt_tx_eop                 (intf_pkt_tx_0.pkt_tx_eop), // (pkt_tx_eop),
+            .pkt_tx_mod                 (intf_pkt_tx_0.pkt_tx_mod), // (pkt_tx_mod[2:0]),
+            .pkt_tx_sop                 (intf_pkt_tx_0.pkt_tx_sop), // (pkt_tx_sop),
+            .pkt_tx_val                 (intf_pkt_tx_0.pkt_tx_val), // (pkt_tx_val),
+            // .reset_156m25_n             (reset_156m25_n),
+            // .reset_156m25_n             (intf_rst_0.reset_156m25_n),
+            // .reset_156m25_n             (intf_pkt_tx_0.reset_156m25_n),
             .reset_156m25_n             (intf_rst_0.reset_156m25_n),
             .reset_xgmii_rx_n           (intf_rst_0.reset_xgmii_rx_n),
+            // .reset_xgmii_rx_n           (reset_xgmii_rx_n),
             .reset_xgmii_tx_n           (intf_rst_0.reset_xgmii_tx_n),
+            // .reset_xgmii_tx_n           (reset_xgmii_tx_n),
             .wb_adr_i                   (wb_adr_i[7:0]),
             .wb_clk_i                   (wb_clk_i),
             .wb_cyc_i                   (wb_cyc_i),
@@ -146,10 +151,12 @@ gxb gxb(// Outputs
         .tx_dataout                     (tx_dataout[3:0]),
         // Inputs
         .pll_inclk                      (clk_156m25),
+        // .rx_analogreset                 (~intf_rst.reset_156m25_n),
         .rx_analogreset                 (~reset_156m25_n),
         .rx_cruclk                      ({clk_156m25, clk_156m25, clk_156m25, clk_156m25}),
         .rx_datain                      (tx_dataout[3:0]),
-        .rx_digitalreset                (~reset_156m25_n),
+        // .rx_digitalreset                (~reset_156m25_n),
+        .rx_digitalreset                (~intf_rst.reset_156m25_n),
         .tx_ctrlenable                  ({xgmii_txc[7],
                                           xgmii_txc[5],
                                           xgmii_txc[3],
@@ -166,7 +173,8 @@ gxb gxb(// Outputs
                                           xgmii_txd[39:32],
                                           xgmii_txd[23:16],
                                           xgmii_txd[7:0]}),
-        .tx_digitalreset                (~reset_156m25_n));
+        // .tx_digitalreset                (~reset_156m25_n));
+        .tx_digitalreset                (~intf_rst.reset_156m25_n));
 `endif
 
 `ifdef XIL
@@ -197,6 +205,7 @@ xaui_block xaui(// Outputs
                 .refclk                 (clk_156m25),
                 // xac- .reset                  (~reset_156m25_n),
                 .reset                  (~int_rst_0.reset_156m25_n),
+                // .reset156               (~intf_rst.reset_156m25_n),
                 .reset156               (~reset_156m25_n),
                 .xgmii_txd              (xgmii_txd[63:0]),
                 .xgmii_txc              (xgmii_txc[7:0]),
@@ -276,17 +285,15 @@ end
 
 //---
 // Reset Generation
-/*
 initial begin
-    reset_156m25_n = 1'b0;
+    // reset_156m25_n = 1'b0;
     reset_xgmii_rx_n = 1'b0;
     reset_xgmii_tx_n = 1'b0;
     WaitNS(20);
-    reset_156m25_n = 1'b1;
+    // reset_156m25_n = 1'b1;
     reset_xgmii_rx_n = 1'b1;
     reset_xgmii_tx_n = 1'b1;
 end
-*/
 
 
 //---
@@ -300,11 +307,11 @@ initial begin
 
     pkt_rx_ren = 1'b0;
 
-    pkt_tx_data = 64'b0;
-    pkt_tx_val = 1'b0;
-    pkt_tx_sop = 1'b0;
-    pkt_tx_eop = 1'b0;
-    pkt_tx_mod = 3'b0;
+    // xac- pkt_tx_data = 64'b0;
+    // xac- pkt_tx_val = 1'b0;
+    // xac- pkt_tx_sop = 1'b0;
+    // xac- pkt_tx_eop = 1'b0;
+    // xac- pkt_tx_mod = 3'b0;
 
 end
 
@@ -326,6 +333,7 @@ endtask
 //---
 // Task to send a single packet
 
+/*
 task TxPacket;
   integer        i;
     begin
@@ -349,29 +357,30 @@ task TxPacket;
                 pkt_tx_mod = tx_length % 8;
             end
 
-            pkt_tx_data[`LANE7] = tx_buffer[i];
-            pkt_tx_data[`LANE6] = tx_buffer[i+1];
-            pkt_tx_data[`LANE5] = tx_buffer[i+2];
-            pkt_tx_data[`LANE4] = tx_buffer[i+3];
-            pkt_tx_data[`LANE3] = tx_buffer[i+4];
-            pkt_tx_data[`LANE2] = tx_buffer[i+5];
-            pkt_tx_data[`LANE1] = tx_buffer[i+6];
-            pkt_tx_data[`LANE0] = tx_buffer[i+7];
+            // pkt_tx_data[`LANE7] = tx_buffer[i];
+            // pkt_tx_data[`LANE6] = tx_buffer[i+1];
+            // pkt_tx_data[`LANE5] = tx_buffer[i+2];
+            // pkt_tx_data[`LANE4] = tx_buffer[i+3];
+            // pkt_tx_data[`LANE3] = tx_buffer[i+4];
+            // pkt_tx_data[`LANE2] = tx_buffer[i+5];
+            // pkt_tx_data[`LANE1] = tx_buffer[i+6];
+            // pkt_tx_data[`LANE0] = tx_buffer[i+7];
 
             @(posedge clk_156m25);
             WaitNS(1);
 
         end
 
-        pkt_tx_val = 1'b0;
-        pkt_tx_eop = 1'b0;
-        pkt_tx_mod = 3'b0;
+        // pkt_tx_val = 1'b0;
+        // pkt_tx_eop = 1'b0;
+        // pkt_tx_mod = 3'b0;
 
         tx_count = tx_count + 1;
 
     end
 
 endtask
+*/
 
 
 //---

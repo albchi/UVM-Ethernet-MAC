@@ -31,12 +31,33 @@ class driver_pkt_tx extends uvm_driver #(data_pkt_tx);
          `uvm_info("XAC PKT TX DRIVER run_phase received this packet ", req.sprint(), UVM_HIGH);
 
          @(posedge vi.clk);
+         @(posedge vi.clk);
+         @(posedge vi.clk);
+         // vi.reset_156m25_n <= 1'b0;
+         @(posedge vi.clk);
+         @(posedge vi.clk);
+         // vi.reset_156m25_n <= 1'b1;
+         vi.pkt_tx_sop <= 1'b0;
+         vi.pkt_tx_eop <= 1'b0;
+         vi.pkt_tx_val <= 1'b0;
+         @(posedge vi.clk);
+         vi.pkt_tx_sop <= 1'b1;
+         vi.pkt_tx_val <= 1'b1; // req.val; 
          vi.pkt_tx_data <= req.data; 
-         vi.pkt_tx_val <= req.val; 
-         vi.pkt_tx_sop <= req.sop;
-         vi.pkt_tx_eop <= req.eop; 
          vi.pkt_tx_mod <= req.mod; 
          @(posedge vi.clk);
+         vi.pkt_tx_sop <= 1'b0;
+         vi.pkt_tx_data <= req.data + 64'h1000; 
+         vi.pkt_tx_mod <= req.mod; 
+         @(posedge vi.clk);
+         vi.pkt_tx_data <= req.data + 64'h1000; 
+         vi.pkt_tx_mod <= req.mod; 
+         vi.pkt_tx_eop <= 1'b1;
+         @(posedge vi.clk);
+         vi.pkt_tx_val <= 1'b0;
+         vi.pkt_tx_eop <= 1'b0;
+         repeat(80)
+            @(posedge vi.clk);
 
       seq_item_port.item_done();
 
