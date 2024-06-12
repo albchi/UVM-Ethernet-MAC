@@ -5,7 +5,7 @@
 class monitor_pkt_tx extends uvm_monitor;
 
   virtual intf_pkt_tx     vi;
-  int unsigned                  m_num_captured;
+  int pkt_captured;
   uvm_analysis_port #(data_pkt_tx)   ap_tx_mon;
 
   `uvm_component_utils( monitor_pkt_tx )
@@ -17,20 +17,20 @@ class monitor_pkt_tx extends uvm_monitor;
 
   virtual function void build_phase(input uvm_phase phase);
     super.build_phase(phase);
-    m_num_captured = 0;
+    pkt_captured = 0;
     ap_tx_mon = new ( "ap_tx_mon", this );
     uvm_config_db#(virtual intf_pkt_tx)::get(this, "", "vi", vi);
     if ( vi==null )
-      `uvm_fatal(get_name(), "Virtual Interface for monitor not set!");
+      `uvm_fatal(get_name(), "Virtual Interface for TX PKT MON not set!");
   endfunction : build_phase
 
 
   virtual task run_phase(input uvm_phase phase);
     data_pkt_tx      rcv_pkt;
-    bit         pkt_in_progress = 0;
     bit [7:0]   rx_data_q[$];
     int         idx;
     bit         packet_captured = 0;
+    bit         pkt_in_progress = 0;
 
     `uvm_info( get_name(), $sformatf("HIERARCHY: %m"), UVM_HIGH);
 
@@ -54,7 +54,7 @@ class monitor_pkt_tx extends uvm_monitor;
 
 
   function void report_phase( uvm_phase phase );
-    `uvm_info( get_name( ), $sformatf( "REPORT: Captured %0d packets", m_num_captured ), UVM_LOW )
+    `uvm_info( get_name( ), $sformatf( "REPORT: PKT TX Captured %0d packets", pkt_captured ), UVM_LOW )
   endfunction : report_phase
 
 endclass : monitor_pkt_tx

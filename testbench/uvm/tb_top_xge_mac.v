@@ -101,8 +101,11 @@ xge_mac dut(/*AUTOINST*/
             .xgmii_txc                  (xgmii_txc[7:0]),
             .xgmii_txd                  (xgmii_txd[63:0]),
             // Inputs
-            // xac- .clk_156m25                 (clk_156m25),
+`ifdef ORIG_RESET
+            .clk_156m25                 (clk_156m25),
+`else
             .clk_156m25                 (intf_rst_0.clk_156m25),
+`endif
             .clk_xgmii_rx               (clk_xgmii_rx),
             .clk_xgmii_tx               (clk_xgmii_tx),
             .pkt_rx_ren                 (pkt_rx_ren),
@@ -111,14 +114,15 @@ xge_mac dut(/*AUTOINST*/
             .pkt_tx_mod                 (intf_pkt_tx_0.pkt_tx_mod), // (pkt_tx_mod[2:0]),
             .pkt_tx_sop                 (intf_pkt_tx_0.pkt_tx_sop), // (pkt_tx_sop),
             .pkt_tx_val                 (intf_pkt_tx_0.pkt_tx_val), // (pkt_tx_val),
-            // .reset_156m25_n             (reset_156m25_n),
-            // .reset_156m25_n             (intf_rst_0.reset_156m25_n),
-            // .reset_156m25_n             (intf_pkt_tx_0.reset_156m25_n),
+`ifdef ORIG_RESET
+            .reset_156m25_n             (reset_156m25_n),
+            .reset_xgmii_rx_n           (reset_xgmii_rx_n),
+            .reset_xgmii_tx_n           (reset_xgmii_tx_n),
+`else
             .reset_156m25_n             (intf_rst_0.reset_156m25_n),
             .reset_xgmii_rx_n           (intf_rst_0.reset_xgmii_rx_n),
-            // .reset_xgmii_rx_n           (reset_xgmii_rx_n),
             .reset_xgmii_tx_n           (intf_rst_0.reset_xgmii_tx_n),
-            // .reset_xgmii_tx_n           (reset_xgmii_tx_n),
+`endif 
             .wb_adr_i                   (wb_adr_i[7:0]),
             .wb_clk_i                   (wb_clk_i),
             .wb_cyc_i                   (wb_cyc_i),
@@ -155,8 +159,8 @@ gxb gxb(// Outputs
         .rx_analogreset                 (~reset_156m25_n),
         .rx_cruclk                      ({clk_156m25, clk_156m25, clk_156m25, clk_156m25}),
         .rx_datain                      (tx_dataout[3:0]),
-        // .rx_digitalreset                (~reset_156m25_n),
-        .rx_digitalreset                (~intf_rst.reset_156m25_n),
+        .rx_digitalreset                (~reset_156m25_n),
+        // .rx_digitalreset                (~intf_rst.reset_156m25_n),
         .tx_ctrlenable                  ({xgmii_txc[7],
                                           xgmii_txc[5],
                                           xgmii_txc[3],
@@ -173,8 +177,8 @@ gxb gxb(// Outputs
                                           xgmii_txd[39:32],
                                           xgmii_txd[23:16],
                                           xgmii_txd[7:0]}),
-        // .tx_digitalreset                (~reset_156m25_n));
-        .tx_digitalreset                (~intf_rst.reset_156m25_n));
+        .tx_digitalreset                (~reset_156m25_n));
+        // .tx_digitalreset                (~intf_rst.reset_156m25_n));
 `endif
 
 `ifdef XIL
@@ -203,10 +207,13 @@ xaui_block xaui(// Outputs
                 .clk156                 (clk_156m25),
                 .clk312                 (clk_312m50),
                 .refclk                 (clk_156m25),
-                // xac- .reset                  (~reset_156m25_n),
-                .reset                  (~int_rst_0.reset_156m25_n),
-                // .reset156               (~intf_rst.reset_156m25_n),
+`ifdef ORIG_RESET
+                .reset                  (~reset_156m25_n),
                 .reset156               (~reset_156m25_n),
+`else
+                .reset156               (~intf_rst_0.reset_156m25_n),
+                .reset                  (~intf_rst_0.reset_156m25_n),
+`endif
                 .xgmii_txd              (xgmii_txd[63:0]),
                 .xgmii_txc              (xgmii_txc[7:0]),
                 .xaui_rx_l0_p           (xaui_tx_l0_p),
@@ -240,6 +247,11 @@ assign wb_we_i = 1'b0;
 
 
 initial begin
+`ifdef ORIG_RESET
+    $display("using ORIG_RESET");
+`else
+    $display("not using ORIG_RESET");
+`endif
    $fsdbDumpvars;
 end
 initial begin
@@ -286,11 +298,11 @@ end
 //---
 // Reset Generation
 initial begin
-    // reset_156m25_n = 1'b0;
+    reset_156m25_n = 1'b0;
     reset_xgmii_rx_n = 1'b0;
     reset_xgmii_tx_n = 1'b0;
     WaitNS(20);
-    // reset_156m25_n = 1'b1;
+    reset_156m25_n = 1'b1;
     reset_xgmii_rx_n = 1'b1;
     reset_xgmii_tx_n = 1'b1;
 end
@@ -523,6 +535,7 @@ initial begin
         @(posedge clk_156m25);
 
     end
+
 
 end
 

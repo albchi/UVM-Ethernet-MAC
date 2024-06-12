@@ -1,5 +1,5 @@
-`ifndef _SEQUENCE_VIRTUAL_
-`define _SEQUENCE_VIRTUAL_
+`ifndef _VIRTUAL_SEQUENCE_
+`define _VIRTUAL_SEQUENCE_
 
 
 class virtual_sequence extends uvm_sequence;
@@ -20,11 +20,9 @@ class virtual_sequence extends uvm_sequence;
 
 
   virtual task body();
-    `uvm_do_on(sequence_reset_0, p_sequencer.sequence_reset_0);
-    // `uvm_do_on( seq_pkt, p_sequencer.seqr_tx_pkt );
+    // `uvm_do_on(sequence_reset_0, p_sequencer.sequence_reset_0);
     #1000000;
-    // `uvm_do_on( seq_eot_wshbn, p_sequencer.seqr_wshbn );
-    `uvm_do_on(sequence_pkt_tx_0, p_sequencer.sequence_pkt_tx_0);
+    // `uvm_do_on(sequence_pkt_tx_0, p_sequencer.sequence_pkt_tx_0);
   endtask : body
 
 
