@@ -1,4 +1,5 @@
 vcs \
++define+ORIG_RESET+ \
 -full64 \
 +vcs+lic+wait \
 -sverilog  \
@@ -19,7 +20,8 @@ vcs \
 ../../testcases/testcase_base.sv \
 ../../testcases/testcase_wb.sv \
 ../../testcases/testcase_reset.sv  \
-../../testcases/testcase_loopback.sv 
+../../testcases/testcase_loopback.sv  \
+../../testcases/testcase_loopback_reset.sv 
 
 
 
