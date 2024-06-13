@@ -71,6 +71,7 @@ wire                    xaui_tx_l3_n;
 wire                    xaui_tx_l3_p;
 
    
+intf_pkt_rx intf_pkt_rx_0(clk_156m25);
 intf_pkt_tx intf_pkt_tx_0(clk_156m25);
 intf_rst intf_rst_0(clk_156m25);
 intf_wb intf_wb_0(clk_wb);
@@ -88,12 +89,12 @@ intf_rst intf_rst_0 (
 xge_mac dut(/*AUTOINST*/
             // Outputs
             .pkt_rx_avail               (pkt_rx_avail),
-            .pkt_rx_data                (pkt_rx_data[63:0]),
-            .pkt_rx_eop                 (pkt_rx_eop),
+            .pkt_rx_data                (intf_pkt_rx_0.pkt_rx_data), // (pkt_rx_data[63:0]),
+            .pkt_rx_eop                 (intf_pkt_rx_0.pkt_rx_eop),
             .pkt_rx_err                 (pkt_rx_err),
             .pkt_rx_mod                 (pkt_rx_mod[2:0]),
-            .pkt_rx_sop                 (pkt_rx_sop),
-            .pkt_rx_val                 (pkt_rx_val),
+            .pkt_rx_sop                 (intf_pkt_rx_0.pkt_rx_sop),
+            .pkt_rx_val                 (intf_pkt_rx_0.pkt_rx_val),
             .pkt_tx_full                (intf_pkt_tx_0.pkt_tx_full), // (pkt_tx_full),
             .wb_ack_o                   (wb_ack_o),
             .wb_dat_o                   (wb_dat_o[31:0]),
@@ -317,13 +318,13 @@ initial begin
         tx_buffer[tx_length] = 0;
     end
 
-    pkt_rx_ren = 1'b0;
+    //xac- compile error pkt_rx_ren = 1'b0;
 
-    // xac- pkt_tx_data = 64'b0;
-    // xac- pkt_tx_val = 1'b0;
-    // xac- pkt_tx_sop = 1'b0;
-    // xac- pkt_tx_eop = 1'b0;
-    // xac- pkt_tx_mod = 3'b0;
+    //xac- compile error pkt_tx_data = 64'b0;
+    //xac- compile error pkt_tx_val = 1'b0;
+    //xac- compile error pkt_tx_sop = 1'b0;
+    //xac- compile error pkt_tx_eop = 1'b0;
+    //xac- compile error pkt_tx_mod = 3'b0;
 
 end
 
@@ -369,23 +370,23 @@ task TxPacket;
                 pkt_tx_mod = tx_length % 8;
             end
 
-            // pkt_tx_data[`LANE7] = tx_buffer[i];
-            // pkt_tx_data[`LANE6] = tx_buffer[i+1];
-            // pkt_tx_data[`LANE5] = tx_buffer[i+2];
-            // pkt_tx_data[`LANE4] = tx_buffer[i+3];
-            // pkt_tx_data[`LANE3] = tx_buffer[i+4];
-            // pkt_tx_data[`LANE2] = tx_buffer[i+5];
-            // pkt_tx_data[`LANE1] = tx_buffer[i+6];
-            // pkt_tx_data[`LANE0] = tx_buffer[i+7];
+            pkt_tx_data[`LANE7] = tx_buffer[i];
+            pkt_tx_data[`LANE6] = tx_buffer[i+1];
+            pkt_tx_data[`LANE5] = tx_buffer[i+2];
+            pkt_tx_data[`LANE4] = tx_buffer[i+3];
+            pkt_tx_data[`LANE3] = tx_buffer[i+4];
+            pkt_tx_data[`LANE2] = tx_buffer[i+5];
+            pkt_tx_data[`LANE1] = tx_buffer[i+6];
+            pkt_tx_data[`LANE0] = tx_buffer[i+7];
 
             @(posedge clk_156m25);
             WaitNS(1);
 
         end
 
-        // pkt_tx_val = 1'b0;
-        // pkt_tx_eop = 1'b0;
-        // pkt_tx_mod = 3'b0;
+        pkt_tx_val = 1'b0;
+        pkt_tx_eop = 1'b0;
+        pkt_tx_mod = 3'b0;
 
         tx_count = tx_count + 1;
 

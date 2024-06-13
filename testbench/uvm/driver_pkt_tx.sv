@@ -26,14 +26,15 @@ class driver_pkt_tx extends uvm_driver #(data_pkt_tx);
 
       forever begin
 
+         `uvm_info("DRIVER CLASS", "before get_next", UVM_HIGH);
          seq_item_port.get_next_item(req);
+         `uvm_info("DRIVER CLASS", "after get_next", UVM_HIGH);
 
          `uvm_info("XAC PKT TX DRIVER run_phase received this packet ", req.sprint(), UVM_HIGH);
 
          @(posedge vi.clk);
-         @(posedge vi.clk);
-         @(posedge vi.clk);
-         // vi.reset_156m25_n <= 1'b0;
+         vi.pkt_tx_val <= 1'b1;
+
          @(posedge vi.clk);
          @(posedge vi.clk);
          // vi.reset_156m25_n <= 1'b1;

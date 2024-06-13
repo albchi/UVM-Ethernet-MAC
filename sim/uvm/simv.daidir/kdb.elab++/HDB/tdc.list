@@ -42,8 +42,10 @@
 ../../testbench/uvm/sequence_wb.sv
 ../../testbench/uvm/tb_prog.sv
 ../../testbench/uvm/tb_top_xge_mac.v
+../../testbench/uvm/virtual_sequencer.sv
 ../../testcases/testcase_base.sv
 ../../testcases/testcase_loopback.sv
+../../testcases/testcase_loopback_reset.sv
 ../../testcases/testcase_reset.sv
 ../../testcases/testcase_wb.sv
 /usr/synopsys/vcs/U-2023.03-SP2/etc/uvm-1.1/base/uvm_barrier.svh

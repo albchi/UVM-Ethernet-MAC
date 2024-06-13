@@ -42,8 +42,10 @@
 /home/sf10274/AlbertLand/0UVMgetinfo/lab-project-10gEthernetMAC/testbench/uvm/sequence_wb.sv
 /home/sf10274/AlbertLand/0UVMgetinfo/lab-project-10gEthernetMAC/testbench/uvm/tb_prog.sv
 /home/sf10274/AlbertLand/0UVMgetinfo/lab-project-10gEthernetMAC/testbench/uvm/tb_top_xge_mac.v
+/home/sf10274/AlbertLand/0UVMgetinfo/lab-project-10gEthernetMAC/testbench/uvm/virtual_sequencer.sv
 /home/sf10274/AlbertLand/0UVMgetinfo/lab-project-10gEthernetMAC/testcases/testcase_base.sv
 /home/sf10274/AlbertLand/0UVMgetinfo/lab-project-10gEthernetMAC/testcases/testcase_loopback.sv
+/home/sf10274/AlbertLand/0UVMgetinfo/lab-project-10gEthernetMAC/testcases/testcase_loopback_reset.sv
 /home/sf10274/AlbertLand/0UVMgetinfo/lab-project-10gEthernetMAC/testcases/testcase_reset.sv
 /home/sf10274/AlbertLand/0UVMgetinfo/lab-project-10gEthernetMAC/testcases/testcase_wb.sv
 /usr/synopsys/vcs/U-2023.03-SP2/etc/uvm-1.1/base/uvm_barrier.svh

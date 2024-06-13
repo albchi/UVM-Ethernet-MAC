@@ -1,4 +1,4 @@
-692      
+699      
 0 uvm_macros.svh
 0 /usr/synopsys/vcs/U-2023.03-SP2/etc/systemverilog/uvm_macros.svh
 0 /usr/synopsys/vcs/U-2023.03-SP2/etc/uvm-1.1/vcs/uvm_macros.svh
@@ -691,7 +691,15 @@
 0 /usr/synopsys/vcs/U-2023.03-SP2/etc/uvm-1.1/sequence_pkt_tx.sv
 0 ../../rtl/include/sequence_pkt_tx.sv
 0 ../../testcases/sequence_pkt_tx.sv
-78
+0 virtual_sequencer.sv
+0 /usr/synopsys/vcs/U-2023.03-SP2/etc/systemverilog/virtual_sequencer.sv
+0 /usr/synopsys/vcs/U-2023.03-SP2/etc/uvm-1.1/vcs/virtual_sequencer.sv
+0 /usr/synopsys/vcs/U-2023.03-SP2/etc/uvm-1.1/verdi/virtual_sequencer.sv
+0 /usr/synopsys/vcs/U-2023.03-SP2/etc/uvm-1.1/virtual_sequencer.sv
+0 ../../rtl/include/virtual_sequencer.sv
+0 ../../testcases/virtual_sequencer.sv
+80
++define+ORIG_RESET+
 +define+UVM_DIRECTC_OPTS
 +define+UVM_VCS_RECORD
 +define+UVM_VERDI_VIF_RECORD
@@ -770,8 +778,9 @@ uvm-1.1
 ../../testcases/testcase_wb.sv
 ../../testcases/testcase_reset.sv
 ../../testcases/testcase_loopback.sv
+../../testcases/testcase_loopback_reset.sv
 66
-XDG_SESSION_ID=29344
+XDG_SESSION_ID=29577
 XDG_RUNTIME_DIR=/run/user/2703
 XDG_DATA_DIRS=/home/sf10274/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share
 XCELIUMPATH=/usr/cadence/XCELIUM2009/tools/bin:/usr/cadence/XCELIUM2009/tools/dfII/bin
@@ -799,9 +808,9 @@ SYNOPSYS=/usr/synopsys/syn/U-2022.12-SP7-1/
 SWROOT=/usr
 SSVPATH=/usr/cadence/SSV211/tools/bin:/usr/cadence/SSV211/tools/dfII/bin
 SSVHOME=/usr/cadence/SSV211
-SSH_TTY=/dev/pts/47
-SSH_CONNECTION=172.17.17.167 55644 10.20.250.17 22
-SSH_CLIENT=172.17.17.167 55644 22
+SSH_TTY=/dev/pts/43
+SSH_CONNECTION=172.17.17.167 49366 10.20.250.17 22
+SSH_CLIENT=172.17.17.167 49366 22
 SNPS_VERDI_INTERNAL_LP_XML_NEW_FLOW=1
 SNPS_VCS_PYTHON3=/usr/synopsys/vcs/U-2023.03-SP2/linux64/bin/Python-3.6.1/bin/python3
 SNPS_VCS_CLANG_PATH=/usr/synopsys/vcs/U-2023.03-SP2/linux64/clang
@@ -839,7 +848,8 @@ CDS_AUTO_64BIT=ALL
 CDN_SYNTH_ROOT=/usr/cadence/rc/tools.lnx86
 0
 0
-201
+203
+1718124365 ../../testbench/uvm/virtual_sequencer.sv
 1718029403 ../../testbench/uvm/sequence_pkt_tx.sv
 1717803721 ../../testbench/uvm/sequence_wb.sv
 1717803521 ../../testbench/uvm/driver_wb.sv
@@ -849,7 +859,7 @@ CDN_SYNTH_ROOT=/usr/cadence/rc/tools.lnx86
 1718042107 ../../testbench/uvm/driver_reset.sv
 1718037943 ../../testbench/uvm/data_reset.sv
 1717710011 ../../testbench/uvm/agent_reset.sv
-1718029132 ../../testbench/uvm/monitor_pkt_tx.sv
+1718129149 ../../testbench/uvm/monitor_pkt_tx.sv
 1718029197 ../../testbench/uvm/driver_pkt_tx.sv
 1717882773 ../../testbench/uvm/data_pkt_tx.sv
 1717977340 ../../testbench/uvm/agent_pkt_tx.sv
@@ -1006,12 +1016,13 @@ CDN_SYNTH_ROOT=/usr/cadence/rc/tools.lnx86
 1693023923 /usr/synopsys/vcs/U-2023.03-SP2/etc/uvm-1.1/macros/snps_macros.svp
 1693023923 /usr/synopsys/vcs/U-2023.03-SP2/etc/uvm-1.1/macros/uvm_version_defines.svh
 1693023923 /usr/synopsys/vcs/U-2023.03-SP2/etc/uvm-1.1/uvm_macros.svh
-1718039385 ../../testcases/testcase_loopback.sv
+1718129067 ../../testcases/testcase_loopback_reset.sv
+1718124629 ../../testcases/testcase_loopback.sv
 1718051794 ../../testcases/testcase_reset.sv
 1717802899 ../../testcases/testcase_wb.sv
 1718042802 ../../testcases/testcase_base.sv
 1717771878 ../../testbench/uvm/tb_prog.sv
-1718050937 ../../testbench/uvm/tb_top_xge_mac.v
+1718157976 ../../testbench/uvm/tb_top_xge_mac.v
 1717887426 ../../testbench/uvm/intf_pkt_tx.sv
 1717771642 ../../testbench/uvm/intf_wb.sv
 1717737955 ../../testbench/uvm/intf_rst.sv
@@ -1048,5 +1059,5 @@ CDN_SYNTH_ROOT=/usr/cadence/rc/tools.lnx86
 1693042805 /usr/synopsys/vcs/U-2023.03-SP2/linux64/lib/liberrorinf.so
 1693042720 /usr/synopsys/vcs/U-2023.03-SP2/linux64/lib/libsnpsmalloc.so
 1693042802 /usr/synopsys/vcs/U-2023.03-SP2/linux64/lib/libvfs.so
-1718051837 simv.daidir
+1718158042 simv.daidir
 -1 partitionlib

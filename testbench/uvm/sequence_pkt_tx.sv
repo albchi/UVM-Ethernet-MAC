@@ -39,6 +39,7 @@ class sequence_pkt_tx extends uvm_sequence#(data_pkt_tx);
       `uvm_do_with(req, {data == 64'haabbccdd; val == 1'b1; sop == 1'b1; eop == 1'b1; })
       `uvm_do_with(req, {data == 64'hfacebeef; val == 1'b1; sop == 1'b1; eop == 1'b1; })
       `uvm_do_with(req, {data == 64'hdeadcafe; val == 1'b1; sop == 1'b1; eop == 1'b1; })
+      `uvm_do_with(req, {data == 64'hbad00bad; val == 1'b1; sop == 1'b1; eop == 1'b1; })
          
 
 

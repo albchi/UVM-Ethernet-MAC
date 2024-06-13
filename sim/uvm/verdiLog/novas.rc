@@ -242,8 +242,8 @@ designTreeFont = *-adobe-courier-medium-r-*-*-12-*-*-*-*-*-iso8859-*
 import_filter_vhdl = *.vhd; *.vhdl; *.f
 import_default_language = Verilog
 import_filter_verilog = *.v; *.vc; *.f
+simulation_file_type = 
 PrefetchViewableAnnot = TRUE
-simulation_file_type = *.fsdb;*.vf;*.jf;*.zwd*
 [Hier]
 filterTimeout = 1500
 [ImportLiberty]
@@ -344,7 +344,7 @@ FileName = test.ps
 PaperSize = A4 - 210x297 (mm)
 ColorPrint = FALSE
 [QtDialog]
-loadFile = 365,263,595,357
+loadFile = 379,373,595,357
 [Safety]
 RegisterObject = ID_RED4
 CoreObject = ID_ORANGE5
@@ -427,7 +427,7 @@ SimMode = TRUE
 interactiveDebugging = TRUE
 KeepBreakPoints = FALSE
 vcs_svPath = /home/sf10274/AlbertLand/0UVMgetinfo/lab-project-10gEthernetMAC/sim/uvm/simv
-vcs_svOption = +UVM_TESTNAME=testcase_wb +UVM_VERBOSITY=HIGH
+vcs_svOption = +UVM_VERBOSITY=HIGH +UVM_TESTNAME=testcase_loopback
 [SimulationPlus2]
 eventDumpUnfinish = FALSE
 [Source]
@@ -459,8 +459,6 @@ ohSimType = VerilogXL
 nLineSize = 1024
 [Test]
 verbose_progress = FALSE
-[TestBenchBrowser]
--showUVMDynamicHierTreeWin = FALSE
 [Text]
 hdlComment = Gray1
 hdlKeyword = blue4
@@ -608,28 +606,28 @@ visualIndex = 1
 isHidden = TRUE
 isUserChangeColumnVisible = FALSE
 [VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column1]
-name = "Code"
-width = 60
-visualIndex = 3
-isHidden = TRUE
-isUserChangeColumnVisible = FALSE
-[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column2]
-name = "Type"
-width = 60
-visualIndex = 4
-isHidden = TRUE
-isUserChangeColumnVisible = FALSE
-[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column3]
 name = "Message"
 width = 2000
 visualIndex = 5
 isHidden = FALSE
 isUserChangeColumnVisible = FALSE
-[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column4]
+[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column2]
 name = "Time"
 width = 60
 visualIndex = 0
 isHidden = FALSE
+isUserChangeColumnVisible = FALSE
+[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column3]
+name = "Code"
+width = 60
+visualIndex = 3
+isHidden = TRUE
+isUserChangeColumnVisible = FALSE
+[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column4]
+name = "Type"
+width = 60
+visualIndex = 4
+isHidden = TRUE
 isUserChangeColumnVisible = FALSE
 [VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column5]
 name = "Severity"
@@ -789,7 +787,6 @@ WaveExtendLastTick = TRUE
 displayMessageLabelOnly = TRUE
 AutoApplySeverityColor = TRUE
 ComputedAnnotColor = -c ID_PURPLE5
-getSignalForm = 0 0 800 479 100 30 100 30
 [cov_hier_name_column]
 justify = TRUE
 [coverageColors]
