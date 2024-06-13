@@ -60,6 +60,8 @@ class driver_pkt_tx extends uvm_driver #(data_pkt_tx);
             @(posedge vi.clk);
 
       seq_item_port.item_done();
+         vi.pkt_tx_sop <= 1'b0;
+ 
 
    end // forever
 
