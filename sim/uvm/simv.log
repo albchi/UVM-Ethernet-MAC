@@ -1,7 +1,7 @@
-Command: /home/sf10274/AlbertLand/0UVMgetinfo/lab-project-10gEthernetMAC/sim/uvm/./simv -l simv.log +UVM_VERBOSITY=HIGH +UVM_TESTNAME=testcase_reset
+Command: /home/sf10274/AlbertLand/0UVMgetinfo/lab-project-10gEthernetMAC/sim/uvm/./simv -l simv.log +UVM_VERBOSITY=HIGH +UVM_TESTNAME=testcase_loopback
 Chronologic VCS simulator copyright 1991-2023
 Contains Synopsys proprietary information.
-Compiler version U-2023.03-SP2_Full64; Runtime version U-2023.03-SP2_Full64;  Jun 10 13:37 2024
+Compiler version U-2023.03-SP2_Full64; Runtime version U-2023.03-SP2_Full64;  Jun 13 11:28 2024
 ----------------------------------------------------------------
 UVM-1.1d.Synopsys
 (C) 2007-2013 Mentor Graphics Corporation
@@ -22,6 +22,7 @@ UVM-1.1d.Synopsys
 
       (Specify +UVM_NO_RELNOTES to turn off this notice)
 
+using ORIG_RESET
 *Verdi* Loading libsscore_vcs202303.so
 FSDB Dumper for VCS, Release Verdi_U-2023.03-SP2-2, Linux x86_64/64bit, 11/22/2023
 (C) 1996 - 2023 by Synopsys, Inc.
@@ -30,44 +31,57 @@ FSDB Dumper for VCS, Release Verdi_U-2023.03-SP2-2, Linux x86_64/64bit, 11/22/20
 *Verdi* : Begin traversing the scopes, layer (0).
 *Verdi* : End of traversing.
 XAC hello from tb_prog
-UVM_INFO @ 0: reporter [RNTST] Running test testcase_reset...
+UVM_INFO @ 0: reporter [RNTST] Running test testcase_loopback...
 UVM_INFO @ 0: reporter [UVMTOP] UVM testbench topology:
 --------------------------------------------------------------
 Name                       Type                    Size  Value
 --------------------------------------------------------------
-uvm_test_top               testcase_reset          -     @459 
-  env_0                    env                     -     @467 
-    agent_pkt_tx_0         agent_pkt_tx            -     @502 
-      driver_pkt_tx_0      driver_pkt_tx           -     @637 
-        rsp_port           uvm_analysis_port       -     @654 
-        seq_item_port      uvm_seq_item_pull_port  -     @645 
-      monitor_pkt_tx_0     monitor_pkt_tx          -     @663 
-        ap_tx_mon          uvm_analysis_port       -     @672 
-      sequencer_pkt_tx_0   uvm_sequencer           -     @514 
-        rsp_export         uvm_analysis_export     -     @522 
-        seq_item_export    uvm_seq_item_pull_imp   -     @628 
+uvm_test_top               testcase_loopback       -     @460 
+  env_0                    env                     -     @468 
+    agent_pkt_rx_0         agent_pkt_rx            -     @515 
+      driver_pkt_rx_0      driver_pkt_rx           -     @650 
+        rsp_port           uvm_analysis_port       -     @667 
+        seq_item_port      uvm_seq_item_pull_port  -     @658 
+      monitor_pkt_rx_0     monitor_pkt_rx          -     @676 
+        ap_rx_mon          uvm_analysis_port       -     @685 
+      sequencer_pkt_rx_0   uvm_sequencer           -     @527 
+        rsp_export         uvm_analysis_export     -     @535 
+        seq_item_export    uvm_seq_item_pull_imp   -     @641 
         arbitration_queue  array                   0     -    
         lock_queue         array                   0     -    
         num_last_reqs      integral                32    'd1  
         num_last_rsps      integral                32    'd1  
-    agent_reset_0          agent_reset             -     @486 
-      driver_reset_0       driver_reset            -     @814 
-        rsp_port           uvm_analysis_port       -     @831 
-        seq_item_port      uvm_seq_item_pull_port  -     @822 
-      sequencer_reset_0    uvm_sequencer           -     @691 
-        rsp_export         uvm_analysis_export     -     @699 
-        seq_item_export    uvm_seq_item_pull_imp   -     @805 
+    agent_pkt_tx_0         agent_pkt_tx            -     @507 
+      driver_pkt_tx_0      driver_pkt_tx           -     @827 
+        rsp_port           uvm_analysis_port       -     @844 
+        seq_item_port      uvm_seq_item_pull_port  -     @835 
+      monitor_pkt_tx_0     monitor_pkt_tx          -     @853 
+        ap_tx_mon          uvm_analysis_port       -     @862 
+      sequencer_pkt_tx_0   uvm_sequencer           -     @704 
+        rsp_export         uvm_analysis_export     -     @712 
+        seq_item_export    uvm_seq_item_pull_imp   -     @818 
         arbitration_queue  array                   0     -    
         lock_queue         array                   0     -    
         num_last_reqs      integral                32    'd1  
         num_last_rsps      integral                32    'd1  
-    agent_wb_0             agent_wb                -     @494 
-      driver_wb_0          driver_wb               -     @973 
-        rsp_port           uvm_analysis_port       -     @990 
-        seq_item_port      uvm_seq_item_pull_port  -     @981 
-      sequencer_wb_0       uvm_sequencer           -     @850 
-        rsp_export         uvm_analysis_export     -     @858 
-        seq_item_export    uvm_seq_item_pull_imp   -     @964 
+    agent_reset_0          agent_reset             -     @491 
+      driver_reset_0       driver_reset            -     @1004
+        rsp_port           uvm_analysis_port       -     @1021
+        seq_item_port      uvm_seq_item_pull_port  -     @1012
+      sequencer_reset_0    uvm_sequencer           -     @881 
+        rsp_export         uvm_analysis_export     -     @889 
+        seq_item_export    uvm_seq_item_pull_imp   -     @995 
+        arbitration_queue  array                   0     -    
+        lock_queue         array                   0     -    
+        num_last_reqs      integral                32    'd1  
+        num_last_rsps      integral                32    'd1  
+    agent_wb_0             agent_wb                -     @499 
+      driver_wb_0          driver_wb               -     @1163
+        rsp_port           uvm_analysis_port       -     @1180
+        seq_item_port      uvm_seq_item_pull_port  -     @1171
+      sequencer_wb_0       uvm_sequencer           -     @1040
+        rsp_export         uvm_analysis_export     -     @1048
+        seq_item_export    uvm_seq_item_pull_imp   -     @1154
         arbitration_queue  array                   0     -    
         lock_queue         array                   0     -    
         num_last_reqs      integral                32    'd1  
@@ -79,22 +93,29 @@ uvm_test_top               testcase_reset          -     @459
 
   No instance or type overrides are registered with this factory
 
-All types registered with the factory: 61 total
+All types registered with the factory: 71 total
 (types without type names will not be printed)
 
   Type Name
   ---------
+  agent_pkt_rx
   agent_pkt_tx
   agent_reset
   agent_wb
+  data_pkt_rx
   data_pkt_tx
   data_reset
   data_wb
+  driver_pkt_rx
   driver_pkt_tx
   driver_reset
   driver_wb
   env
+  monitor_pkt_rx
   monitor_pkt_tx
+  scoreboard_pkt_rx
+  scoreboard_pkt_tx
+  sequence_pkt_rx
   sequence_pkt_tx
   sequence_reset
   sequence_wb
@@ -102,8 +123,10 @@ All types registered with the factory: 61 total
   snps_uvm_reg_map
   testcase_base
   testcase_loopback
+  testcase_loopback_reset
   testcase_reset
   testcase_wb
+  virtual_sequencer
 (*) Types with no associated type name will be printed as <unknown>
 
 ####
@@ -112,39 +135,52 @@ UVM_INFO @ 0: reporter [UVMTOP] UVM testbench topology:
 --------------------------------------------------------------
 Name                       Type                    Size  Value
 --------------------------------------------------------------
-uvm_test_top               testcase_reset          -     @459 
-  env_0                    env                     -     @467 
-    agent_pkt_tx_0         agent_pkt_tx            -     @502 
-      driver_pkt_tx_0      driver_pkt_tx           -     @637 
-        rsp_port           uvm_analysis_port       -     @654 
-        seq_item_port      uvm_seq_item_pull_port  -     @645 
-      monitor_pkt_tx_0     monitor_pkt_tx          -     @663 
-        ap_tx_mon          uvm_analysis_port       -     @672 
-      sequencer_pkt_tx_0   uvm_sequencer           -     @514 
-        rsp_export         uvm_analysis_export     -     @522 
-        seq_item_export    uvm_seq_item_pull_imp   -     @628 
+uvm_test_top               testcase_loopback       -     @460 
+  env_0                    env                     -     @468 
+    agent_pkt_rx_0         agent_pkt_rx            -     @515 
+      driver_pkt_rx_0      driver_pkt_rx           -     @650 
+        rsp_port           uvm_analysis_port       -     @667 
+        seq_item_port      uvm_seq_item_pull_port  -     @658 
+      monitor_pkt_rx_0     monitor_pkt_rx          -     @676 
+        ap_rx_mon          uvm_analysis_port       -     @685 
+      sequencer_pkt_rx_0   uvm_sequencer           -     @527 
+        rsp_export         uvm_analysis_export     -     @535 
+        seq_item_export    uvm_seq_item_pull_imp   -     @641 
         arbitration_queue  array                   0     -    
         lock_queue         array                   0     -    
         num_last_reqs      integral                32    'd1  
         num_last_rsps      integral                32    'd1  
-    agent_reset_0          agent_reset             -     @486 
-      driver_reset_0       driver_reset            -     @814 
-        rsp_port           uvm_analysis_port       -     @831 
-        seq_item_port      uvm_seq_item_pull_port  -     @822 
-      sequencer_reset_0    uvm_sequencer           -     @691 
-        rsp_export         uvm_analysis_export     -     @699 
-        seq_item_export    uvm_seq_item_pull_imp   -     @805 
+    agent_pkt_tx_0         agent_pkt_tx            -     @507 
+      driver_pkt_tx_0      driver_pkt_tx           -     @827 
+        rsp_port           uvm_analysis_port       -     @844 
+        seq_item_port      uvm_seq_item_pull_port  -     @835 
+      monitor_pkt_tx_0     monitor_pkt_tx          -     @853 
+        ap_tx_mon          uvm_analysis_port       -     @862 
+      sequencer_pkt_tx_0   uvm_sequencer           -     @704 
+        rsp_export         uvm_analysis_export     -     @712 
+        seq_item_export    uvm_seq_item_pull_imp   -     @818 
         arbitration_queue  array                   0     -    
         lock_queue         array                   0     -    
         num_last_reqs      integral                32    'd1  
         num_last_rsps      integral                32    'd1  
-    agent_wb_0             agent_wb                -     @494 
-      driver_wb_0          driver_wb               -     @973 
-        rsp_port           uvm_analysis_port       -     @990 
-        seq_item_port      uvm_seq_item_pull_port  -     @981 
-      sequencer_wb_0       uvm_sequencer           -     @850 
-        rsp_export         uvm_analysis_export     -     @858 
-        seq_item_export    uvm_seq_item_pull_imp   -     @964 
+    agent_reset_0          agent_reset             -     @491 
+      driver_reset_0       driver_reset            -     @1004
+        rsp_port           uvm_analysis_port       -     @1021
+        seq_item_port      uvm_seq_item_pull_port  -     @1012
+      sequencer_reset_0    uvm_sequencer           -     @881 
+        rsp_export         uvm_analysis_export     -     @889 
+        seq_item_export    uvm_seq_item_pull_imp   -     @995 
+        arbitration_queue  array                   0     -    
+        lock_queue         array                   0     -    
+        num_last_reqs      integral                32    'd1  
+        num_last_rsps      integral                32    'd1  
+    agent_wb_0             agent_wb                -     @499 
+      driver_wb_0          driver_wb               -     @1163
+        rsp_port           uvm_analysis_port       -     @1180
+        seq_item_port      uvm_seq_item_pull_port  -     @1171
+      sequencer_wb_0       uvm_sequencer           -     @1040
+        rsp_export         uvm_analysis_export     -     @1048
+        seq_item_export    uvm_seq_item_pull_imp   -     @1154
         arbitration_queue  array                   0     -    
         lock_queue         array                   0     -    
         num_last_reqs      integral                32    'd1  
@@ -156,22 +192,29 @@ uvm_test_top               testcase_reset          -     @459
 
   No instance or type overrides are registered with this factory
 
-All types registered with the factory: 61 total
+All types registered with the factory: 71 total
 (types without type names will not be printed)
 
   Type Name
   ---------
+  agent_pkt_rx
   agent_pkt_tx
   agent_reset
   agent_wb
+  data_pkt_rx
   data_pkt_tx
   data_reset
   data_wb
+  driver_pkt_rx
   driver_pkt_tx
   driver_reset
   driver_wb
   env
+  monitor_pkt_rx
   monitor_pkt_tx
+  scoreboard_pkt_rx
+  scoreboard_pkt_tx
+  sequence_pkt_rx
   sequence_pkt_tx
   sequence_reset
   sequence_wb
@@ -179,87 +222,172 @@ All types registered with the factory: 61 total
   snps_uvm_reg_map
   testcase_base
   testcase_loopback
+  testcase_loopback_reset
   testcase_reset
   testcase_wb
+  virtual_sequencer
 (*) Types with no associated type name will be printed as <unknown>
 
 ####
 
+UVM_INFO ../../testbench/uvm/driver_pkt_rx.sv(25) @ 0: uvm_test_top.env_0.agent_pkt_rx_0.driver_pkt_rx_0 [DRIVER CLASS] HIERARCHY: %m
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(35) @ 0: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [monitor_pkt_rx_0] HIERARCHY: $unit::\monitor_pkt_rx::run_phase 
 UVM_INFO ../../testbench/uvm/driver_pkt_tx.sv(25) @ 0: uvm_test_top.env_0.agent_pkt_tx_0.driver_pkt_tx_0 [DRIVER CLASS] HIERARCHY: %m
+UVM_INFO ../../testbench/uvm/driver_pkt_tx.sv(29) @ 0: uvm_test_top.env_0.agent_pkt_tx_0.driver_pkt_tx_0 [DRIVER CLASS] before get_next
 UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(35) @ 0: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [monitor_pkt_tx_0] HIERARCHY: $unit::\monitor_pkt_tx::run_phase 
 UVM_INFO ../../testbench/uvm/driver_reset.sv(25) @ 0: uvm_test_top.env_0.agent_reset_0.driver_reset_0 [DRIVER CLASS] HIERARCHY: %m
 UVM_INFO ../../testbench/uvm/driver_wb.sv(25) @ 0: uvm_test_top.env_0.agent_wb_0.driver_wb_0 [DRIVER CLASS] HIERARCHY: %m
-UVM_INFO ../../testbench/uvm/sequence_reset.sv(18) @ 0: uvm_test_top.env_0.agent_reset_0.sequencer_reset_0@@sequence_reset_0 [Hey from RESET Sequence aka Generator] producing stim in body!
-UVM_INFO ../../testbench/uvm/driver_reset.sv(31) @ 0: uvm_test_top.env_0.agent_reset_0.driver_reset_0 [XAC RESET DRIVER run_phase received this packet ] --------------------------------------------------------------------------------------------------------------------
-Name                           Type        Size  Value                                                              
---------------------------------------------------------------------------------------------------------------------
-req                            data_reset  -     @1064                                                              
-  reset_                       integral    1     'h0                                                                
-  cycles                       integral    32    'h3                                                                
-  begin_time                   time        64    0                                                                  
-  depth                        int         32    'd2                                                                
-  parent sequence (name)       string      16    sequence_reset_0                                                   
-  parent sequence (full name)  string      67    uvm_test_top.env_0.agent_reset_0.sequencer_reset_0.sequence_reset_0
-  sequencer                    string      50    uvm_test_top.env_0.agent_reset_0.sequencer_reset_0                 
---------------------------------------------------------------------------------------------------------------------
+UVM_INFO ../../testbench/uvm/sequence_pkt_tx.sv(24) @ 0: uvm_test_top.env_0.agent_pkt_tx_0.sequencer_pkt_tx_0@@sequence_pkt_tx_0 [XAC Hey from PKT_TX Sequence aka Generator] producing stim in body!
+UVM_INFO ../../testbench/uvm/driver_pkt_tx.sv(31) @ 0: uvm_test_top.env_0.agent_pkt_tx_0.driver_pkt_tx_0 [DRIVER CLASS] after get_next
+UVM_INFO ../../testbench/uvm/driver_pkt_tx.sv(33) @ 0: uvm_test_top.env_0.agent_pkt_tx_0.driver_pkt_tx_0 [XAC PKT TX DRIVER run_phase received this packet ] ------------------------------------------------------------------------------------------------------------------------
+Name                           Type         Size  Value                                                                 
+------------------------------------------------------------------------------------------------------------------------
+req                            data_pkt_tx  -     @1272                                                                 
+  data                         integral     64    'h11223344                                                            
+  mod                          integral     3     'h2                                                                   
+  val                          integral     1     'h1                                                                   
+  sop                          integral     1     'h1                                                                   
+  eop                          integral     1     'h1                                                                   
+  begin_time                   time         64    0                                                                     
+  depth                        int          32    'd2                                                                   
+  parent sequence (name)       string       17    sequence_pkt_tx_0                                                     
+  parent sequence (full name)  string       70    uvm_test_top.env_0.agent_pkt_tx_0.sequencer_pkt_tx_0.sequence_pkt_tx_0
+  sequencer                    string       52    uvm_test_top.env_0.agent_pkt_tx_0.sequencer_pkt_tx_0                  
+------------------------------------------------------------------------------------------------------------------------
 
-UVM_INFO ../../testbench/uvm/driver_reset.sv(38) @ 0: uvm_test_top.env_0.agent_reset_0.driver_reset_0 [XAC RESET DRIVER right before wait] --------------------------------------------------------------------------------------------------------------------
-Name                           Type        Size  Value                                                              
---------------------------------------------------------------------------------------------------------------------
-req                            data_reset  -     @1064                                                              
-  reset_                       integral    1     'h0                                                                
-  cycles                       integral    32    'h3                                                                
-  begin_time                   time        64    0                                                                  
-  depth                        int         32    'd2                                                                
-  parent sequence (name)       string      16    sequence_reset_0                                                   
-  parent sequence (full name)  string      67    uvm_test_top.env_0.agent_reset_0.sequencer_reset_0.sequence_reset_0
-  sequencer                    string      50    uvm_test_top.env_0.agent_reset_0.sequencer_reset_0                 
---------------------------------------------------------------------------------------------------------------------
+XAC PKT_TX_MON sop : 1
+XAC PKT_TX_MON sop : 1
+XAC PKT_TX_MON data : 0000000011223344
+XAC PKT_TX_MON sop : 1
+XAC PKT_TX_MON sop : 1
+XAC PKT_TX_MON data : 0000000011223344
+XAC PKT_RX_MON sop : 1
+XAC PKT_RX_MON sop : 1
+XAC PKT_RX_MON data : 0000000011223344
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(50) @ 291200: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [XAC Hey from PKT_RX MON ] SEE THIS
+XAC PKT_RX_MON sop : 1
+XAC PKT_RX_MON sop : 1
+XAC PKT_RX_MON data : 0000000011223344
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(50) @ 294400: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [XAC Hey from PKT_RX MON ] SEE THIS
+UVM_INFO ../../testbench/uvm/driver_pkt_tx.sv(29) @ 553600: uvm_test_top.env_0.agent_pkt_tx_0.driver_pkt_tx_0 [DRIVER CLASS] before get_next
+UVM_INFO ../../testbench/uvm/driver_pkt_tx.sv(31) @ 553600: uvm_test_top.env_0.agent_pkt_tx_0.driver_pkt_tx_0 [DRIVER CLASS] after get_next
+UVM_INFO ../../testbench/uvm/driver_pkt_tx.sv(33) @ 553600: uvm_test_top.env_0.agent_pkt_tx_0.driver_pkt_tx_0 [XAC PKT TX DRIVER run_phase received this packet ] ------------------------------------------------------------------------------------------------------------------------
+Name                           Type         Size  Value                                                                 
+------------------------------------------------------------------------------------------------------------------------
+req                            data_pkt_tx  -     @1601                                                                 
+  data                         integral     64    'haabbccdd                                                            
+  mod                          integral     3     'h2                                                                   
+  val                          integral     1     'h1                                                                   
+  sop                          integral     1     'h1                                                                   
+  eop                          integral     1     'h1                                                                   
+  begin_time                   time         64    553600                                                                
+  depth                        int          32    'd2                                                                   
+  parent sequence (name)       string       17    sequence_pkt_tx_0                                                     
+  parent sequence (full name)  string       70    uvm_test_top.env_0.agent_pkt_tx_0.sequencer_pkt_tx_0.sequence_pkt_tx_0
+  sequencer                    string       52    uvm_test_top.env_0.agent_pkt_tx_0.sequencer_pkt_tx_0                  
+------------------------------------------------------------------------------------------------------------------------
 
-UVM_INFO ../../testbench/uvm/driver_reset.sv(46) @ 16000: uvm_test_top.env_0.agent_reset_0.driver_reset_0 [XAC RESET DRIVER right after wait] --------------------------------------------------------------------------------------------------------------------
-Name                           Type        Size  Value                                                              
---------------------------------------------------------------------------------------------------------------------
-req                            data_reset  -     @1064                                                              
-  reset_                       integral    1     'h0                                                                
-  cycles                       integral    32    'h3                                                                
-  begin_time                   time        64    0                                                                  
-  depth                        int         32    'd2                                                                
-  parent sequence (name)       string      16    sequence_reset_0                                                   
-  parent sequence (full name)  string      67    uvm_test_top.env_0.agent_reset_0.sequencer_reset_0.sequence_reset_0
-  sequencer                    string      50    uvm_test_top.env_0.agent_reset_0.sequencer_reset_0                 
---------------------------------------------------------------------------------------------------------------------
+XAC PKT_TX_MON sop : 1
+XAC PKT_TX_MON sop : 1
+XAC PKT_TX_MON data : 00000000aabbccdd
+XAC PKT_TX_MON sop : 1
+XAC PKT_TX_MON sop : 1
+XAC PKT_TX_MON data : 00000000aabbccdd
+XAC PKT_RX_MON sop : 1
+XAC PKT_RX_MON sop : 1
+XAC PKT_RX_MON data : 00000000aabbccdd
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(50) @ 835200: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [XAC Hey from PKT_RX MON ] SEE THIS
+XAC PKT_RX_MON sop : 1
+XAC PKT_RX_MON sop : 1
+XAC PKT_RX_MON data : 00000000aabbccdd
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(50) @ 838400: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [XAC Hey from PKT_RX MON ] SEE THIS
+UVM_INFO ../../testbench/uvm/driver_pkt_tx.sv(29) @ 1110400: uvm_test_top.env_0.agent_pkt_tx_0.driver_pkt_tx_0 [DRIVER CLASS] before get_next
+UVM_INFO ../../testbench/uvm/driver_pkt_tx.sv(31) @ 1110400: uvm_test_top.env_0.agent_pkt_tx_0.driver_pkt_tx_0 [DRIVER CLASS] after get_next
+UVM_INFO ../../testbench/uvm/driver_pkt_tx.sv(33) @ 1110400: uvm_test_top.env_0.agent_pkt_tx_0.driver_pkt_tx_0 [XAC PKT TX DRIVER run_phase received this packet ] ------------------------------------------------------------------------------------------------------------------------
+Name                           Type         Size  Value                                                                 
+------------------------------------------------------------------------------------------------------------------------
+req                            data_pkt_tx  -     @2293                                                                 
+  data                         integral     64    'hfacebeef                                                            
+  mod                          integral     3     'h7                                                                   
+  val                          integral     1     'h1                                                                   
+  sop                          integral     1     'h1                                                                   
+  eop                          integral     1     'h1                                                                   
+  begin_time                   time         64    1110400                                                               
+  depth                        int          32    'd2                                                                   
+  parent sequence (name)       string       17    sequence_pkt_tx_0                                                     
+  parent sequence (full name)  string       70    uvm_test_top.env_0.agent_pkt_tx_0.sequencer_pkt_tx_0.sequence_pkt_tx_0
+  sequencer                    string       52    uvm_test_top.env_0.agent_pkt_tx_0.sequencer_pkt_tx_0                  
+------------------------------------------------------------------------------------------------------------------------
 
-CMD SEND_PKT
-CMD SEND_PKT
-CMD SEND_PKT
-CMD SEND_PKT
-CMD SEND_PKT
-CMD SEND_PKT
-CMD SEND_PKT
-CMD SEND_PKT
-CMD SEND_PKT
-CMD SEND_PKT
-UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(57) @ 5016000: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [monitor_pkt_tx_0] REPORT: Captured 0 packets
+XAC PKT_TX_MON sop : 1
+XAC PKT_TX_MON sop : 1
+XAC PKT_TX_MON data : 00000000facebeef
+XAC PKT_TX_MON sop : 1
+XAC PKT_TX_MON sop : 1
+XAC PKT_TX_MON data : 00000000facebeef
+XAC PKT_RX_MON sop : 1
+XAC PKT_RX_MON sop : 1
+XAC PKT_RX_MON data : 00000000facebeef
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(50) @ 1392000: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [XAC Hey from PKT_RX MON ] SEE THIS
+XAC PKT_RX_MON sop : 1
+XAC PKT_RX_MON sop : 1
+XAC PKT_RX_MON data : 00000000facebeef
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(50) @ 1395200: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [XAC Hey from PKT_RX MON ] SEE THIS
+UVM_INFO ../../testbench/uvm/driver_pkt_tx.sv(29) @ 1667200: uvm_test_top.env_0.agent_pkt_tx_0.driver_pkt_tx_0 [DRIVER CLASS] before get_next
+UVM_INFO ../../testbench/uvm/driver_pkt_tx.sv(31) @ 1667200: uvm_test_top.env_0.agent_pkt_tx_0.driver_pkt_tx_0 [DRIVER CLASS] after get_next
+UVM_INFO ../../testbench/uvm/driver_pkt_tx.sv(33) @ 1667200: uvm_test_top.env_0.agent_pkt_tx_0.driver_pkt_tx_0 [XAC PKT TX DRIVER run_phase received this packet ] ------------------------------------------------------------------------------------------------------------------------
+Name                           Type         Size  Value                                                                 
+------------------------------------------------------------------------------------------------------------------------
+req                            data_pkt_tx  -     @2985                                                                 
+  data                         integral     64    'hdeadcafe                                                            
+  mod                          integral     3     'h5                                                                   
+  val                          integral     1     'h1                                                                   
+  sop                          integral     1     'h1                                                                   
+  eop                          integral     1     'h1                                                                   
+  begin_time                   time         64    1667200                                                               
+  depth                        int          32    'd2                                                                   
+  parent sequence (name)       string       17    sequence_pkt_tx_0                                                     
+  parent sequence (full name)  string       70    uvm_test_top.env_0.agent_pkt_tx_0.sequencer_pkt_tx_0.sequence_pkt_tx_0
+  sequencer                    string       52    uvm_test_top.env_0.agent_pkt_tx_0.sequencer_pkt_tx_0                  
+------------------------------------------------------------------------------------------------------------------------
+
+XAC PKT_TX_MON sop : 1
+XAC PKT_TX_MON sop : 1
+XAC PKT_TX_MON data : 00000000deadcafe
+XAC PKT_TX_MON sop : 1
+XAC PKT_TX_MON sop : 1
+XAC PKT_TX_MON data : 00000000deadcafe
+XAC PKT_RX_MON sop : 1
+XAC PKT_RX_MON sop : 1
+XAC PKT_RX_MON data : 00000000deadcafe
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(50) @ 1948800: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [XAC Hey from PKT_RX MON ] SEE THIS
+XAC PKT_RX_MON sop : 1
+XAC PKT_RX_MON sop : 1
+XAC PKT_RX_MON data : 00000000deadcafe
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(50) @ 1952000: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [XAC Hey from PKT_RX MON ] SEE THIS
+UVM_INFO ../../testbench/uvm/driver_pkt_tx.sv(29) @ 2224000: uvm_test_top.env_0.agent_pkt_tx_0.driver_pkt_tx_0 [DRIVER CLASS] before get_next
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(61) @ 2224000: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [monitor_pkt_rx_0] REPORT: PKT RX Captured 0 packets
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(57) @ 2224000: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [monitor_pkt_tx_0] REPORT: PKT TX Captured 0 packets
 
 --- UVM Report Summary ---
 
 ** Report counts by severity
-UVM_INFO :   12
+UVM_INFO :   33
 UVM_WARNING :    0
 UVM_ERROR :    0
 UVM_FATAL :    0
 ** Report counts by id
-[DRIVER CLASS]     3
-[Hey from RESET Sequence aka Generator]     1
+[DRIVER CLASS]    13
 [RNTST]     1
 [UVMTOP]     2
-[XAC RESET DRIVER right after wait]     1
-[XAC RESET DRIVER right before wait]     1
-[XAC RESET DRIVER run_phase received this packet ]     1
+[XAC Hey from PKT_RX MON ]     8
+[XAC Hey from PKT_TX Sequence aka Generator]     1
+[XAC PKT TX DRIVER run_phase received this packet ]     4
+[monitor_pkt_rx_0]     2
 [monitor_pkt_tx_0]     2
 $finish called from file "/usr/synopsys/vcs/U-2023.03-SP2/etc/uvm-1.1/base/uvm_root.svh", line 437.
-$finish at simulation time              5016000
+$finish at simulation time              2224000
            V C S   S i m u l a t i o n   R e p o r t 
-Time: 5016000 ps
-CPU Time:      0.490 seconds;       Data structure size:   0.7Mb
-Mon Jun 10 13:37:22 2024
+Time: 2224000 ps
+CPU Time:      0.520 seconds;       Data structure size:   0.7Mb
+Thu Jun 13 11:28:05 2024
