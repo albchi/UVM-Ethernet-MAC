@@ -7,6 +7,7 @@ interface intf_pkt_rx( input bit clk); // clk_156m25);
    logic        pkt_rx_sop;
    logic        pkt_rx_val;             
    logic        reset_156m25_n;
+   logic        pkt_rx_ren;             
 
    // output 
    logic pkt_rx_full;
@@ -20,6 +21,7 @@ interface intf_pkt_rx( input bit clk); // clk_156m25);
       input pkt_rx_sop;          
       input pkt_rx_val;         
       output pkt_rx_full;
+      output pkt_rx_ren;             
    endclocking 
 
 endinterface

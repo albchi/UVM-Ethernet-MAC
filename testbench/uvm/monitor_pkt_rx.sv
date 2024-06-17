@@ -37,13 +37,20 @@ class monitor_pkt_rx extends uvm_monitor;
     forever begin
 
 
+      `uvm_info("xac ", "pkt_rx_mon drive pkt_rx_ren to 1", UVM_HIGH);
+      vi.pkt_rx_ren <= 1'b1; 
       @(vi.clk) // @(vi.mon_cb)
+      $display("XAC PKT_RX_MON pkt_rx_ren is : %b", vi.pkt_rx_ren);
+      `uvm_info("xac ", "pkt_rx_mon wait for pkt_rx_val", UVM_HIGH);
       if ( vi.pkt_rx_val ) begin 
+        `uvm_info("xac ", "pkt_rx_mon got pkt_rx_val", UVM_HIGH);
         // if ( vi.pkt_rx_sop && !vi.pkt_rx_eop && pkt_in_flight==0 ) begin
         tmp_rcv_pkt = data_pkt_rx::type_id::create("tmp_rcv_pkt", this);
 
+        // `uvm_info( get_name(), $sformatf("xac pkt_rx_mon got  pkt_rx_val), UVM_HIGH);
+        `uvm_info("xac ", "pkt_rx_mon wait for sop and eop ", UVM_HIGH);
         if ( vi.pkt_rx_sop && !vi.pkt_rx_eop  ) begin
-           `uvm_info( get_name(), $sformatf("xac pkt_rx_mon: %m"), UVM_HIGH);
+           `uvm_info("xac ", "pkt_rx_mon got sop and eop ", UVM_HIGH);
            $display("XAC PKT_RX_MON sop : %b", vi.pkt_rx_sop);
            tmp_rcv_pkt.data = vi.pkt_rx_data;
            $display("XAC PKT_RX_MON sop : %b", vi.pkt_rx_sop);
@@ -54,6 +61,9 @@ class monitor_pkt_rx extends uvm_monitor;
 
         end // vi.pkt_rx_sop && !vi.pkt_rx_eop  ) begin
       end // if vi.pkt_rx_val
+      vi.pkt_rx_ren <= 1'b0; 
+      $display("XAC PKT_RX_MON pkt_rx_ren is now : %b", vi.pkt_rx_ren);
+      `uvm_info("XAC2 PKT RX_MON ", "going back ",  UVM_HIGH);
     end // forever begin
     ap_rx_mon.write(tmp_rcv_pkt);
   endtask : run_phase

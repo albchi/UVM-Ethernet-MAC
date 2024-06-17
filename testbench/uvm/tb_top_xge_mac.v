@@ -1,15 +1,9 @@
 `include "timescale.v"
 `include "defines.v"
 
-//`define GXB
-//`define XIL
-
 module tb_top_xge_mac;
 
 
-// tb_prog tb_prog_0();
-
-/*AUTOREG*/
 
 reg [7:0]     tx_buffer[0:10000];
 integer       tx_length;
@@ -25,7 +19,7 @@ reg           reset_156m25_n;
 reg           reset_xgmii_rx_n;
 reg           reset_xgmii_tx_n;
 
-reg           pkt_rx_ren;
+// xac- reg           pkt_rx_ren;
 
 // xac- reg  [63:0]   pkt_tx_data;
 // xac- reg           pkt_tx_val;
@@ -109,7 +103,8 @@ xge_mac dut(/*AUTOINST*/
 `endif
             .clk_xgmii_rx               (clk_xgmii_rx),
             .clk_xgmii_tx               (clk_xgmii_tx),
-            .pkt_rx_ren                 (pkt_rx_ren),
+            // .pkt_rx_ren                 (pkt_rx_ren),
+            .pkt_rx_ren                 (intf_pkt_rx_0.pkt_rx_ren),
             .pkt_tx_data                (intf_pkt_tx_0.pkt_tx_data), // (pkt_tx_data[63:0]),
             .pkt_tx_eop                 (intf_pkt_tx_0.pkt_tx_eop), // (pkt_tx_eop),
             .pkt_tx_mod                 (intf_pkt_tx_0.pkt_tx_mod), // (pkt_tx_mod[2:0]),
@@ -309,24 +304,7 @@ initial begin
 end
 
 
-//---
-// Init signals
-
-initial begin
-
-    for (tx_length = 0; tx_length <= 1000; tx_length = tx_length + 1) begin
-        tx_buffer[tx_length] = 0;
-    end
-
-    //xac- compile error pkt_rx_ren = 1'b0;
-
-    //xac- compile error pkt_tx_data = 64'b0;
-    //xac- compile error pkt_tx_val = 1'b0;
-    //xac- compile error pkt_tx_sop = 1'b0;
-    //xac- compile error pkt_tx_eop = 1'b0;
-    //xac- compile error pkt_tx_mod = 3'b0;
-
-end
+// `include "verilog_tasks.v"
 
 task WaitNS;
   input [31:0] delay;
@@ -343,201 +321,6 @@ task WaitPS;
 endtask
 
 
-//---
-// Task to send a single packet
 
-/*
-task TxPacket;
-  integer        i;
-    begin
-
-        $display("Transmit packet with length: %d", tx_length);
-
-        @(posedge clk_156m25);
-        WaitNS(1);
-        pkt_tx_val = 1'b1;
-
-        for (i = 0; i < tx_length; i = i + 8) begin
-
-            pkt_tx_sop = 1'b0;
-            pkt_tx_eop = 1'b0;
-            pkt_tx_mod = 2'b0;
-
-            if (i == 0) pkt_tx_sop = 1'b1;
-
-            if (i + 8 >= tx_length) begin
-                pkt_tx_eop = 1'b1;
-                pkt_tx_mod = tx_length % 8;
-            end
-
-            pkt_tx_data[`LANE7] = tx_buffer[i];
-            pkt_tx_data[`LANE6] = tx_buffer[i+1];
-            pkt_tx_data[`LANE5] = tx_buffer[i+2];
-            pkt_tx_data[`LANE4] = tx_buffer[i+3];
-            pkt_tx_data[`LANE3] = tx_buffer[i+4];
-            pkt_tx_data[`LANE2] = tx_buffer[i+5];
-            pkt_tx_data[`LANE1] = tx_buffer[i+6];
-            pkt_tx_data[`LANE0] = tx_buffer[i+7];
-
-            @(posedge clk_156m25);
-            WaitNS(1);
-
-        end
-
-        pkt_tx_val = 1'b0;
-        pkt_tx_eop = 1'b0;
-        pkt_tx_mod = 3'b0;
-
-        tx_count = tx_count + 1;
-
-    end
-
-endtask
-*/
-
-
-//---
-// Task to read a single packet from command file and transmit
-
-task CmdTxPacket;
-  input [31:0] file;
-  integer count;
-  integer data;
-  integer i;
-    begin
-
-        count = $fscanf(file, "%2d", tx_length);
-
-        if (count == 1) begin
-
-            for (i = 0; i < tx_length; i = i + 1) begin
-
-                count = $fscanf(file, "%2X", data);
-                if (count) begin
-                    tx_buffer[i] = data;
-                end
-
-            end
-
-            // xac - TxPacket();
-
-        end
-    end
-
-endtask
-
-
-//---
-// Task to read commands from file and stop when complete
-
-task ProcessCmdFile;
-  integer    file_cmd;
-  integer  count;
-  reg [8*8-1:0] str;
-    begin
-
-        file_cmd = $fopen("../../testbench/verilog/packets_tx.txt", "r");
-        if (!file_cmd) $stop;
-
-        while (!$feof(file_cmd)) begin
-
-            count = $fscanf(file_cmd, "%s", str);
-            if (count != 1) continue;
-
-            $display("CMD %s", str);
-
-            case (str)
-
-              "SEND_PKT":
-                begin
-                    CmdTxPacket(file_cmd);
-                end
-
-            endcase
-
-        end
-
-        $fclose(file_cmd);
-
-        WaitNS(50000);
-        //$stop;
-        $finish;
-
-    end
-endtask
-
-initial begin
-    WaitNS(5000);
-`ifdef XIL
-    WaitNS(200000);
-`endif
-    ProcessCmdFile();
-end
-
-
-//---
-// Task to read a single packet from receive interface and display
-
-task RxPacket;
-  reg done;
-    begin
-
-        done = 0;
-
-        pkt_rx_ren <= 1'b1;
-        @(posedge clk_156m25);
-
-        while (!done) begin
-
-            if (pkt_rx_val) begin
-
-                if (pkt_rx_sop) begin
-                    $display("\n\n------------------------");
-                    $display("Received Packet");
-                    $display("------------------------");
-                end
-
-                $display("%x", pkt_rx_data);
-
-                if (pkt_rx_eop) begin
-                    done <= 1;
-                    pkt_rx_ren <= 1'b0;
-                end
-
-                if (pkt_rx_eop) begin
-                    $display("------------------------\n\n");
-                end
-
-            end
-
-            @(posedge clk_156m25);
-
-        end
-
-        rx_count = rx_count + 1;
-
-    end
-endtask
-
-initial begin
-
-    forever begin
-
-        if (pkt_rx_avail) begin
-
-            RxPacket();
-
-            if (rx_count == tx_count) begin
-                $display("All packets received. Sumulation done!!!\n");
-            end
-
-        end
-
-        @(posedge clk_156m25);
-
-    end
-
-
-end
 
 endmodule // tb_top_xge_mac
