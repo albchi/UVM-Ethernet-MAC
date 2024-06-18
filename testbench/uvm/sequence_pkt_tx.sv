@@ -1,8 +1,8 @@
 `ifndef _SEQUENCNE_PKT_TX_
 `define _SEQUENCNE_PKT_TX_
-`include "data_pkt_tx.sv"
+`include "data_pkt.sv"
 
-class sequence_pkt_tx extends uvm_sequence#(data_pkt_tx);
+class sequence_pkt_tx extends uvm_sequence#(data_pkt);
 
 
 
@@ -35,11 +35,11 @@ class sequence_pkt_tx extends uvm_sequence#(data_pkt_tx);
 
       // `uvm_do_with(req, {src_addr != 48'h1234; src_data != 32'h5678;})
 
-      `uvm_do_with(req, {data == 64'h11223344; val == 1'b1; sop == 1'b1; eop == 1'b1; })
-      `uvm_do_with(req, {data == 64'haabbccdd; val == 1'b1; sop == 1'b1; eop == 1'b1; })
-      `uvm_do_with(req, {data == 64'hfacebeef; val == 1'b1; sop == 1'b1; eop == 1'b1; })
-      `uvm_do_with(req, {data == 64'hdeadcafe; val == 1'b1; sop == 1'b1; eop == 1'b1; })
-      `uvm_do_with(req, {data == 64'hbad00bad; val == 1'b1; sop == 1'b1; eop == 1'b1; })
+      `uvm_do_with(req, {data == 64'h11223344;});
+      `uvm_do_with(req, {data == 64'haabbccdd;});
+      `uvm_do_with(req, {data == 64'hfacebeef;});
+      `uvm_do_with(req, {data == 64'hdeadcafe;});
+      `uvm_do_with(req, {data == 64'hbad00bad;});
          
 
 
@@ -48,7 +48,7 @@ class sequence_pkt_tx extends uvm_sequence#(data_pkt_tx);
       taddr = 8'hAB;
       tdata = 32'h00112233;
       $display("XAC Hey from Sequence aka Generator start_item ","producing addr=%h data=%h", taddr, tdata);
-      req = data_pkt_tx::type_id::create("req");
+      req = data_pkt::type_id::create("req");
       start_item(req);
       req.adr = taddr;
       req.dat_i = tdata;
@@ -60,7 +60,7 @@ class sequence_pkt_tx extends uvm_sequence#(data_pkt_tx);
       taddr = 8'hBA;
       tdata = 32'h33001122;
       $display("XAC Hey from Sequence aka Generator start_item ","producing addr=%h data=%h", taddr, tdata);
-      req = data_pkt_tx::type_id::create("req");
+      req = data_pkt::type_id::create("req");
       start_item(req);
       req.adr = taddr;
       req.dat_i = tdata;

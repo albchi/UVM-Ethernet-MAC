@@ -1,12 +1,13 @@
 `ifndef _MONITOR_PACKET_TX_MONITOR_
 `define _MONITOR_PACKET_TX_MONITOR_
 
+`include "data_pkt.sv"
 
 class monitor_pkt_tx extends uvm_monitor;
 
   virtual intf_pkt_tx     vi;
   int pkt_captured;
-  uvm_analysis_port #(data_pkt_tx)   ap_tx_mon;
+  uvm_analysis_port #(data_pkt)   ap;
 
   `uvm_component_utils( monitor_pkt_tx )
 
@@ -18,7 +19,7 @@ class monitor_pkt_tx extends uvm_monitor;
   virtual function void build_phase(input uvm_phase phase);
     super.build_phase(phase);
     pkt_captured = 0;
-    ap_tx_mon = new ( "ap_tx_mon", this );
+    ap = new("ap", this);
     uvm_config_db#(virtual intf_pkt_tx)::get(this, "", "vi", vi);
     if ( vi==null )
       `uvm_fatal(get_name(), "Virtual Interface for TX PKT MON not set!");
@@ -26,7 +27,7 @@ class monitor_pkt_tx extends uvm_monitor;
 
 
   virtual task run_phase(input uvm_phase phase);
-    data_pkt_tx      rcv_pkt;
+    data_pkt      rcv_pkt;
     bit [7:0]   rx_data_q[$];
     int         idx;
     bit         packet_captured = 0;

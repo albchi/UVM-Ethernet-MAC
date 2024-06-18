@@ -1,7 +1,9 @@
 `ifndef _DRIVER_PKT_TX_
 `define _DRIVER_PKT_TX_
 
-class driver_pkt_tx extends uvm_driver #(data_pkt_tx);
+`include "data_pkt.sv";
+
+class driver_pkt_tx extends uvm_driver #(data_pkt);
 
    `uvm_component_utils(driver_pkt_tx)
 
@@ -21,46 +23,43 @@ class driver_pkt_tx extends uvm_driver #(data_pkt_tx);
    endfunction 
 
    virtual task run_phase(input uvm_phase phase);
+       int pkt_remain = 0;
 
-      `uvm_info("DRIVER CLASS", "HIERARCHY: %m", UVM_HIGH);
+      `uvm_info("DRIVER_PKT_TX", "HIERARCHY: %m", UVM_HIGH);
 
+      
       forever begin
 
-         `uvm_info("DRIVER CLASS", "before get_next", UVM_HIGH);
+         `uvm_info("DRIVER_PKT_TX", "before get_next", UVM_HIGH);
          seq_item_port.get_next_item(req);
-         `uvm_info("DRIVER CLASS", "after get_next", UVM_HIGH);
+         // pkt_remain = req.data.size();
+         `uvm_info("DRIVER_PKT_TX", "after get_next", UVM_HIGH);
 
          `uvm_info("XAC PKT TX DRIVER run_phase received this packet ", req.sprint(), UVM_HIGH);
 
-         //xac-- @(posedge vi.clk);
-         //xac-- vi.pkt_tx_val <= 1'b1;
-
-         //xac-- @(posedge vi.clk);
-         //xac-- @(posedge vi.clk);
 
          // phase.0
-         // vi.reset_156m25_n <= 1'b1;
          vi.pkt_tx_sop <= 1'b0;
          vi.pkt_tx_eop <= 1'b0;
          vi.pkt_tx_val <= 1'b0;
          @(posedge vi.clk);
 
-         // phase1.0
+         // phase1
          vi.pkt_tx_sop <= 1'b1;
-         vi.pkt_tx_val <= 1'b1; // req.val; 
+         vi.pkt_tx_val <= 1'b1;
          vi.pkt_tx_data <= req.data; 
          vi.pkt_tx_mod <= req.mod; 
          vi.pkt_tx_eop <= 1'b0;
          @(posedge vi.clk);
 
-         // phase1.1
+         // phase2
          vi.pkt_tx_sop <= 1'b0;
-         // vi.pkt_tx_data <= req.data + 64'h1000; 
+         vi.pkt_tx_data <= req.data + 64'h1000; 
          vi.pkt_tx_mod <= req.mod; 
          @(posedge vi.clk);
 
          // phase3
-         // vi.pkt_tx_data <= req.data + 64'h1000; 
+         vi.pkt_tx_data <= req.data + 64'h1000; 
          vi.pkt_tx_mod <= req.mod; 
          vi.pkt_tx_eop <= 1'b1;
          @(posedge vi.clk);
@@ -73,7 +72,6 @@ class driver_pkt_tx extends uvm_driver #(data_pkt_tx);
             @(posedge vi.clk);
 
          seq_item_port.item_done();
-         // vi.pkt_tx_sop <= 1'b0; // needed?
  
 
    end // forever

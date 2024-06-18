@@ -1,7 +1,7 @@
 `ifndef _DRIVER_PKT_RX_
 `define _DRIVER_PKT_RX_
 
-class driver_pkt_rx extends uvm_driver #(data_pkt_rx);
+class driver_pkt_rx extends uvm_driver #(data_pkt);
 
    `uvm_component_utils(driver_pkt_rx)
 

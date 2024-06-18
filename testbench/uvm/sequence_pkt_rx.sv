@@ -1,8 +1,8 @@
 `ifndef _SEQUENCNE_PKT_RX_
 `define _SEQUENCNE_PKT_RX_
-`include "data_pkt_rx.sv"
+`include "data_pkt.sv"
 
-class sequence_pkt_rx extends uvm_sequence#(data_pkt_rx);
+class sequence_pkt_rx extends uvm_sequence#(data_pkt);
 
 
 
@@ -47,7 +47,7 @@ class sequence_pkt_rx extends uvm_sequence#(data_pkt_rx);
       taddr = 8'hAB;
       tdata = 32'h00112233;
       $display("XAC Hey from Sequence aka Generator start_item ","producing addr=%h data=%h", taddr, tdata);
-      req = data_pkt_rx::type_id::create("req");
+      req = data_pkt::type_id::create("req");
       start_item(req);
       req.adr = taddr;
       req.dat_i = tdata;
@@ -59,7 +59,7 @@ class sequence_pkt_rx extends uvm_sequence#(data_pkt_rx);
       taddr = 8'hBA;
       tdata = 32'h33001122;
       $display("XAC Hey from Sequence aka Generator start_item ","producing addr=%h data=%h", taddr, tdata);
-      req = data_pkt_rx::type_id::create("req");
+      req = data_pkt::type_id::create("req");
       start_item(req);
       req.adr = taddr;
       req.dat_i = tdata;

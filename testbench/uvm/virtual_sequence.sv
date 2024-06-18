@@ -20,9 +20,9 @@ class virtual_sequence extends uvm_sequence;
 
 
   virtual task body();
-    // `uvm_do_on(sequence_reset_0, p_sequencer.sequence_reset_0);
-    #1000000;
-    // `uvm_do_on(sequence_pkt_tx_0, p_sequencer.sequence_pkt_tx_0);
+    `uvm_do_on(sequence_reset_0, p_sequencer.sequencer_reset_0);
+    #100;
+    `uvm_do_on(sequence_pkt_tx_0, p_sequencer.sequencer_pkt_tx_0);
   endtask : body
 
 
