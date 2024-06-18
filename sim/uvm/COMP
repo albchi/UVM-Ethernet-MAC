@@ -1,5 +1,4 @@
 vcs \
-+define+ORIG_RESET+ \
 -full64 \
 +vcs+lic+wait \
 -sverilog  \
@@ -15,6 +14,7 @@ vcs \
 ../../testbench/uvm/intf_rst.sv \
 ../../testbench/uvm/intf_wb.sv \
 ../../testbench/uvm/intf_pkt_tx.sv \
+../../testbench/uvm/intf_pkt_rx.sv \
 ../../testbench/uvm/tb_top_xge_mac.v \
 ../../testbench/uvm/tb_prog.sv  \
 ../../testcases/testcase_base.sv \
@@ -26,4 +26,4 @@ vcs \
 
 
 # ../../testbench/uvm/tb_prog.sv \
-
+# +define+ORIG_RESET+ \
