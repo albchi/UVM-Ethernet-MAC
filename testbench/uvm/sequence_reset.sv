@@ -20,8 +20,6 @@ class sequence_reset extends uvm_sequence#(data_reset);
       `uvm_do_with(req, {reset_ == irst_; cycles  == icycles;})
 
       // repeat(10) `uvm_do(req);
-
-
       // finish_item(req);
 
    endtask

@@ -39,73 +39,23 @@ class sequence_wb extends uvm_sequence#(data_wb);
       paddr = 8'hAB;
       pdata = 32'h00112233;
       $display("XAC Hey from Sequence aka Generator start_item ","producing addr=%h data=%h", paddr, pdata);
+      req = data_wb::type_id::create("req");
+      start_item(req);
+      req.adr = paddr;
+      req.dat_i = pdata;
+      req.we = 1;
+      finish_item(req);
 
-
-      // Control Register list:
-      // 0x0 : config 0 
-      // 0x8  : interrupt pending
-      // 0xc  : interrupt status
-      // 0x10  : interrupt mask
-      // 0x80  : TX octent count
-      // 0x84  : TX packet count
-      // 0x90  : RX octent count
-      // 0x90  : RX packet count
-
+      paddr = 8'hCD;
+      pdata = 32'h33001122;
       $display("XAC Hey from Sequence aka Generator start_item ","producing addr=%h data=%h", paddr, pdata);
       req = data_wb::type_id::create("req");
       start_item(req);
-      req.adr = 8'h0;
-      req.we = 0;
+      req.adr = paddr;
+      req.dat_i = pdata;
+      req.we = 1;
+
       finish_item(req);
-
-      req = data_wb::type_id::create("req");
-      start_item(req);
-      req.adr = 8'h0x8;
-      req.we = 0;
-      finish_item(req);
-
-      req = data_wb::type_id::create("req");
-      start_item(req);
-      req.adr = 8'h0xc;
-      req.we = 0;
-      finish_item(req);
-
-      req = data_wb::type_id::create("req");
-      start_item(req);
-      req.adr = 8'h0x10;
-      req.we = 0;
-      finish_item(req);
-
-      req = data_wb::type_id::create("req");
-      start_item(req);
-      req.adr = 8'h0x80;
-      req.we = 0;
-      finish_item(req);
-
-      req = data_wb::type_id::create("req");
-      start_item(req);
-      req.adr = 8'h0x84;
-      req.we = 0;
-      finish_item(req);
-
-      req = data_wb::type_id::create("req");
-      start_item(req);
-      req.adr = 8'h0x90;
-      req.we = 0;
-      finish_item(req);
-
-      req = data_wb::type_id::create("req");
-      start_item(req);
-      req.adr = 8'h0x94;
-      req.we = 0;
-      finish_item(req);
-
-
-
-
-
-
-
 
 
    endtask

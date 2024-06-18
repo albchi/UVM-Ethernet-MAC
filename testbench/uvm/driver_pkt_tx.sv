@@ -46,29 +46,29 @@ class driver_pkt_tx extends uvm_driver #(data_pkt);
 
          // phase1
          vi.pkt_tx_sop <= 1'b1;
+         vi.pkt_tx_eop <= 1'b0;
          vi.pkt_tx_val <= 1'b1;
          vi.pkt_tx_data <= req.data; 
          vi.pkt_tx_mod <= req.mod; 
-         vi.pkt_tx_eop <= 1'b0;
          @(posedge vi.clk);
 
          // phase2
          vi.pkt_tx_sop <= 1'b0;
+         vi.pkt_tx_eop <= 1'b1;
+         vi.pkt_tx_val <= 1'b1;
          vi.pkt_tx_data <= req.data + 64'h1000; 
          vi.pkt_tx_mod <= req.mod; 
          @(posedge vi.clk);
 
          // phase3
-         vi.pkt_tx_data <= req.data + 64'h1000; 
-         vi.pkt_tx_mod <= req.mod; 
-         vi.pkt_tx_eop <= 1'b1;
-         @(posedge vi.clk);
-
-         // phase4
          vi.pkt_tx_val <= 1'b0;
          vi.pkt_tx_eop <= 1'b0;
+         vi.pkt_tx_data <= req.data + 64'h1000; 
+         vi.pkt_tx_mod <= req.mod; 
+         @(posedge vi.clk);
 
-         repeat(80)
+
+         repeat(1)
             @(posedge vi.clk);
 
          seq_item_port.item_done();

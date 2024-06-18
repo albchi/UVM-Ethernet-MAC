@@ -90,9 +90,9 @@ xge_mac dut(/*AUTOINST*/
             .pkt_rx_sop                 (intf_pkt_rx_0.pkt_rx_sop),
             .pkt_rx_val                 (intf_pkt_rx_0.pkt_rx_val),
             .pkt_tx_full                (intf_pkt_tx_0.pkt_tx_full), // (pkt_tx_full),
-            .wb_ack_o                   (wb_ack_o),
-            .wb_dat_o                   (wb_dat_o[31:0]),
-            .wb_int_o                   (wb_int_o),
+            .wb_ack_o                   (intf_wb_0.ack), // wb_ack_o),
+            .wb_dat_o                   (intf_wb_0.dat_o[31:0]),
+            .wb_int_o                   (intf_wb_0.intr),
             .xgmii_txc                  (xgmii_txc[7:0]),
             .xgmii_txd                  (xgmii_txd[63:0]),
             // Inputs
@@ -119,13 +119,14 @@ xge_mac dut(/*AUTOINST*/
             .reset_xgmii_rx_n           (intf_rst_0.reset_xgmii_rx_n),
             .reset_xgmii_tx_n           (intf_rst_0.reset_xgmii_tx_n),
 `endif 
-            .wb_adr_i                   (wb_adr_i[7:0]),
-            .wb_clk_i                   (wb_clk_i),
-            .wb_cyc_i                   (wb_cyc_i),
-            .wb_dat_i                   (wb_dat_i[31:0]),
-            .wb_rst_i                   (wb_rst_i),
-            .wb_stb_i                   (wb_stb_i),
-            .wb_we_i                    (wb_we_i),
+            .wb_adr_i                   (intf_wb_0.adr[7:0]),
+            .wb_clk_i                   (intf_wb_0.clk),
+            .wb_cyc_i                   (intf_wb_0.cyc),
+            .wb_dat_i                   (intf_wb_0.dat_i[31:0]),
+            // .wb_rst_i                   (intf_wb_0.rst_i),
+            .wb_rst_i                   (intf_rst_0.wb_rst_i),
+            .wb_stb_i                   (intf_wb_0.stb),
+            .wb_we_i                    (intf_wb_0.we),
             .xgmii_rxc                  (xgmii_rxc[7:0]),
             .xgmii_rxd                  (xgmii_rxd[63:0]));
 
@@ -233,6 +234,7 @@ glbl glbl();
 //---
 // Unused for this testbench
 
+/*
 assign wb_adr_i = 8'b0;
 assign wb_clk_i = 1'b0;
 assign wb_cyc_i = 1'b0;
@@ -240,6 +242,7 @@ assign wb_dat_i = 32'b0;
 assign wb_rst_i = 1'b1;
 assign wb_stb_i = 1'b0;
 assign wb_we_i = 1'b0;
+*/
 
 
 initial begin

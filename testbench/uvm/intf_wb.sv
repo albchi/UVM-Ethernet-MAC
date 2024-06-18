@@ -1,4 +1,4 @@
-interface intf_wb( input bit wb_clk);
+interface intf_wb( input bit clk);
 
    // input to WB
    logic [7:0] adr;
@@ -12,7 +12,7 @@ interface intf_wb( input bit wb_clk);
    logic ack;
    logic intr;
  
-   clocking cb_driver @(posedge wb_clk);
+   clocking cb_driver @(posedge clk);
       output adr;
       output dat_i;
       output we;
