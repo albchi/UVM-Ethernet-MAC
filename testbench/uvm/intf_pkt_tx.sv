@@ -7,6 +7,7 @@ interface intf_pkt_tx( input bit clk); // clk_156m25);
    logic        pkt_tx_sop;
    logic        pkt_tx_val;             
    logic        reset_156m25_n;
+   logic        pkt_tx_ren;
 
    // output 
    logic pkt_tx_full;
@@ -19,6 +20,7 @@ interface intf_pkt_tx( input bit clk); // clk_156m25);
       output pkt_tx_sop;          
       output pkt_tx_val;         
       input pkt_tx_full;
+      input pkt_tx_ren;
    endclocking 
 
 endinterface

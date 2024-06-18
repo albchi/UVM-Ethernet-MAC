@@ -57,6 +57,8 @@ class monitor_pkt_rx extends uvm_monitor;
            $display("XAC PKT_RX_MON data : %h", vi.pkt_rx_data);
            tmp_rcv_pkt.data = vi.pkt_rx_data;
            `uvm_info("MON_PKT_RX run_phase received this packet ", tmp_rcv_pkt.sprint(), UVM_HIGH);
+           `uvm_info("PKT_RX_MON writing this to ap", tmp_rcv_pkt.sprint(), UVM_HIGH);
+           ap.write(tmp_rcv_pkt);
 
         end // vi.pkt_rx_sop && !vi.pkt_rx_eop  ) begin
       end // if vi.pkt_rx_val
@@ -64,9 +66,6 @@ class monitor_pkt_rx extends uvm_monitor;
       $display("PKT_RX_MON pkt_rx_ren is now : %b", vi.pkt_rx_ren);
       `uvm_info("PKT_RX_MON ", "going back ",  UVM_HIGH);
     end // forever begin
-    `uvm_info("PKT_RX_MON ", "write to ap",  UVM_HIGH);
-    `uvm_info("PKT_RX_MON writing this to ap", tmp_rcv_pkt.sprint(), UVM_HIGH);
-    ap.write(tmp_rcv_pkt);
   endtask : run_phase
 
 
