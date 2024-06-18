@@ -6,6 +6,8 @@ import uvm_pkg::*;
 // class testcase_reset extends uvm_test;
 class testcase_reset extends testcase_base;
 
+
+
    `uvm_component_utils(testcase_reset)
 
 
@@ -45,14 +47,11 @@ virtual function void start_of_simulation_phase(input uvm_phase phase);
   endtask
 
   virtual task main_phase(uvm_phase phase) ;
-     uvm_objection objection;
      super.main_phase(phase) ;
      phase.raise_objection(this);
      // sequence_reset_0.start(env0.agent_in.seqr);
      sequence_reset_0.start(env_0.agent_reset_0.sequencer_reset_0);
      phase.drop_objection(this);
-     objection=phase.get_objection();
-     objection.set_drain_time(this, 5us);
   endtask 
 
 endclass 
