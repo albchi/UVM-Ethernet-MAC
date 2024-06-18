@@ -27,6 +27,8 @@ class testcase_base extends uvm_test;
      uvm_config_db#(virtual intf_rst)::set(this, "env_0.agent_reset_0.driver_reset_0", "vi", tb_top_xge_mac.intf_rst_0);
      uvm_config_db#(virtual intf_pkt_tx)::set(this, "env_0.agent_pkt_tx_0.driver_pkt_tx_0", "vi", tb_top_xge_mac.intf_pkt_tx_0);
      uvm_config_db#(virtual intf_pkt_tx)::set(this, "env_0.agent_pkt_tx_0.monitor_pkt_tx_0", "vi", tb_top_xge_mac.intf_pkt_tx_0);
+     uvm_config_db#(virtual intf_pkt_rx)::set(this, "env_0.agent_pkt_rx_0.driver_pkt_rx_0", "vi", tb_top_xge_mac.intf_pkt_rx_0);
+     uvm_config_db#(virtual intf_pkt_rx)::set(this, "env_0.agent_pkt_rx_0.monitor_pkt_rx_0", "vi", tb_top_xge_mac.intf_pkt_rx_0);
   endfunction 
 
    virtual function void end_of_elaboration_phase(uvm_phase phase); 
