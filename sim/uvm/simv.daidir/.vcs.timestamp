@@ -1,4 +1,4 @@
-699      
+755      
 0 uvm_macros.svh
 0 /usr/synopsys/vcs/U-2023.03-SP2/etc/systemverilog/uvm_macros.svh
 0 /usr/synopsys/vcs/U-2023.03-SP2/etc/uvm-1.1/vcs/uvm_macros.svh
@@ -607,13 +607,13 @@
 0 /usr/synopsys/vcs/U-2023.03-SP2/etc/uvm-1.1/agent_pkt_tx.sv
 0 ../../rtl/include/agent_pkt_tx.sv
 0 ../../testcases/agent_pkt_tx.sv
-0 data_pkt_tx.sv
-0 /usr/synopsys/vcs/U-2023.03-SP2/etc/systemverilog/data_pkt_tx.sv
-0 /usr/synopsys/vcs/U-2023.03-SP2/etc/uvm-1.1/vcs/data_pkt_tx.sv
-0 /usr/synopsys/vcs/U-2023.03-SP2/etc/uvm-1.1/verdi/data_pkt_tx.sv
-0 /usr/synopsys/vcs/U-2023.03-SP2/etc/uvm-1.1/data_pkt_tx.sv
-0 ../../rtl/include/data_pkt_tx.sv
-0 ../../testcases/data_pkt_tx.sv
+0 data_pkt.sv
+0 /usr/synopsys/vcs/U-2023.03-SP2/etc/systemverilog/data_pkt.sv
+0 /usr/synopsys/vcs/U-2023.03-SP2/etc/uvm-1.1/vcs/data_pkt.sv
+0 /usr/synopsys/vcs/U-2023.03-SP2/etc/uvm-1.1/verdi/data_pkt.sv
+0 /usr/synopsys/vcs/U-2023.03-SP2/etc/uvm-1.1/data_pkt.sv
+0 ../../rtl/include/data_pkt.sv
+0 ../../testcases/data_pkt.sv
 0 driver_pkt_tx.sv
 0 /usr/synopsys/vcs/U-2023.03-SP2/etc/systemverilog/driver_pkt_tx.sv
 0 /usr/synopsys/vcs/U-2023.03-SP2/etc/uvm-1.1/vcs/driver_pkt_tx.sv
@@ -628,6 +628,41 @@
 0 /usr/synopsys/vcs/U-2023.03-SP2/etc/uvm-1.1/monitor_pkt_tx.sv
 0 ../../rtl/include/monitor_pkt_tx.sv
 0 ../../testcases/monitor_pkt_tx.sv
+0 sequence_pkt_tx.sv
+0 /usr/synopsys/vcs/U-2023.03-SP2/etc/systemverilog/sequence_pkt_tx.sv
+0 /usr/synopsys/vcs/U-2023.03-SP2/etc/uvm-1.1/vcs/sequence_pkt_tx.sv
+0 /usr/synopsys/vcs/U-2023.03-SP2/etc/uvm-1.1/verdi/sequence_pkt_tx.sv
+0 /usr/synopsys/vcs/U-2023.03-SP2/etc/uvm-1.1/sequence_pkt_tx.sv
+0 ../../rtl/include/sequence_pkt_tx.sv
+0 ../../testcases/sequence_pkt_tx.sv
+0 scoreboard_pkt.sv
+0 /usr/synopsys/vcs/U-2023.03-SP2/etc/systemverilog/scoreboard_pkt.sv
+0 /usr/synopsys/vcs/U-2023.03-SP2/etc/uvm-1.1/vcs/scoreboard_pkt.sv
+0 /usr/synopsys/vcs/U-2023.03-SP2/etc/uvm-1.1/verdi/scoreboard_pkt.sv
+0 /usr/synopsys/vcs/U-2023.03-SP2/etc/uvm-1.1/scoreboard_pkt.sv
+0 ../../rtl/include/scoreboard_pkt.sv
+0 ../../testcases/scoreboard_pkt.sv
+0 agent_pkt_rx.sv
+0 /usr/synopsys/vcs/U-2023.03-SP2/etc/systemverilog/agent_pkt_rx.sv
+0 /usr/synopsys/vcs/U-2023.03-SP2/etc/uvm-1.1/vcs/agent_pkt_rx.sv
+0 /usr/synopsys/vcs/U-2023.03-SP2/etc/uvm-1.1/verdi/agent_pkt_rx.sv
+0 /usr/synopsys/vcs/U-2023.03-SP2/etc/uvm-1.1/agent_pkt_rx.sv
+0 ../../rtl/include/agent_pkt_rx.sv
+0 ../../testcases/agent_pkt_rx.sv
+0 monitor_pkt_rx.sv
+0 /usr/synopsys/vcs/U-2023.03-SP2/etc/systemverilog/monitor_pkt_rx.sv
+0 /usr/synopsys/vcs/U-2023.03-SP2/etc/uvm-1.1/vcs/monitor_pkt_rx.sv
+0 /usr/synopsys/vcs/U-2023.03-SP2/etc/uvm-1.1/verdi/monitor_pkt_rx.sv
+0 /usr/synopsys/vcs/U-2023.03-SP2/etc/uvm-1.1/monitor_pkt_rx.sv
+0 ../../rtl/include/monitor_pkt_rx.sv
+0 ../../testcases/monitor_pkt_rx.sv
+0 sequence_pkt_rx.sv
+0 /usr/synopsys/vcs/U-2023.03-SP2/etc/systemverilog/sequence_pkt_rx.sv
+0 /usr/synopsys/vcs/U-2023.03-SP2/etc/uvm-1.1/vcs/sequence_pkt_rx.sv
+0 /usr/synopsys/vcs/U-2023.03-SP2/etc/uvm-1.1/verdi/sequence_pkt_rx.sv
+0 /usr/synopsys/vcs/U-2023.03-SP2/etc/uvm-1.1/sequence_pkt_rx.sv
+0 ../../rtl/include/sequence_pkt_rx.sv
+0 ../../testcases/sequence_pkt_rx.sv
 0 agent_reset.sv
 0 /usr/synopsys/vcs/U-2023.03-SP2/etc/systemverilog/agent_reset.sv
 0 /usr/synopsys/vcs/U-2023.03-SP2/etc/uvm-1.1/vcs/agent_reset.sv
@@ -677,6 +712,13 @@
 0 /usr/synopsys/vcs/U-2023.03-SP2/etc/uvm-1.1/driver_wb.sv
 0 ../../rtl/include/driver_wb.sv
 0 ../../testcases/driver_wb.sv
+0 monitor_wb.sv
+0 /usr/synopsys/vcs/U-2023.03-SP2/etc/systemverilog/monitor_wb.sv
+0 /usr/synopsys/vcs/U-2023.03-SP2/etc/uvm-1.1/vcs/monitor_wb.sv
+0 /usr/synopsys/vcs/U-2023.03-SP2/etc/uvm-1.1/verdi/monitor_wb.sv
+0 /usr/synopsys/vcs/U-2023.03-SP2/etc/uvm-1.1/monitor_wb.sv
+0 ../../rtl/include/monitor_wb.sv
+0 ../../testcases/monitor_wb.sv
 0 sequence_wb.sv
 0 /usr/synopsys/vcs/U-2023.03-SP2/etc/systemverilog/sequence_wb.sv
 0 /usr/synopsys/vcs/U-2023.03-SP2/etc/uvm-1.1/vcs/sequence_wb.sv
@@ -684,13 +726,13 @@
 0 /usr/synopsys/vcs/U-2023.03-SP2/etc/uvm-1.1/sequence_wb.sv
 0 ../../rtl/include/sequence_wb.sv
 0 ../../testcases/sequence_wb.sv
-0 sequence_pkt_tx.sv
-0 /usr/synopsys/vcs/U-2023.03-SP2/etc/systemverilog/sequence_pkt_tx.sv
-0 /usr/synopsys/vcs/U-2023.03-SP2/etc/uvm-1.1/vcs/sequence_pkt_tx.sv
-0 /usr/synopsys/vcs/U-2023.03-SP2/etc/uvm-1.1/verdi/sequence_pkt_tx.sv
-0 /usr/synopsys/vcs/U-2023.03-SP2/etc/uvm-1.1/sequence_pkt_tx.sv
-0 ../../rtl/include/sequence_pkt_tx.sv
-0 ../../testcases/sequence_pkt_tx.sv
+0 coverage.sv
+0 /usr/synopsys/vcs/U-2023.03-SP2/etc/systemverilog/coverage.sv
+0 /usr/synopsys/vcs/U-2023.03-SP2/etc/uvm-1.1/vcs/coverage.sv
+0 /usr/synopsys/vcs/U-2023.03-SP2/etc/uvm-1.1/verdi/coverage.sv
+0 /usr/synopsys/vcs/U-2023.03-SP2/etc/uvm-1.1/coverage.sv
+0 ../../rtl/include/coverage.sv
+0 ../../testcases/coverage.sv
 0 virtual_sequencer.sv
 0 /usr/synopsys/vcs/U-2023.03-SP2/etc/systemverilog/virtual_sequencer.sv
 0 /usr/synopsys/vcs/U-2023.03-SP2/etc/uvm-1.1/vcs/virtual_sequencer.sv
@@ -698,8 +740,21 @@
 0 /usr/synopsys/vcs/U-2023.03-SP2/etc/uvm-1.1/virtual_sequencer.sv
 0 ../../rtl/include/virtual_sequencer.sv
 0 ../../testcases/virtual_sequencer.sv
-80
-+define+ORIG_RESET+
+0 virtual_sequence_wb.sv
+0 /usr/synopsys/vcs/U-2023.03-SP2/etc/systemverilog/virtual_sequence_wb.sv
+0 /usr/synopsys/vcs/U-2023.03-SP2/etc/uvm-1.1/vcs/virtual_sequence_wb.sv
+0 /usr/synopsys/vcs/U-2023.03-SP2/etc/uvm-1.1/verdi/virtual_sequence_wb.sv
+0 /usr/synopsys/vcs/U-2023.03-SP2/etc/uvm-1.1/virtual_sequence_wb.sv
+0 ../../rtl/include/virtual_sequence_wb.sv
+0 ../../testcases/virtual_sequence_wb.sv
+0 virtual_sequence.sv
+0 /usr/synopsys/vcs/U-2023.03-SP2/etc/systemverilog/virtual_sequence.sv
+0 /usr/synopsys/vcs/U-2023.03-SP2/etc/uvm-1.1/vcs/virtual_sequence.sv
+0 /usr/synopsys/vcs/U-2023.03-SP2/etc/uvm-1.1/verdi/virtual_sequence.sv
+0 /usr/synopsys/vcs/U-2023.03-SP2/etc/uvm-1.1/virtual_sequence.sv
+0 ../../rtl/include/virtual_sequence.sv
+0 ../../testcases/virtual_sequence.sv
+79
 +define+UVM_DIRECTC_OPTS
 +define+UVM_VCS_RECORD
 +define+UVM_VERDI_VIF_RECORD
@@ -772,15 +827,15 @@ uvm-1.1
 ../../testbench/uvm/intf_rst.sv
 ../../testbench/uvm/intf_wb.sv
 ../../testbench/uvm/intf_pkt_tx.sv
+../../testbench/uvm/intf_pkt_rx.sv
 ../../testbench/uvm/tb_top_xge_mac.v
 ../../testbench/uvm/tb_prog.sv
 ../../testcases/testcase_base.sv
 ../../testcases/testcase_wb.sv
 ../../testcases/testcase_reset.sv
-../../testcases/testcase_loopback.sv
 ../../testcases/testcase_loopback_reset.sv
 66
-XDG_SESSION_ID=29577
+XDG_SESSION_ID=30878
 XDG_RUNTIME_DIR=/run/user/2703
 XDG_DATA_DIRS=/home/sf10274/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share
 XCELIUMPATH=/usr/cadence/XCELIUM2009/tools/bin:/usr/cadence/XCELIUM2009/tools/dfII/bin
@@ -808,9 +863,9 @@ SYNOPSYS=/usr/synopsys/syn/U-2022.12-SP7-1/
 SWROOT=/usr
 SSVPATH=/usr/cadence/SSV211/tools/bin:/usr/cadence/SSV211/tools/dfII/bin
 SSVHOME=/usr/cadence/SSV211
-SSH_TTY=/dev/pts/43
-SSH_CONNECTION=172.17.17.167 49366 10.20.250.17 22
-SSH_CLIENT=172.17.17.167 49366 22
+SSH_TTY=/dev/pts/48
+SSH_CONNECTION=172.17.17.167 54314 10.20.250.17 22
+SSH_CLIENT=172.17.17.167 54314 22
 SNPS_VERDI_INTERNAL_LP_XML_NEW_FLOW=1
 SNPS_VCS_PYTHON3=/usr/synopsys/vcs/U-2023.03-SP2/linux64/bin/Python-3.6.1/bin/python3
 SNPS_VCS_CLANG_PATH=/usr/synopsys/vcs/U-2023.03-SP2/linux64/clang
@@ -848,27 +903,35 @@ CDS_AUTO_64BIT=ALL
 CDN_SYNTH_ROOT=/usr/cadence/rc/tools.lnx86
 0
 0
-203
-1718124365 ../../testbench/uvm/virtual_sequencer.sv
-1718029403 ../../testbench/uvm/sequence_pkt_tx.sv
-1717803721 ../../testbench/uvm/sequence_wb.sv
-1717803521 ../../testbench/uvm/driver_wb.sv
-1717799760 ../../testbench/uvm/data_wb.sv
-1717765857 ../../testbench/uvm/agent_wb.sv
-1718051182 ../../testbench/uvm/sequence_reset.sv
-1718042107 ../../testbench/uvm/driver_reset.sv
-1718037943 ../../testbench/uvm/data_reset.sv
-1717710011 ../../testbench/uvm/agent_reset.sv
-1718129149 ../../testbench/uvm/monitor_pkt_tx.sv
-1718029197 ../../testbench/uvm/driver_pkt_tx.sv
-1717882773 ../../testbench/uvm/data_pkt_tx.sv
-1717977340 ../../testbench/uvm/agent_pkt_tx.sv
-1717881946 ../../testbench/uvm/env.sv
-1715810909 ../../rtl/include/timescale.v
-1715810909 ../../rtl/include/utils.v
-1715810909 ../../rtl/include/CRC32_D8.v
-1715810909 ../../rtl/include/CRC32_D64.v
-1715810909 ../../rtl/include/defines.v
+211
+1718718788 ../../testbench/uvm/virtual_sequence.sv
+1718721714 ../../testbench/uvm/virtual_sequence_wb.sv
+1718716887 ../../testbench/uvm/virtual_sequencer.sv
+1718743668 ../../testbench/uvm/coverage.sv
+1718753276 ../../testbench/uvm/sequence_wb.sv
+1718752304 ../../testbench/uvm/monitor_wb.sv
+1718720023 ../../testbench/uvm/driver_wb.sv
+1718714103 ../../testbench/uvm/data_wb.sv
+1718744100 ../../testbench/uvm/agent_wb.sv
+1718721928 ../../testbench/uvm/sequence_reset.sv
+1718722183 ../../testbench/uvm/driver_reset.sv
+1718714103 ../../testbench/uvm/data_reset.sv
+1718714103 ../../testbench/uvm/agent_reset.sv
+1718714103 ../../testbench/uvm/sequence_pkt_rx.sv
+1718714103 ../../testbench/uvm/monitor_pkt_rx.sv
+1718714440 ../../testbench/uvm/agent_pkt_rx.sv
+1718714103 ../../testbench/uvm/scoreboard_pkt.sv
+1718714103 ../../testbench/uvm/sequence_pkt_tx.sv
+1718714103 ../../testbench/uvm/monitor_pkt_tx.sv
+1718715099 ../../testbench/uvm/driver_pkt_tx.sv
+1718743744 ../../testbench/uvm/data_pkt.sv
+1718714103 ../../testbench/uvm/agent_pkt_tx.sv
+1718741951 ../../testbench/uvm/env.sv
+1718714103 ../../rtl/include/timescale.v
+1718714103 ../../rtl/include/utils.v
+1718714103 ../../rtl/include/CRC32_D8.v
+1718714103 ../../rtl/include/CRC32_D64.v
+1718714103 ../../rtl/include/defines.v
 1693023923 /usr/synopsys/vcs/U-2023.03-SP2/etc/uvm-1.1/verdi/uvm_verdi_pli.svh
 1700654147 /usr/synopsys/verdi/U-2023.03-SP2-2/share/PLI/VCS/include/verdi_trans_recorder_dpi.svh
 1693023923 /usr/synopsys/vcs/U-2023.03-SP2/etc/uvm-1.1/verdi/uvm_verdi_reg_recording.sv
@@ -1016,36 +1079,36 @@ CDN_SYNTH_ROOT=/usr/cadence/rc/tools.lnx86
 1693023923 /usr/synopsys/vcs/U-2023.03-SP2/etc/uvm-1.1/macros/snps_macros.svp
 1693023923 /usr/synopsys/vcs/U-2023.03-SP2/etc/uvm-1.1/macros/uvm_version_defines.svh
 1693023923 /usr/synopsys/vcs/U-2023.03-SP2/etc/uvm-1.1/uvm_macros.svh
-1718129067 ../../testcases/testcase_loopback_reset.sv
-1718124629 ../../testcases/testcase_loopback.sv
-1718051794 ../../testcases/testcase_reset.sv
-1717802899 ../../testcases/testcase_wb.sv
-1718042802 ../../testcases/testcase_base.sv
-1717771878 ../../testbench/uvm/tb_prog.sv
-1718157976 ../../testbench/uvm/tb_top_xge_mac.v
-1717887426 ../../testbench/uvm/intf_pkt_tx.sv
-1717771642 ../../testbench/uvm/intf_wb.sv
-1717737955 ../../testbench/uvm/intf_rst.sv
-1715810909 ../../rtl/verilog/xge_mac.v
-1715810909 ../../rtl/verilog/wishbone_if.v
-1715810909 ../../rtl/verilog/tx_hold_fifo.v
-1715810909 ../../rtl/verilog/tx_enqueue.v
-1715810909 ../../rtl/verilog/tx_dequeue.v
-1715810909 ../../rtl/verilog/tx_data_fifo.v
-1715810909 ../../rtl/verilog/sync_clk_xgmii_tx.v
-1715810909 ../../rtl/verilog/sync_clk_wb.v
-1715810909 ../../rtl/verilog/sync_clk_core.v
-1715810909 ../../rtl/verilog/rx_hold_fifo.v
-1715810909 ../../rtl/verilog/rx_enqueue.v
-1715810909 ../../rtl/verilog/rx_dequeue.v
-1715810909 ../../rtl/verilog/rx_data_fifo.v
-1715810909 ../../rtl/verilog/meta_sync.v
-1715810909 ../../rtl/verilog/meta_sync_single.v
-1715810909 ../../rtl/verilog/generic_mem_small.v
-1715810909 ../../rtl/verilog/generic_mem_medium.v
-1715810909 ../../rtl/verilog/generic_fifo.v
-1715810909 ../../rtl/verilog/generic_fifo_ctrl.v
-1715810909 ../../rtl/verilog/fault_sm.v
+1718753839 ../../testcases/testcase_loopback_reset.sv
+1718753856 ../../testcases/testcase_reset.sv
+1718753845 ../../testcases/testcase_wb.sv
+1718753830 ../../testcases/testcase_base.sv
+1718714103 ../../testbench/uvm/tb_prog.sv
+1718720990 ../../testbench/uvm/tb_top_xge_mac.v
+1718714103 ../../testbench/uvm/intf_pkt_rx.sv
+1718714103 ../../testbench/uvm/intf_pkt_tx.sv
+1718720003 ../../testbench/uvm/intf_wb.sv
+1718714103 ../../testbench/uvm/intf_rst.sv
+1718714103 ../../rtl/verilog/xge_mac.v
+1718714103 ../../rtl/verilog/wishbone_if.v
+1718714103 ../../rtl/verilog/tx_hold_fifo.v
+1718714103 ../../rtl/verilog/tx_enqueue.v
+1718714103 ../../rtl/verilog/tx_dequeue.v
+1718714103 ../../rtl/verilog/tx_data_fifo.v
+1718714103 ../../rtl/verilog/sync_clk_xgmii_tx.v
+1718714103 ../../rtl/verilog/sync_clk_wb.v
+1718714103 ../../rtl/verilog/sync_clk_core.v
+1718714103 ../../rtl/verilog/rx_hold_fifo.v
+1718714103 ../../rtl/verilog/rx_enqueue.v
+1718714103 ../../rtl/verilog/rx_dequeue.v
+1718714103 ../../rtl/verilog/rx_data_fifo.v
+1718714103 ../../rtl/verilog/meta_sync.v
+1718714103 ../../rtl/verilog/meta_sync_single.v
+1718714103 ../../rtl/verilog/generic_mem_small.v
+1718714103 ../../rtl/verilog/generic_mem_medium.v
+1718714103 ../../rtl/verilog/generic_fifo.v
+1718714103 ../../rtl/verilog/generic_fifo_ctrl.v
+1718714103 ../../rtl/verilog/fault_sm.v
 1693023923 /usr/synopsys/vcs/U-2023.03-SP2/etc/uvm-1.1/verdi/uvm_custom_install_verdi_recorder.sv
 1693023923 /usr/synopsys/vcs/U-2023.03-SP2/etc/uvm-1.1/verdi/uvm_custom_install_verdi_recorder.sv
 1693023923 /usr/synopsys/vcs/U-2023.03-SP2/etc/uvm-1.1/vcs/uvm_custom_install_vcs_recorder.sv
@@ -1059,5 +1122,5 @@ CDN_SYNTH_ROOT=/usr/cadence/rc/tools.lnx86
 1693042805 /usr/synopsys/vcs/U-2023.03-SP2/linux64/lib/liberrorinf.so
 1693042720 /usr/synopsys/vcs/U-2023.03-SP2/linux64/lib/libsnpsmalloc.so
 1693042802 /usr/synopsys/vcs/U-2023.03-SP2/linux64/lib/libvfs.so
-1718158042 simv.daidir
+1718755515 simv.daidir
 -1 partitionlib

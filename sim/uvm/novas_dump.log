@@ -91,91 +91,89 @@ ANF: vhdi_enc_def_get_handle_by_module_id('simv: undefined symbol: vhdi_enc_def_
 VCS compile option:
  option[0]: simv
  option[1]: -l
- option[2]: simv.log
- option[3]: +UVM_VERBOSITY=HIGH
- option[4]: +UVM_TESTNAME=testcase_loopback
- option[5]: /usr/synopsys/vcs/U-2023.03-SP2/linux64/bin/vcs1
- option[6]: -Mcc=gcc
- option[7]: -Mcplusplus=g++
- option[8]: -Masflags=
- option[9]: -Mcfl= -pipe -DVCS -DUVM_DPI_DO_TYPE_CHECK -fPIC -O -I/usr/synopsys/vcs/U-2023.03-SP2/include 
- option[10]: -Mxllcflags=
- option[11]: -Mxcflags= -pipe -DVCS -DUVM_DPI_DO_TYPE_CHECK -fPIC -I/usr/synopsys/vcs/U-2023.03-SP2/include
- option[12]: -Mldflags= -rdynamic 
- option[13]: -Mout=simv
- option[14]: -Mamsrun=
- option[15]: -Mvcsaceobjs=
- option[16]: -Mobjects= /usr/synopsys/vcs/U-2023.03-SP2/linux64/lib/libvirsim.so /usr/synopsys/vcs/U-2023.03-SP2/linux64/lib/liberrorinf.so /usr/synopsys/vcs/U-2023.03-SP2/linux64/lib/libsnpsmalloc.so /usr/synopsys/vcs/U-2023.03-SP2/linux64/lib/libvfs.so 
- option[17]: -Mexternalobj=
- option[18]: -Msaverestoreobj=/usr/synopsys/vcs/U-2023.03-SP2/linux64/lib/vcs_save_restore_new.o
- option[19]: -Mcrt0=
- option[20]: -Mcrtn=
- option[21]: -Mcsrc=/usr/synopsys/vcs/U-2023.03-SP2/etc/uvm-1.1/dpi/uvm_dpi.cc /usr/synopsys/vcs/U-2023.03-SP2/etc/uvm-1.1/verdi/dpi/uvm_verdi_dpi.cpp 
- option[22]: -Msyslibs=/usr/synopsys/verdi/U-2023.03-SP2-2/share/PLI/VCS/LINUX64/pli.a -ldl 
- option[23]: -l
- option[24]: vcs.log
- option[25]: +define+UVM_VERDI_VIF_RECORD
- option[26]: +define+UVM_VCS_RECORD
- option[27]: +incdir+/usr/synopsys/vcs/U-2023.03-SP2/etc/uvm-1.1/vcs
- option[28]: /usr/synopsys/vcs/U-2023.03-SP2/etc/uvm-1.1/uvm_pkg.sv
- option[29]: /usr/synopsys/vcs/U-2023.03-SP2/etc/uvm-1.1/vcs/uvm_custom_install_vcs_recorder.sv
- option[30]: +incdir+/usr/synopsys/vcs/U-2023.03-SP2/etc/uvm-1.1/verdi
- option[31]: /usr/synopsys/vcs/U-2023.03-SP2/etc/uvm-1.1/verdi/uvm_custom_install_verdi_recorder.sv
- option[32]: +define+ORIG_RESET+
- option[33]: -full64
- option[34]: +vcs+lic+wait
- option[35]: -override_timescale=1ps/1ps
- option[36]: -ntb_opts
- option[37]: uvm-1.1
- option[38]: +incdir+/usr/synopsys/vcs/U-2023.03-SP2/etc/uvm-1.1/
- option[39]: -debug_access+all
- option[40]: +vpi
- option[41]: +vcsd1
- option[42]: +itf+/usr/synopsys/vcs/U-2023.03-SP2/linux64/lib/vcsdp_lite.tab
- option[43]: -kdb
- option[44]: -Xufe=2steps
- option[45]: -picarchive
- option[46]: -P
- option[47]: /usr/synopsys/verdi/U-2023.03-SP2-2/share/PLI/VCS/LINUX64/verdi.tab
- option[48]: -fsdb
- option[49]: -sverilog
- option[50]: -gen_obj
- option[51]: ../../rtl/verilog/fault_sm.v
- option[52]: ../../rtl/verilog/generic_fifo_ctrl.v
- option[53]: ../../rtl/verilog/generic_fifo.v
- option[54]: ../../rtl/verilog/generic_mem_medium.v
- option[55]: ../../rtl/verilog/generic_mem_small.v
- option[56]: ../../rtl/verilog/meta_sync_single.v
- option[57]: ../../rtl/verilog/meta_sync.v
- option[58]: ../../rtl/verilog/rx_data_fifo.v
- option[59]: ../../rtl/verilog/rx_dequeue.v
- option[60]: ../../rtl/verilog/rx_enqueue.v
- option[61]: ../../rtl/verilog/rx_hold_fifo.v
- option[62]: ../../rtl/verilog/sync_clk_core.v
- option[63]: ../../rtl/verilog/sync_clk_wb.v
- option[64]: ../../rtl/verilog/sync_clk_xgmii_tx.v
- option[65]: ../../rtl/verilog/tx_data_fifo.v
- option[66]: ../../rtl/verilog/tx_dequeue.v
- option[67]: ../../rtl/verilog/tx_enqueue.v
- option[68]: ../../rtl/verilog/tx_hold_fifo.v
- option[69]: ../../rtl/verilog/wishbone_if.v
- option[70]: ../../rtl/verilog/xge_mac.v
- option[71]: +incdir+../../rtl/include
- option[72]: +incdir+../../testcases
- option[73]: +incdir+../../testbench/uvm
- option[74]: ../../testbench/uvm/intf_rst.sv
- option[75]: ../../testbench/uvm/intf_wb.sv
- option[76]: ../../testbench/uvm/intf_pkt_tx.sv
- option[77]: ../../testbench/uvm/tb_top_xge_mac.v
- option[78]: ../../testbench/uvm/tb_prog.sv
- option[79]: ../../testcases/testcase_base.sv
- option[80]: ../../testcases/testcase_wb.sv
- option[81]: ../../testcases/testcase_reset.sv
- option[82]: ../../testcases/testcase_loopback.sv
- option[83]: ../../testcases/testcase_loopback_reset.sv
- option[84]: +define+UVM_DIRECTC_OPTS
- option[85]: -load
- option[86]: /usr/synopsys/verdi/U-2023.03-SP2-2/share/PLI/VCS/LINUX64/libnovas.so:FSDBDumpCmd
+ option[2]: simv_testcase_reset.log
+ option[3]: +UVM_TESTNAME=testcase_reset
+ option[4]: /usr/synopsys/vcs/U-2023.03-SP2/linux64/bin/vcs1
+ option[5]: -Mcc=gcc
+ option[6]: -Mcplusplus=g++
+ option[7]: -Masflags=
+ option[8]: -Mcfl= -pipe -DVCS -DUVM_DPI_DO_TYPE_CHECK -fPIC -O -I/usr/synopsys/vcs/U-2023.03-SP2/include 
+ option[9]: -Mxllcflags=
+ option[10]: -Mxcflags= -pipe -DVCS -DUVM_DPI_DO_TYPE_CHECK -fPIC -I/usr/synopsys/vcs/U-2023.03-SP2/include
+ option[11]: -Mldflags= -rdynamic 
+ option[12]: -Mout=simv
+ option[13]: -Mamsrun=
+ option[14]: -Mvcsaceobjs=
+ option[15]: -Mobjects= /usr/synopsys/vcs/U-2023.03-SP2/linux64/lib/libvirsim.so /usr/synopsys/vcs/U-2023.03-SP2/linux64/lib/liberrorinf.so /usr/synopsys/vcs/U-2023.03-SP2/linux64/lib/libsnpsmalloc.so /usr/synopsys/vcs/U-2023.03-SP2/linux64/lib/libvfs.so 
+ option[16]: -Mexternalobj=
+ option[17]: -Msaverestoreobj=/usr/synopsys/vcs/U-2023.03-SP2/linux64/lib/vcs_save_restore_new.o
+ option[18]: -Mcrt0=
+ option[19]: -Mcrtn=
+ option[20]: -Mcsrc=/usr/synopsys/vcs/U-2023.03-SP2/etc/uvm-1.1/dpi/uvm_dpi.cc /usr/synopsys/vcs/U-2023.03-SP2/etc/uvm-1.1/verdi/dpi/uvm_verdi_dpi.cpp 
+ option[21]: -Msyslibs=/usr/synopsys/verdi/U-2023.03-SP2-2/share/PLI/VCS/LINUX64/pli.a -ldl 
+ option[22]: -l
+ option[23]: vcs.log
+ option[24]: +define+UVM_VERDI_VIF_RECORD
+ option[25]: +define+UVM_VCS_RECORD
+ option[26]: +incdir+/usr/synopsys/vcs/U-2023.03-SP2/etc/uvm-1.1/vcs
+ option[27]: /usr/synopsys/vcs/U-2023.03-SP2/etc/uvm-1.1/uvm_pkg.sv
+ option[28]: /usr/synopsys/vcs/U-2023.03-SP2/etc/uvm-1.1/vcs/uvm_custom_install_vcs_recorder.sv
+ option[29]: +incdir+/usr/synopsys/vcs/U-2023.03-SP2/etc/uvm-1.1/verdi
+ option[30]: /usr/synopsys/vcs/U-2023.03-SP2/etc/uvm-1.1/verdi/uvm_custom_install_verdi_recorder.sv
+ option[31]: -full64
+ option[32]: +vcs+lic+wait
+ option[33]: -override_timescale=1ps/1ps
+ option[34]: -ntb_opts
+ option[35]: uvm-1.1
+ option[36]: +incdir+/usr/synopsys/vcs/U-2023.03-SP2/etc/uvm-1.1/
+ option[37]: -debug_access+all
+ option[38]: +vpi
+ option[39]: +vcsd1
+ option[40]: +itf+/usr/synopsys/vcs/U-2023.03-SP2/linux64/lib/vcsdp_lite.tab
+ option[41]: -kdb
+ option[42]: -Xufe=2steps
+ option[43]: -picarchive
+ option[44]: -P
+ option[45]: /usr/synopsys/verdi/U-2023.03-SP2-2/share/PLI/VCS/LINUX64/verdi.tab
+ option[46]: -fsdb
+ option[47]: -sverilog
+ option[48]: -gen_obj
+ option[49]: ../../rtl/verilog/fault_sm.v
+ option[50]: ../../rtl/verilog/generic_fifo_ctrl.v
+ option[51]: ../../rtl/verilog/generic_fifo.v
+ option[52]: ../../rtl/verilog/generic_mem_medium.v
+ option[53]: ../../rtl/verilog/generic_mem_small.v
+ option[54]: ../../rtl/verilog/meta_sync_single.v
+ option[55]: ../../rtl/verilog/meta_sync.v
+ option[56]: ../../rtl/verilog/rx_data_fifo.v
+ option[57]: ../../rtl/verilog/rx_dequeue.v
+ option[58]: ../../rtl/verilog/rx_enqueue.v
+ option[59]: ../../rtl/verilog/rx_hold_fifo.v
+ option[60]: ../../rtl/verilog/sync_clk_core.v
+ option[61]: ../../rtl/verilog/sync_clk_wb.v
+ option[62]: ../../rtl/verilog/sync_clk_xgmii_tx.v
+ option[63]: ../../rtl/verilog/tx_data_fifo.v
+ option[64]: ../../rtl/verilog/tx_dequeue.v
+ option[65]: ../../rtl/verilog/tx_enqueue.v
+ option[66]: ../../rtl/verilog/tx_hold_fifo.v
+ option[67]: ../../rtl/verilog/wishbone_if.v
+ option[68]: ../../rtl/verilog/xge_mac.v
+ option[69]: +incdir+../../rtl/include
+ option[70]: +incdir+../../testcases
+ option[71]: +incdir+../../testbench/uvm
+ option[72]: ../../testbench/uvm/intf_rst.sv
+ option[73]: ../../testbench/uvm/intf_wb.sv
+ option[74]: ../../testbench/uvm/intf_pkt_tx.sv
+ option[75]: ../../testbench/uvm/intf_pkt_rx.sv
+ option[76]: ../../testbench/uvm/tb_top_xge_mac.v
+ option[77]: ../../testbench/uvm/tb_prog.sv
+ option[78]: ../../testcases/testcase_base.sv
+ option[79]: ../../testcases/testcase_wb.sv
+ option[80]: ../../testcases/testcase_reset.sv
+ option[81]: ../../testcases/testcase_loopback_reset.sv
+ option[82]: +define+UVM_DIRECTC_OPTS
+ option[83]: -load
+ option[84]: /usr/synopsys/verdi/U-2023.03-SP2-2/share/PLI/VCS/LINUX64/libnovas.so:FSDBDumpCmd
 Chronologic Simulation VCS Release U-2023.03-SP2_Full64
 Linux 3.10.0-1160.105.1.el7.x86_64 #1 SMP Mon Nov 6 06:58:51 EST 2023 x86_64
 CPU cores: 8
@@ -195,7 +193,7 @@ maxproc		4096
 (Special)Runtime environment variables:
 
 Runtime environment variables:
-XDG_SESSION_ID=29577
+XDG_SESSION_ID=30878
 HOSTNAME=VLSI04.ucsc-extension.edu
 SYNOPSYS_TMAX=/usr/synopsys/syn/U-2022.12-SP7-1/
 SELINUX_ROLE_REQUESTED=
@@ -204,13 +202,13 @@ TERM=xterm-256color
 JASPERPATH=/usr/cadence/JASPER/bin
 HISTSIZE=1000
 SKIP_CDS_DIALOG=
-SSH_CLIENT=172.17.17.167 49366 22
+SSH_CLIENT=172.17.17.167 54314 22
 SIGRITYHOME=/usr/cadence/SIGRITY20211
 SELINUX_USE_CURRENT_RANGE=
 QTDIR=/usr/lib64/qt-3.3
 MVSHOME=/usr/cadence/MVS211
 QTINC=/usr/lib64/qt-3.3/include
-SSH_TTY=/dev/pts/43
+SSH_TTY=/dev/pts/48
 Formality_ESP=/usr/synopsys/esp/U-2022.12-SP5-2/
 QT_GRAPHICSSYSTEM_CHECKED=1
 USER=sf10274
@@ -224,7 +222,6 @@ VC_STATIC_HOME=/usr/synopsys/vc_static/U-2023.03-SP2/
 PATH=/usr/synopsys/vcs/U-2023.03-SP2/bin:/usr/synopsys/verdi/U-2023.03-SP2-2/bin:/usr/lib64/qt-3.3/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/usr/cadence/XCELIUM2009/tools/bin:/usr/cadence/XCELIUM2009/tools/dfII/bin:/usr/cadence/SIGRITY20211/tools/bin:/usr/cadence/SIGRITY20211/tools/dfII/bin:/usr/cadence/MVS211/tools/bin:/usr/cadence/MVS211/tools/dfII/bin:/usr/cadence/INNOVUS191/tools/bin:/usr/cadence/INNOVUS191/tools/dfII/bin:/usr/cadence/SSV211/tools/bin:/usr/cadence/SSV211/tools/dfII/bin:/usr/cadence/JASPER/bin:/usr/synopsys/syn/U-2022.12-SP7-1//bin:/synopsys/current/customcompiler/bin:#/synopsys/current/cdesigner/bin:/synopsys/current/cscope/ai_bin:#/synopsys/current/cx/bin:#/synopsys/current/dve/bin:/synopsys/current/esp/bin:/synopsys/current/fm/bin:/synopsys/current/hspice/hspice/linux64:#/synopsys/current/icc/bin:/synopsys/current/icc2/bin:/synopsys/current/idq/linux64/iddq/bin:/synopsys/current/lc/bin:#/synopsys/current/pts/bin:/synopsys/current/prime/bin:/synopsys/current/syn/amd64/syn/bin:#/synopsys/current/tx/amd64/syn/bin:/synopsys/current/txs/bin:#/synopsys/current/vcs-mx/bin:#/synopsys/current/vera/vera_vI-2014.03-2_linux/bin:#/synopsys/current/hercules/bin/AMD.64:/synopsys/current/fpga/bin:/synopsys/current/starrc/linux64_starrc/bin:/synopsys/current/icv/bin/linux64:/synopsys/current/vcstatic/bin:/synopsys/current/wv/bin:/synopsys/current/xa/bin:/synopsys/current/vcs/bin:/synopsys/current/spyglass/bin:/synopsys/current/verdi/bin:/synopsys/current/identity/bin:/synopsys/current/nt/bin:/usr/lib64:.:/home/sf10274/.local/bin:/home/sf10274/bin
 MAIL=/var/spool/mail/sf10274
 SYSTEM_CDS_LIB_DIR=/cdssetup
-_=./simv
 VERDI_HOME=/usr/synopsys/verdi/U-2023.03-SP2-2
 PWD=/home/sf10274/AlbertLand/0UVMgetinfo/lab-project-10gEthernetMAC/sim/uvm
 VCS_HOME=/usr/synopsys/vcs/U-2023.03-SP2
@@ -246,7 +243,7 @@ XCELIUMPATH=/usr/cadence/XCELIUM2009/tools/bin:/usr/cadence/XCELIUM2009/tools/df
 LOGNAME=sf10274
 CVS_RSH=ssh
 QTLIB=/usr/lib64/qt-3.3/lib
-SSH_CONNECTION=172.17.17.167 49366 10.20.250.17 22
+SSH_CONNECTION=172.17.17.167 54314 10.20.250.17 22
 SSVHOME=/usr/cadence/SSV211
 XDG_DATA_DIRS=/home/sf10274/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share
 CDS_LIC_FILE=27000@license.soe.ucsc.edu
@@ -254,10 +251,11 @@ LESSOPEN=||/usr/bin/lesspipe.sh %s
 OA_UNSUPPORTED_PLAT=linux_rhel50_gcc48x
 SYNPLIFYPRO_LICENSE_TYPE=synplifypremierdp
 SKIP_CDSLIB_MANAGER=
-DISPLAY=localhost:10.0
+DISPLAY=localhost:12.0
 XDG_RUNTIME_DIR=/run/user/2703
 XCELIUMHOME=/usr/cadence/XCELIUM2009
 MVSPATH=/usr/cadence/MVS211/tools/bin:/usr/cadence/MVS211/tools/dfII/bin
+_=./simv
 VCS_PATHMAP_PRELOAD_DONE=1
 VCS_STACK_EXEC=true
 VCS_EXEC_DONE=1
@@ -268,84 +266,84 @@ FLEXLM_BORROWFILE=/home/sf10274/.VLSI04.ucsc-extension.edu-borrow.txt
 Runtime command line arguments:
 argv[0]=simv
 argv[1]=-l
-argv[2]=simv.log
-argv[3]=+UVM_VERBOSITY=HIGH
-argv[4]=+UVM_TESTNAME=testcase_loopback
-273 profile - 100
-          CPU/Mem usage: 0.070 sys,  0.340 user,  305.49M mem
-274 Elapsed time:    0:00:01    Tue Jun 11 19:07:44 2024
-275 User CPU time used: 0 seconds
-276 System CPU time used: 0 seconds
-277 pliAppInit
-278 [SC]Init: MemoryConsumed=0.00MB ElapsedTime=0hour 0min. 0sec.
-279 FSDB_GATE is set.
-280 FSDB_RTL is set.
-281 FSDB_ALIAS_ARRAY_ELEM is set to 4294967295.
-282 Enable Parallel Dumping.
-283 pliAppMiscSet: New Sim Round
-284 pliEntryInit
-285 LIBSSCORE=found /usr/synopsys/verdi/U-2023.03-SP2-2/share/PLI/lib/LINUXAMD64/libsscore_vcs202303.so through $NOVAS_HOME setting.
-286 FSDB Dumper for VCS, Release Verdi_U-2023.03-SP2-2, Linux x86_64/64bit, 11/22/2023
-287 (C) 1996 - 2023 by Synopsys, Inc.
-288 DVDI_is_vir_unload_enabled is enable
-289 FSDB_VCS_ENABLE_NATIVE_VC is enable
-290 sps_call_fsdbDumpvars_vd_main at 0 : ../../testbench/uvm/tb_top_xge_mac.v(255)
-291 *Verdi* : Create FSDB file 'novas.fsdb'
-292 [spi_vcs_vd_ppi_create_root]: no upf option
-293 compile option from '/home/sf10274/AlbertLand/0UVMgetinfo/lab-project-10gEthernetMAC/sim/uvm/simv.daidir/vcs_rebuild'.
-294   "vcs '+define+ORIG_RESET+' '-full64' '+vcs+lic+wait' '-sverilog' '-l' 'vcs.log' '-override_timescale=1ps/1ps' '-ntb_opts' 'uvm-1.1' '-debug_access+all' '-kdb' '../../rtl/verilog/fault_sm.v' '../../rtl/verilog/generic_fifo_ctrl.v' '../../rtl/verilog/generic_fifo.v' '../../rtl/verilog/generic_mem_medium.v' '../../rtl/verilog/generic_mem_small.v' '../../rtl/verilog/meta_sync_single.v' '../../rtl/verilog/meta_sync.v' '../../rtl/verilog/rx_data_fifo.v' '../../rtl/verilog/rx_dequeue.v' '../../rtl/verilog/rx_enqueue.v' '../../rtl/verilog/rx_hold_fifo.v' '../../rtl/verilog/sync_clk_core.v' '../../rtl/verilog/sync_clk_wb.v' '../../rtl/verilog/sync_clk_xgmii_tx.v' '../../rtl/verilog/tx_data_fifo.v' '../../rtl/verilog/tx_dequeue.v' '../../rtl/verilog/tx_enqueue.v' '../../rtl/verilog/tx_hold_fifo.v' '../../rtl/verilog/wishbone_if.v' '../../rtl/verilog/xge_mac.v' '+incdir+../../rtl/include' '+incdir+../../testcases' '+incdir+../../testbench/uvm' '../../testbench/uvm/intf_rst.sv' '../../testbench/uvm/intf_wb.sv' '../../testbench/uvm/intf_pkt_tx.sv' '../../testbench/uvm/tb_top_xge_mac.v' '../../testbench/uvm/tb_prog.sv' '../../testcases/testcase_base.sv' '../../testcases/testcase_wb.sv' '../../testcases/testcase_reset.sv' '../../testcases/testcase_loopback.sv' '../../testcases/testcase_loopback_reset.sv' 2>&1"
-295 *Verdi* : Begin traversing the scopes, layer (0).
-296 *Verdi* : End of traversing.
-297 pliAppHDL_DumpVarComplete traverse var: profile - 
-          CPU/Mem usage: 0.070 sys,  0.380 user,  406.46M mem
-                   incr: 0.000 sys,  0.040 user,  9.36M mem
-                   accu: 0.000 sys,  0.040 user,  9.36M mem
-              accu incr: 0.000 sys,  0.040 user,  9.36M mem
+argv[2]=simv_testcase_reset.log
+argv[3]=+UVM_TESTNAME=testcase_reset
+270 profile - 100
+          CPU/Mem usage: 0.060 sys,  0.350 user,  332.14M mem
+271 Elapsed time:    0:00:01    Tue Jun 18 17:05:21 2024
+272 User CPU time used: 0 seconds
+273 System CPU time used: 0 seconds
+274 pliAppInit
+275 [SC]Init: MemoryConsumed=0.00MB ElapsedTime=0hour 0min. 0sec.
+276 FSDB_GATE is set.
+277 FSDB_RTL is set.
+278 FSDB_ALIAS_ARRAY_ELEM is set to 4294967295.
+279 Enable Parallel Dumping.
+280 pliAppMiscSet: New Sim Round
+281 pliEntryInit
+282 LIBSSCORE=found /usr/synopsys/verdi/U-2023.03-SP2-2/share/PLI/lib/LINUXAMD64/libsscore_vcs202303.so through $NOVAS_HOME setting.
+283 FSDB Dumper for VCS, Release Verdi_U-2023.03-SP2-2, Linux x86_64/64bit, 11/22/2023
+284 (C) 1996 - 2023 by Synopsys, Inc.
+285 DVDI_is_vir_unload_enabled is enable
+286 FSDB_VCS_ENABLE_NATIVE_VC is enable
+287 sps_call_fsdbDumpvars_vd_main at 0 : ../../testbench/uvm/tb_top_xge_mac.v(254)
+288 *Verdi* FSDB WARNING: The FSDB file already exists. Overwriting the FSDB file may crash the programs that are using this file.
+289 *Verdi* : Create FSDB file 'novas.fsdb'
+290 [spi_vcs_vd_ppi_create_root]: no upf option
+291 compile option from '/home/sf10274/AlbertLand/0UVMgetinfo/lab-project-10gEthernetMAC/sim/uvm/simv.daidir/vcs_rebuild'.
+292   "vcs '-full64' '+vcs+lic+wait' '-sverilog' '-l' 'vcs.log' '-override_timescale=1ps/1ps' '-ntb_opts' 'uvm-1.1' '-debug_access+all' '-kdb' '../../rtl/verilog/fault_sm.v' '../../rtl/verilog/generic_fifo_ctrl.v' '../../rtl/verilog/generic_fifo.v' '../../rtl/verilog/generic_mem_medium.v' '../../rtl/verilog/generic_mem_small.v' '../../rtl/verilog/meta_sync_single.v' '../../rtl/verilog/meta_sync.v' '../../rtl/verilog/rx_data_fifo.v' '../../rtl/verilog/rx_dequeue.v' '../../rtl/verilog/rx_enqueue.v' '../../rtl/verilog/rx_hold_fifo.v' '../../rtl/verilog/sync_clk_core.v' '../../rtl/verilog/sync_clk_wb.v' '../../rtl/verilog/sync_clk_xgmii_tx.v' '../../rtl/verilog/tx_data_fifo.v' '../../rtl/verilog/tx_dequeue.v' '../../rtl/verilog/tx_enqueue.v' '../../rtl/verilog/tx_hold_fifo.v' '../../rtl/verilog/wishbone_if.v' '../../rtl/verilog/xge_mac.v' '+incdir+../../rtl/include' '+incdir+../../testcases' '+incdir+../../testbench/uvm' '../../testbench/uvm/intf_rst.sv' '../../testbench/uvm/intf_wb.sv' '../../testbench/uvm/intf_pkt_tx.sv' '../../testbench/uvm/intf_pkt_rx.sv' '../../testbench/uvm/tb_top_xge_mac.v' '../../testbench/uvm/tb_prog.sv' '../../testcases/testcase_base.sv' '../../testcases/testcase_wb.sv' '../../testcases/testcase_reset.sv' '../../testcases/testcase_loopback_reset.sv' 2>&1"
+293 *Verdi* : Begin traversing the scopes, layer (0).
+294 *Verdi* : End of traversing.
+295 pliAppHDL_DumpVarComplete traverse var: profile - 
+          CPU/Mem usage: 0.070 sys,  0.390 user,  432.93M mem
+                   incr: 0.010 sys,  0.030 user,  9.15M mem
+                   accu: 0.010 sys,  0.030 user,  9.15M mem
+              accu incr: 0.010 sys,  0.030 user,  9.15M mem
 
-          Count usage: 819 var,  497 idcode,  352 callback
-                 incr: 819 var,  497 idcode,  352 callback
-                 accu: 819 var,  497 idcode,  352 callback
-            accu incr: 819 var,  497 idcode,  352 callback
-298 Elapsed time:    0:00:01    Tue Jun 11 19:07:44 2024
-299 User CPU time used: 0 seconds
-300 System CPU time used: 0 seconds
-301 pliAppHDL_DumpVarComplete: profile - 
-          CPU/Mem usage: 0.080 sys,  0.380 user,  407.52M mem
-                   incr: 0.010 sys,  0.000 user,  1.05M mem
-                   accu: 0.010 sys,  0.040 user,  10.41M mem
-              accu incr: 0.010 sys,  0.000 user,  1.05M mem
+          Count usage: 831 var,  522 idcode,  373 callback
+                 incr: 831 var,  522 idcode,  373 callback
+                 accu: 831 var,  522 idcode,  373 callback
+            accu incr: 831 var,  522 idcode,  373 callback
+296 Elapsed time:    0:00:02    Tue Jun 18 17:05:22 2024
+297 User CPU time used: 0 seconds
+298 System CPU time used: 0 seconds
+299 pliAppHDL_DumpVarComplete: profile - 
+          CPU/Mem usage: 0.070 sys,  0.390 user,  433.99M mem
+                   incr: 0.000 sys,  0.000 user,  1.05M mem
+                   accu: 0.010 sys,  0.030 user,  10.21M mem
+              accu incr: 0.000 sys,  0.000 user,  1.05M mem
 
-          Count usage: 819 var,  497 idcode,  352 callback
+          Count usage: 831 var,  522 idcode,  373 callback
                  incr: 0 var,  0 idcode,  0 callback
-                 accu: 819 var,  497 idcode,  352 callback
+                 accu: 831 var,  522 idcode,  373 callback
             accu incr: 0 var,  0 idcode,  0 callback
-302 Elapsed time:    0:00:01    Tue Jun 11 19:07:44 2024
-303 User CPU time used: 0 seconds
-304 System CPU time used: 0 seconds
-305 End of simulation at 2275200
-306 Memory usage: 408.850 M
-307 Maximum resident set size: 110 MB
-308 Hard page faults: 0
-309 Soft page faults: 41465
-310 Elapsed time:    0:00:01    Tue Jun 11 19:07:44 2024
-311 User CPU time used: 0 seconds
-312 System CPU time used: 0 seconds
-313 Begin FSDB profile info:
-314 FSDB Writer : bc1(6847) bcn(2005) mtf/stf(0/0)
-FSDB Writer elapsed time : flush(0.096343) io wait(0.000000) theadpool wait(0.000000)
+300 Elapsed time:    0:00:02    Tue Jun 18 17:05:22 2024
+301 User CPU time used: 0 seconds
+302 System CPU time used: 0 seconds
+303 End of simulation at 5016000
+304 Memory usage: 435.458 M
+305 Maximum resident set size: 121 MB
+306 Hard page faults: 0
+307 Soft page faults: 44496
+308 Elapsed time:    0:00:02    Tue Jun 18 17:05:22 2024
+309 User CPU time used: 0 seconds
+310 System CPU time used: 0 seconds
+311 Begin FSDB profile info:
+312 FSDB Writer : bc1(23833) bcn(341) mtf/stf(0/0)
+FSDB Writer elapsed time : flush(0.002658) io wait(0.000000) theadpool wait(0.000000)
 FSDB Writer cpu time : MT Compression : 0
-315 End FSDB profile info
-316 FSDB closed. Name: novas.fsdb Size: 45499
-317 Parallel profile     - ProducerThread:1 ConsumerThread:1 Buffer:64MB
-318                      - BlockUsed:1 Acquire:0 BufferUsed:126820
-319                      - Flush:2 Expand:0 ProducerWait:0 ConsumerWait:0
-320                      - MainProducerTime:0.504961966 TotalConsumerTime:0.000000000
-321                      - ElapsedTime:1.124298000
-322 Producer   0 profile - BlockUsed:2 Acquire:0 BufferUsed:126820
-323 Consumer   0 profile - Affinity:-1 CPUTime:0.000000000 LifeTime:0.000000000 (-nan%)
-324                      - BlockUsed:2 Acquire:0 BufferUsed:126820
-325 SimExit
-326 Elapsed time:    0:00:02    Tue Jun 11 19:07:45 2024
-327 User CPU time used: 0 seconds
-328 System CPU time used: 0 seconds
-329 Sim process exit
+313 End FSDB profile info
+314 FSDB closed. Name: novas.fsdb Size: 42809
+315 Parallel profile     - ProducerThread:1 ConsumerThread:1 Buffer:64MB
+316                      - BlockUsed:1 Acquire:0 BufferUsed:292785
+317                      - Flush:2 Expand:0 ProducerWait:0 ConsumerWait:0
+318                      - MainProducerTime:0.593544144 TotalConsumerTime:0.000000000
+319                      - ElapsedTime:1.072502000
+320 Producer   0 profile - BlockUsed:2 Acquire:0 BufferUsed:292785
+321 Consumer   0 profile - Affinity:-1 CPUTime:0.000000000 LifeTime:0.000000000 (-nan%)
+322                      - BlockUsed:2 Acquire:0 BufferUsed:292785
+323 SimExit
+324 Elapsed time:    0:00:03    Tue Jun 18 17:05:23 2024
+325 User CPU time used: 0 seconds
+326 System CPU time used: 0 seconds
+327 Sim process exit

@@ -1,0 +1,1281 @@
+Command: /home/sf10274/AlbertLand/0UVMgetinfo/lab-project-10gEthernetMAC/sim/uvm/./simv -l simv.log +UVM_VERBOSITY=HIGH +UVM_TESTNAME=testcase_wb
+Chronologic VCS simulator copyright 1991-2023
+Contains Synopsys proprietary information.
+Compiler version U-2023.03-SP2_Full64; Runtime version U-2023.03-SP2_Full64;  Jun 18 07:50 2024
+----------------------------------------------------------------
+UVM-1.1d.Synopsys
+(C) 2007-2013 Mentor Graphics Corporation
+(C) 2007-2013 Cadence Design Systems, Inc.
+(C) 2006-2013 Synopsys, Inc.
+(C) 2011-2013 Cypress Semiconductor Corp.
+----------------------------------------------------------------
+
+  ***********       IMPORTANT RELEASE NOTES         ************
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_NO_DEPRECATED undefined.
+  See http://www.eda.org/svdb/view.php?id=3313 for more details.
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+  See http://www.eda.org/svdb/view.php?id=3770 for more details.
+
+      (Specify +UVM_NO_RELNOTES to turn off this notice)
+
+not using ORIG_RESET
+*Verdi* Loading libsscore_vcs202303.so
+FSDB Dumper for VCS, Release Verdi_U-2023.03-SP2-2, Linux x86_64/64bit, 11/22/2023
+(C) 1996 - 2023 by Synopsys, Inc.
+*Verdi* : Create FSDB file 'novas.fsdb'
+*Verdi* : Begin traversing the scopes, layer (0).
+*Verdi* : End of traversing.
+XAC hello from tb_prog
+UVM_INFO @ 0: reporter [RNTST] Running test testcase_wb...
+UVM_INFO @ 0: reporter [UVMTOP] UVM testbench topology:
+--------------------------------------------------------------------------
+Name                       Type                                Size  Value
+--------------------------------------------------------------------------
+uvm_test_top               testcase_wb                         -     @460 
+  env_0                    env                                 -     @468 
+    agent_pkt_rx_0         agent_pkt_rx                        -     @638 
+      analysis_port        uvm_analysis_port                   -     @789 
+      monitor_pkt_rx_0     monitor_pkt_rx                      -     @781 
+        ap                 uvm_analysis_port                   -     @798 
+      sequencer_pkt_rx_0   uvm_sequencer                       -     @658 
+        rsp_export         uvm_analysis_export                 -     @666 
+        seq_item_export    uvm_seq_item_pull_imp               -     @772 
+        arbitration_queue  array                               0     -    
+        lock_queue         array                               0     -    
+        num_last_reqs      integral                            32    'd1  
+        num_last_rsps      integral                            32    'd1  
+    agent_pkt_tx_0         agent_pkt_tx                        -     @630 
+      analysis_port        uvm_analysis_port                   -     @974 
+      driver_pkt_tx_0      driver_pkt_tx                       -     @940 
+        rsp_port           uvm_analysis_port                   -     @957 
+        seq_item_port      uvm_seq_item_pull_port              -     @948 
+      monitor_pkt_tx_0     monitor_pkt_tx                      -     @966 
+        ap                 uvm_analysis_port                   -     @984 
+      sequencer_pkt_tx_0   uvm_sequencer                       -     @817 
+        rsp_export         uvm_analysis_export                 -     @825 
+        seq_item_export    uvm_seq_item_pull_imp               -     @931 
+        arbitration_queue  array                               0     -    
+        lock_queue         array                               0     -    
+        num_last_reqs      integral                            32    'd1  
+        num_last_rsps      integral                            32    'd1  
+    agent_reset_0          agent_reset                         -     @614 
+      driver_reset_0       driver_reset                        -     @1126
+        rsp_port           uvm_analysis_port                   -     @1143
+        seq_item_port      uvm_seq_item_pull_port              -     @1134
+      sequencer_reset_0    uvm_sequencer                       -     @1003
+        rsp_export         uvm_analysis_export                 -     @1011
+        seq_item_export    uvm_seq_item_pull_imp               -     @1117
+        arbitration_queue  array                               0     -    
+        lock_queue         array                               0     -    
+        num_last_reqs      integral                            32    'd1  
+        num_last_rsps      integral                            32    'd1  
+    agent_wb_0             agent_wb                            -     @622 
+      driver_wb_0          driver_wb                           -     @1285
+        rsp_port           uvm_analysis_port                   -     @1302
+        seq_item_port      uvm_seq_item_pull_port              -     @1293
+      sequencer_wb_0       uvm_sequencer                       -     @1162
+        rsp_export         uvm_analysis_export                 -     @1170
+        seq_item_export    uvm_seq_item_pull_imp               -     @1276
+        arbitration_queue  array                               0     -    
+        lock_queue         array                               0     -    
+        num_last_reqs      integral                            32    'd1  
+        num_last_rsps      integral                            32    'd1  
+    scoreboard_pkt_0       scoreboard_pkt                      -     @646 
+      comparator           uvm_in_order_class_comparator #(T)  -     @1317
+        after              uvm_tlm_analysis_fifo #(T)          -     @1405
+          analysis_export  uvm_analysis_imp                    -     @1449
+          get_ap           uvm_analysis_port                   -     @1440
+          get_peek_export  uvm_get_peek_imp                    -     @1422
+          put_ap           uvm_analysis_port                   -     @1431
+          put_export       uvm_put_imp                         -     @1413
+        after_export       uvm_analysis_export                 -     @1334
+        before             uvm_tlm_analysis_fifo #(T)          -     @1352
+          analysis_export  uvm_analysis_imp                    -     @1396
+          get_ap           uvm_analysis_port                   -     @1387
+          get_peek_export  uvm_get_peek_imp                    -     @1369
+          put_ap           uvm_analysis_port                   -     @1378
+          put_export       uvm_put_imp                         -     @1360
+        before_export      uvm_analysis_export                 -     @1325
+        pair_ap            uvm_analysis_port                   -     @1343
+      from_agent_in        uvm_analysis_export                 -     @1467
+      from_agent_out       uvm_analysis_export                 -     @1458
+  virtual_sequencer_0      virtual_sequencer                   -     @491 
+    rsp_export             uvm_analysis_export                 -     @499 
+    seq_item_export        uvm_seq_item_pull_imp               -     @605 
+    arbitration_queue      array                               0     -    
+    lock_queue             array                               0     -    
+    num_last_reqs          integral                            32    'd1  
+    num_last_rsps          integral                            32    'd1  
+--------------------------------------------------------------------------
+
+
+#### Factory Configuration (*)
+
+  No instance or type overrides are registered with this factory
+
+All types registered with the factory: 72 total
+(types without type names will not be printed)
+
+  Type Name
+  ---------
+  agent_pkt_rx
+  agent_pkt_tx
+  agent_reset
+  agent_wb
+  data_pkt
+  data_reset
+  data_wb
+  driver_pkt_tx
+  driver_reset
+  driver_wb
+  env
+  monitor_pkt_rx
+  monitor_pkt_tx
+  scoreboard_pkt
+  sequence_pkt_rx
+  sequence_pkt_tx
+  sequence_reset
+  sequence_wb
+  snps_uvm_reg_bank_group
+  snps_uvm_reg_map
+  testcase_base
+  testcase_loopback
+  testcase_loopback_reset
+  testcase_reset
+  testcase_wb
+  virtual_sequence
+  virtual_sequence_wb
+  virtual_sequencer
+(*) Types with no associated type name will be printed as <unknown>
+
+####
+
+UVM_INFO @ 0: reporter [UVMTOP] UVM testbench topology:
+--------------------------------------------------------------------------
+Name                       Type                                Size  Value
+--------------------------------------------------------------------------
+uvm_test_top               testcase_wb                         -     @460 
+  env_0                    env                                 -     @468 
+    agent_pkt_rx_0         agent_pkt_rx                        -     @638 
+      analysis_port        uvm_analysis_port                   -     @789 
+      monitor_pkt_rx_0     monitor_pkt_rx                      -     @781 
+        ap                 uvm_analysis_port                   -     @798 
+      sequencer_pkt_rx_0   uvm_sequencer                       -     @658 
+        rsp_export         uvm_analysis_export                 -     @666 
+        seq_item_export    uvm_seq_item_pull_imp               -     @772 
+        arbitration_queue  array                               0     -    
+        lock_queue         array                               0     -    
+        num_last_reqs      integral                            32    'd1  
+        num_last_rsps      integral                            32    'd1  
+    agent_pkt_tx_0         agent_pkt_tx                        -     @630 
+      analysis_port        uvm_analysis_port                   -     @974 
+      driver_pkt_tx_0      driver_pkt_tx                       -     @940 
+        rsp_port           uvm_analysis_port                   -     @957 
+        seq_item_port      uvm_seq_item_pull_port              -     @948 
+      monitor_pkt_tx_0     monitor_pkt_tx                      -     @966 
+        ap                 uvm_analysis_port                   -     @984 
+      sequencer_pkt_tx_0   uvm_sequencer                       -     @817 
+        rsp_export         uvm_analysis_export                 -     @825 
+        seq_item_export    uvm_seq_item_pull_imp               -     @931 
+        arbitration_queue  array                               0     -    
+        lock_queue         array                               0     -    
+        num_last_reqs      integral                            32    'd1  
+        num_last_rsps      integral                            32    'd1  
+    agent_reset_0          agent_reset                         -     @614 
+      driver_reset_0       driver_reset                        -     @1126
+        rsp_port           uvm_analysis_port                   -     @1143
+        seq_item_port      uvm_seq_item_pull_port              -     @1134
+      sequencer_reset_0    uvm_sequencer                       -     @1003
+        rsp_export         uvm_analysis_export                 -     @1011
+        seq_item_export    uvm_seq_item_pull_imp               -     @1117
+        arbitration_queue  array                               0     -    
+        lock_queue         array                               0     -    
+        num_last_reqs      integral                            32    'd1  
+        num_last_rsps      integral                            32    'd1  
+    agent_wb_0             agent_wb                            -     @622 
+      driver_wb_0          driver_wb                           -     @1285
+        rsp_port           uvm_analysis_port                   -     @1302
+        seq_item_port      uvm_seq_item_pull_port              -     @1293
+      sequencer_wb_0       uvm_sequencer                       -     @1162
+        rsp_export         uvm_analysis_export                 -     @1170
+        seq_item_export    uvm_seq_item_pull_imp               -     @1276
+        arbitration_queue  array                               0     -    
+        lock_queue         array                               0     -    
+        num_last_reqs      integral                            32    'd1  
+        num_last_rsps      integral                            32    'd1  
+    scoreboard_pkt_0       scoreboard_pkt                      -     @646 
+      comparator           uvm_in_order_class_comparator #(T)  -     @1317
+        after              uvm_tlm_analysis_fifo #(T)          -     @1405
+          analysis_export  uvm_analysis_imp                    -     @1449
+          get_ap           uvm_analysis_port                   -     @1440
+          get_peek_export  uvm_get_peek_imp                    -     @1422
+          put_ap           uvm_analysis_port                   -     @1431
+          put_export       uvm_put_imp                         -     @1413
+        after_export       uvm_analysis_export                 -     @1334
+        before             uvm_tlm_analysis_fifo #(T)          -     @1352
+          analysis_export  uvm_analysis_imp                    -     @1396
+          get_ap           uvm_analysis_port                   -     @1387
+          get_peek_export  uvm_get_peek_imp                    -     @1369
+          put_ap           uvm_analysis_port                   -     @1378
+          put_export       uvm_put_imp                         -     @1360
+        before_export      uvm_analysis_export                 -     @1325
+        pair_ap            uvm_analysis_port                   -     @1343
+      from_agent_in        uvm_analysis_export                 -     @1467
+      from_agent_out       uvm_analysis_export                 -     @1458
+  virtual_sequencer_0      virtual_sequencer                   -     @491 
+    rsp_export             uvm_analysis_export                 -     @499 
+    seq_item_export        uvm_seq_item_pull_imp               -     @605 
+    arbitration_queue      array                               0     -    
+    lock_queue             array                               0     -    
+    num_last_reqs          integral                            32    'd1  
+    num_last_rsps          integral                            32    'd1  
+--------------------------------------------------------------------------
+
+
+#### Factory Configuration (*)
+
+  No instance or type overrides are registered with this factory
+
+All types registered with the factory: 72 total
+(types without type names will not be printed)
+
+  Type Name
+  ---------
+  agent_pkt_rx
+  agent_pkt_tx
+  agent_reset
+  agent_wb
+  data_pkt
+  data_reset
+  data_wb
+  driver_pkt_tx
+  driver_reset
+  driver_wb
+  env
+  monitor_pkt_rx
+  monitor_pkt_tx
+  scoreboard_pkt
+  sequence_pkt_rx
+  sequence_pkt_tx
+  sequence_reset
+  sequence_wb
+  snps_uvm_reg_bank_group
+  snps_uvm_reg_map
+  testcase_base
+  testcase_loopback
+  testcase_loopback_reset
+  testcase_reset
+  testcase_wb
+  virtual_sequence
+  virtual_sequence_wb
+  virtual_sequencer
+(*) Types with no associated type name will be printed as <unknown>
+
+####
+
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(35) @ 0: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [monitor_pkt_rx_0] HIERARCHY: $unit::\monitor_pkt_rx::run_phase 
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(40) @ 0: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon drive pkt_rx_ren to 1
+UVM_INFO ../../testbench/uvm/driver_pkt_tx.sv(28) @ 0: uvm_test_top.env_0.agent_pkt_tx_0.driver_pkt_tx_0 [DRIVER_PKT_TX] HIERARCHY: %m
+UVM_INFO ../../testbench/uvm/driver_pkt_tx.sv(33) @ 0: uvm_test_top.env_0.agent_pkt_tx_0.driver_pkt_tx_0 [DRIVER_PKT_TX] before get_next
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(35) @ 0: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [monitor_pkt_tx_0] HIERARCHY: $unit::\monitor_pkt_tx::run_phase 
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(40) @ 0: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon drive pkt_tx_ren to 1
+UVM_INFO ../../testbench/uvm/driver_reset.sv(25) @ 0: uvm_test_top.env_0.agent_reset_0.driver_reset_0 [DRIVER CLASS] HIERARCHY: %m
+UVM_INFO ../../testbench/uvm/driver_wb.sv(25) @ 0: uvm_test_top.env_0.agent_wb_0.driver_wb_0 [WB DRIVER CLASS] HIERARCHY: %m
+UVM_INFO ../../testbench/uvm/driver_wb.sv(29) @ 0: uvm_test_top.env_0.agent_wb_0.driver_wb_0 [WB DRIVER ] wait for next_item
+UVM_INFO ../../testbench/uvm/virtual_sequence_wb.sv(16) @ 0: reporter@@virtual_sequence_wb [virtual_sequence_wb] Hierarchy: $unit::\virtual_sequence_wb::new 
+UVM_INFO ../../testbench/uvm/sequence_reset.sv(18) @ 0: uvm_test_top.env_0.agent_reset_0.sequencer_reset_0@@virtual_sequence_wb.sequence_reset_0 [Hey from RESET Sequence aka Generator] producing stim in body!
+UVM_INFO ../../testbench/uvm/driver_reset.sv(31) @ 0: uvm_test_top.env_0.agent_reset_0.driver_reset_0 [RESET DRIVER run_phase received this packet ] ----------------------------------------------------------------------------------------------------------------------
+Name                           Type        Size  Value                                                                
+----------------------------------------------------------------------------------------------------------------------
+req                            data_reset  -     @1533                                                                
+  reset_                       integral    1     'h0                                                                  
+  cycles                       integral    32    'h3                                                                  
+  begin_time                   time        64    0                                                                    
+  depth                        int         32    'd3                                                                  
+  parent sequence (name)       string      16    sequence_reset_0                                                     
+  parent sequence (full name)  string      69    uvm_test_top.virtual_sequencer_0.virtual_sequence_wb.sequence_reset_0
+  sequencer                    string      50    uvm_test_top.env_0.agent_reset_0.sequencer_reset_0                   
+----------------------------------------------------------------------------------------------------------------------
+
+UVM_INFO ../../testbench/uvm/driver_reset.sv(32) @ 0: uvm_test_top.env_0.agent_reset_0.driver_reset_0 [RESET DRIVER] driving to active reset state
+UVM_INFO ../../testbench/uvm/driver_reset.sv(39) @ 0: uvm_test_top.env_0.agent_reset_0.driver_reset_0 [XAC RESET DRIVER right before wait] ----------------------------------------------------------------------------------------------------------------------
+Name                           Type        Size  Value                                                                
+----------------------------------------------------------------------------------------------------------------------
+req                            data_reset  -     @1533                                                                
+  reset_                       integral    1     'h0                                                                  
+  cycles                       integral    32    'h3                                                                  
+  begin_time                   time        64    0                                                                    
+  depth                        int         32    'd3                                                                  
+  parent sequence (name)       string      16    sequence_reset_0                                                     
+  parent sequence (full name)  string      69    uvm_test_top.virtual_sequencer_0.virtual_sequence_wb.sequence_reset_0
+  sequencer                    string      50    uvm_test_top.env_0.agent_reset_0.sequencer_reset_0                   
+----------------------------------------------------------------------------------------------------------------------
+
+XAC PKT_RX_MON pkt_rx_ren is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(44) @ 3200: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon wait for pkt_rx_val
+PKT_RX_MON pkt_rx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(67) @ 3200: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(40) @ 3200: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon drive pkt_rx_ren to 1
+XAC PKT_RX_MON pkt_rx_ten is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(44) @ 3200: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon wait for pkt_tx_val
+PKT_RX_MON pkt_tx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(67) @ 3200: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(40) @ 3200: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon drive pkt_tx_ren to 1
+XAC PKT_RX_MON pkt_rx_ren is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(44) @ 6400: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon wait for pkt_rx_val
+PKT_RX_MON pkt_rx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(67) @ 6400: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(40) @ 6400: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon drive pkt_rx_ren to 1
+XAC PKT_RX_MON pkt_rx_ten is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(44) @ 6400: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon wait for pkt_tx_val
+PKT_RX_MON pkt_tx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(67) @ 6400: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(40) @ 6400: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon drive pkt_tx_ren to 1
+XAC PKT_RX_MON pkt_rx_ren is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(44) @ 9600: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon wait for pkt_rx_val
+PKT_RX_MON pkt_rx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(67) @ 9600: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(40) @ 9600: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon drive pkt_rx_ren to 1
+XAC PKT_RX_MON pkt_rx_ten is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(44) @ 9600: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon wait for pkt_tx_val
+PKT_RX_MON pkt_tx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(67) @ 9600: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(40) @ 9600: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon drive pkt_tx_ren to 1
+XAC PKT_RX_MON pkt_rx_ren is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(44) @ 12800: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon wait for pkt_rx_val
+PKT_RX_MON pkt_rx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(67) @ 12800: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(40) @ 12800: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon drive pkt_rx_ren to 1
+XAC PKT_RX_MON pkt_rx_ten is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(44) @ 12800: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon wait for pkt_tx_val
+PKT_RX_MON pkt_tx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(67) @ 12800: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(40) @ 12800: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon drive pkt_tx_ren to 1
+XAC PKT_RX_MON pkt_rx_ren is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(44) @ 16000: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon wait for pkt_rx_val
+PKT_RX_MON pkt_rx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(67) @ 16000: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(40) @ 16000: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon drive pkt_rx_ren to 1
+XAC PKT_RX_MON pkt_rx_ten is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(44) @ 16000: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon wait for pkt_tx_val
+PKT_RX_MON pkt_tx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(67) @ 16000: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(40) @ 16000: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon drive pkt_tx_ren to 1
+UVM_INFO ../../testbench/uvm/driver_reset.sv(43) @ 16000: uvm_test_top.env_0.agent_reset_0.driver_reset_0 [RESET DRIVER] driving to de-active reset state
+UVM_INFO ../../testbench/uvm/driver_reset.sv(49) @ 16000: uvm_test_top.env_0.agent_reset_0.driver_reset_0 [XAC RESET DRIVER right after wait] ----------------------------------------------------------------------------------------------------------------------
+Name                           Type        Size  Value                                                                
+----------------------------------------------------------------------------------------------------------------------
+req                            data_reset  -     @1533                                                                
+  reset_                       integral    1     'h0                                                                  
+  cycles                       integral    32    'h3                                                                  
+  begin_time                   time        64    0                                                                    
+  depth                        int         32    'd3                                                                  
+  parent sequence (name)       string      16    sequence_reset_0                                                     
+  parent sequence (full name)  string      69    uvm_test_top.virtual_sequencer_0.virtual_sequence_wb.sequence_reset_0
+  sequencer                    string      50    uvm_test_top.env_0.agent_reset_0.sequencer_reset_0                   
+----------------------------------------------------------------------------------------------------------------------
+
+XAC PKT_RX_MON pkt_rx_ren is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(44) @ 19200: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon wait for pkt_rx_val
+PKT_RX_MON pkt_rx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(67) @ 19200: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(40) @ 19200: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon drive pkt_rx_ren to 1
+XAC PKT_RX_MON pkt_rx_ten is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(44) @ 19200: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon wait for pkt_tx_val
+PKT_RX_MON pkt_tx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(67) @ 19200: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(40) @ 19200: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon drive pkt_tx_ren to 1
+XAC PKT_RX_MON pkt_rx_ren is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(44) @ 22400: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon wait for pkt_rx_val
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(46) @ 22400: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon got pkt_rx_val
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(51) @ 22400: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon wait for sop and eop 
+PKT_RX_MON pkt_rx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(67) @ 22400: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(40) @ 22400: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon drive pkt_rx_ren to 1
+XAC PKT_RX_MON pkt_rx_ten is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(44) @ 22400: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon wait for pkt_tx_val
+PKT_RX_MON pkt_tx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(67) @ 22400: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(40) @ 22400: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon drive pkt_tx_ren to 1
+XAC PKT_RX_MON pkt_rx_ren is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(44) @ 25600: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon wait for pkt_rx_val
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(46) @ 25600: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon got pkt_rx_val
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(51) @ 25600: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon wait for sop and eop 
+PKT_RX_MON pkt_rx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(67) @ 25600: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(40) @ 25600: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon drive pkt_rx_ren to 1
+XAC PKT_RX_MON pkt_rx_ten is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(44) @ 25600: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon wait for pkt_tx_val
+PKT_RX_MON pkt_tx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(67) @ 25600: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(40) @ 25600: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon drive pkt_tx_ren to 1
+UVM_INFO ../../testbench/uvm/sequence_wb.sv(24) @ 26000: uvm_test_top.env_0.agent_wb_0.sequencer_wb_0@@virtual_sequence_wb.sequence_wb_0 [XAC Hey from WB Sequence aka Generator] producing stim in body!
+XAC Hey from Sequence aka Generator start_item producing addr=ab data=00112233
+UVM_INFO ../../testbench/uvm/driver_wb.sv(31) @ 26000: uvm_test_top.env_0.agent_wb_0.driver_wb_0 [WB DRIVER ] got next_item
+UVM_INFO ../../testbench/uvm/driver_wb.sv(33) @ 26000: uvm_test_top.env_0.agent_wb_0.driver_wb_0 [WB DRIVER run_phase received this packet ] -----------------------------------------------------------------------------------------------------------------
+Name                           Type      Size  Value                                                             
+-----------------------------------------------------------------------------------------------------------------
+req                            data_wb   -     @1551                                                             
+  adr                          integral  8     'hab                                                              
+  dat_i                        integral  32    'h112233                                                          
+  dat_o                        integral  32    'h0                                                               
+  cyc                          integral  1     'h0                                                               
+  we                           integral  1     'h1                                                               
+  stb                          integral  1     'h0                                                               
+  begin_time                   time      64    26000                                                             
+  depth                        int       32    'd3                                                               
+  parent sequence (name)       string    13    sequence_wb_0                                                     
+  parent sequence (full name)  string    66    uvm_test_top.virtual_sequencer_0.virtual_sequence_wb.sequence_wb_0
+  sequencer                    string    44    uvm_test_top.env_0.agent_wb_0.sequencer_wb_0                      
+-----------------------------------------------------------------------------------------------------------------
+
+XAC PKT_RX_MON pkt_rx_ren is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(44) @ 28800: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon wait for pkt_rx_val
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(46) @ 28800: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon got pkt_rx_val
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(51) @ 28800: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon wait for sop and eop 
+PKT_RX_MON pkt_rx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(67) @ 28800: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(40) @ 28800: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon drive pkt_rx_ren to 1
+XAC PKT_RX_MON pkt_rx_ten is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(44) @ 28800: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon wait for pkt_tx_val
+PKT_RX_MON pkt_tx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(67) @ 28800: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(40) @ 28800: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon drive pkt_tx_ren to 1
+XAC PKT_RX_MON pkt_rx_ren is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(44) @ 32000: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon wait for pkt_rx_val
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(46) @ 32000: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon got pkt_rx_val
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(51) @ 32000: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon wait for sop and eop 
+PKT_RX_MON pkt_rx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(67) @ 32000: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(40) @ 32000: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon drive pkt_rx_ren to 1
+XAC PKT_RX_MON pkt_rx_ten is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(44) @ 32000: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon wait for pkt_tx_val
+PKT_RX_MON pkt_tx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(67) @ 32000: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(40) @ 32000: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon drive pkt_tx_ren to 1
+XAC PKT_RX_MON pkt_rx_ren is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(44) @ 35200: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon wait for pkt_rx_val
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(46) @ 35200: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon got pkt_rx_val
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(51) @ 35200: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon wait for sop and eop 
+PKT_RX_MON pkt_rx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(67) @ 35200: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(40) @ 35200: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon drive pkt_rx_ren to 1
+XAC PKT_RX_MON pkt_rx_ten is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(44) @ 35200: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon wait for pkt_tx_val
+PKT_RX_MON pkt_tx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(67) @ 35200: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(40) @ 35200: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon drive pkt_tx_ren to 1
+XAC PKT_RX_MON pkt_rx_ren is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(44) @ 38400: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon wait for pkt_rx_val
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(46) @ 38400: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon got pkt_rx_val
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(51) @ 38400: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon wait for sop and eop 
+PKT_RX_MON pkt_rx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(67) @ 38400: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(40) @ 38400: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon drive pkt_rx_ren to 1
+XAC PKT_RX_MON pkt_rx_ten is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(44) @ 38400: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon wait for pkt_tx_val
+PKT_RX_MON pkt_tx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(67) @ 38400: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(40) @ 38400: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon drive pkt_tx_ren to 1
+UVM_INFO ../../testbench/uvm/driver_wb.sv(29) @ 41600: uvm_test_top.env_0.agent_wb_0.driver_wb_0 [WB DRIVER ] wait for next_item
+XAC PKT_RX_MON pkt_rx_ren is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(44) @ 41600: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon wait for pkt_rx_val
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(46) @ 41600: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon got pkt_rx_val
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(51) @ 41600: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon wait for sop and eop 
+PKT_RX_MON pkt_rx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(67) @ 41600: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(40) @ 41600: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon drive pkt_rx_ren to 1
+XAC PKT_RX_MON pkt_rx_ten is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(44) @ 41600: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon wait for pkt_tx_val
+PKT_RX_MON pkt_tx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(67) @ 41600: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(40) @ 41600: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon drive pkt_tx_ren to 1
+XAC Hey from Sequence aka Generator start_item producing addr=cd data=33001122
+UVM_INFO ../../testbench/uvm/driver_wb.sv(31) @ 41600: uvm_test_top.env_0.agent_wb_0.driver_wb_0 [WB DRIVER ] got next_item
+UVM_INFO ../../testbench/uvm/driver_wb.sv(33) @ 41600: uvm_test_top.env_0.agent_wb_0.driver_wb_0 [WB DRIVER run_phase received this packet ] -----------------------------------------------------------------------------------------------------------------
+Name                           Type      Size  Value                                                             
+-----------------------------------------------------------------------------------------------------------------
+req                            data_wb   -     @1576                                                             
+  adr                          integral  8     'hcd                                                              
+  dat_i                        integral  32    'h33001122                                                        
+  dat_o                        integral  32    'h0                                                               
+  cyc                          integral  1     'h0                                                               
+  we                           integral  1     'h1                                                               
+  stb                          integral  1     'h0                                                               
+  begin_time                   time      64    41600                                                             
+  depth                        int       32    'd3                                                               
+  parent sequence (name)       string    13    sequence_wb_0                                                     
+  parent sequence (full name)  string    66    uvm_test_top.virtual_sequencer_0.virtual_sequence_wb.sequence_wb_0
+  sequencer                    string    44    uvm_test_top.env_0.agent_wb_0.sequencer_wb_0                      
+-----------------------------------------------------------------------------------------------------------------
+
+XAC PKT_RX_MON pkt_rx_ren is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(44) @ 44800: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon wait for pkt_rx_val
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(46) @ 44800: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon got pkt_rx_val
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(51) @ 44800: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon wait for sop and eop 
+PKT_RX_MON pkt_rx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(67) @ 44800: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(40) @ 44800: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon drive pkt_rx_ren to 1
+XAC PKT_RX_MON pkt_rx_ten is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(44) @ 44800: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon wait for pkt_tx_val
+PKT_RX_MON pkt_tx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(67) @ 44800: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(40) @ 44800: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon drive pkt_tx_ren to 1
+XAC PKT_RX_MON pkt_rx_ren is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(44) @ 48000: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon wait for pkt_rx_val
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(46) @ 48000: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon got pkt_rx_val
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(51) @ 48000: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon wait for sop and eop 
+PKT_RX_MON pkt_rx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(67) @ 48000: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(40) @ 48000: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon drive pkt_rx_ren to 1
+XAC PKT_RX_MON pkt_rx_ten is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(44) @ 48000: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon wait for pkt_tx_val
+PKT_RX_MON pkt_tx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(67) @ 48000: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(40) @ 48000: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon drive pkt_tx_ren to 1
+XAC PKT_RX_MON pkt_rx_ren is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(44) @ 51200: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon wait for pkt_rx_val
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(46) @ 51200: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon got pkt_rx_val
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(51) @ 51200: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon wait for sop and eop 
+PKT_RX_MON pkt_rx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(67) @ 51200: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(40) @ 51200: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon drive pkt_rx_ren to 1
+XAC PKT_RX_MON pkt_rx_ten is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(44) @ 51200: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon wait for pkt_tx_val
+PKT_RX_MON pkt_tx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(67) @ 51200: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(40) @ 51200: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon drive pkt_tx_ren to 1
+XAC PKT_RX_MON pkt_rx_ren is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(44) @ 54400: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon wait for pkt_rx_val
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(46) @ 54400: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon got pkt_rx_val
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(51) @ 54400: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon wait for sop and eop 
+PKT_RX_MON pkt_rx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(67) @ 54400: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(40) @ 54400: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon drive pkt_rx_ren to 1
+XAC PKT_RX_MON pkt_rx_ten is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(44) @ 54400: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon wait for pkt_tx_val
+PKT_RX_MON pkt_tx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(67) @ 54400: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(40) @ 54400: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon drive pkt_tx_ren to 1
+XAC PKT_RX_MON pkt_rx_ren is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(44) @ 57600: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon wait for pkt_rx_val
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(46) @ 57600: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon got pkt_rx_val
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(51) @ 57600: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon wait for sop and eop 
+PKT_RX_MON pkt_rx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(67) @ 57600: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(40) @ 57600: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon drive pkt_rx_ren to 1
+XAC PKT_RX_MON pkt_rx_ten is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(44) @ 57600: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon wait for pkt_tx_val
+PKT_RX_MON pkt_tx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(67) @ 57600: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(40) @ 57600: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon drive pkt_tx_ren to 1
+UVM_INFO ../../testbench/uvm/driver_wb.sv(29) @ 60800: uvm_test_top.env_0.agent_wb_0.driver_wb_0 [WB DRIVER ] wait for next_item
+XAC PKT_RX_MON pkt_rx_ren is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(44) @ 60800: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon wait for pkt_rx_val
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(46) @ 60800: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon got pkt_rx_val
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(51) @ 60800: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon wait for sop and eop 
+PKT_RX_MON pkt_rx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(67) @ 60800: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(40) @ 60800: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon drive pkt_rx_ren to 1
+XAC PKT_RX_MON pkt_rx_ten is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(44) @ 60800: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon wait for pkt_tx_val
+PKT_RX_MON pkt_tx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(67) @ 60800: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(40) @ 60800: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon drive pkt_tx_ren to 1
+UVM_INFO ../../testbench/uvm/sequence_wb.sv(24) @ 60800: uvm_test_top.env_0.agent_wb_0.sequencer_wb_0@@sequence_wb_0 [XAC Hey from WB Sequence aka Generator] producing stim in body!
+XAC Hey from Sequence aka Generator start_item producing addr=ab data=00112233
+UVM_INFO ../../testbench/uvm/driver_wb.sv(31) @ 60800: uvm_test_top.env_0.agent_wb_0.driver_wb_0 [WB DRIVER ] got next_item
+UVM_INFO ../../testbench/uvm/driver_wb.sv(33) @ 60800: uvm_test_top.env_0.agent_wb_0.driver_wb_0 [WB DRIVER run_phase received this packet ] ---------------------------------------------------------------------------------------------------------
+Name                           Type      Size  Value                                                     
+---------------------------------------------------------------------------------------------------------
+req                            data_wb   -     @1665                                                     
+  adr                          integral  8     'hab                                                      
+  dat_i                        integral  32    'h112233                                                  
+  dat_o                        integral  32    'h0                                                       
+  cyc                          integral  1     'h0                                                       
+  we                           integral  1     'h1                                                       
+  stb                          integral  1     'h0                                                       
+  begin_time                   time      64    60800                                                     
+  depth                        int       32    'd2                                                       
+  parent sequence (name)       string    13    sequence_wb_0                                             
+  parent sequence (full name)  string    58    uvm_test_top.env_0.agent_wb_0.sequencer_wb_0.sequence_wb_0
+  sequencer                    string    44    uvm_test_top.env_0.agent_wb_0.sequencer_wb_0              
+---------------------------------------------------------------------------------------------------------
+
+XAC PKT_RX_MON pkt_rx_ren is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(44) @ 64000: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon wait for pkt_rx_val
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(46) @ 64000: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon got pkt_rx_val
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(51) @ 64000: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon wait for sop and eop 
+PKT_RX_MON pkt_rx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(67) @ 64000: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(40) @ 64000: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon drive pkt_rx_ren to 1
+XAC PKT_RX_MON pkt_rx_ten is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(44) @ 64000: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon wait for pkt_tx_val
+PKT_RX_MON pkt_tx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(67) @ 64000: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(40) @ 64000: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon drive pkt_tx_ren to 1
+XAC PKT_RX_MON pkt_rx_ren is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(44) @ 67200: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon wait for pkt_rx_val
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(46) @ 67200: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon got pkt_rx_val
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(51) @ 67200: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon wait for sop and eop 
+PKT_RX_MON pkt_rx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(67) @ 67200: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(40) @ 67200: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon drive pkt_rx_ren to 1
+XAC PKT_RX_MON pkt_rx_ten is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(44) @ 67200: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon wait for pkt_tx_val
+PKT_RX_MON pkt_tx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(67) @ 67200: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(40) @ 67200: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon drive pkt_tx_ren to 1
+XAC PKT_RX_MON pkt_rx_ren is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(44) @ 70400: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon wait for pkt_rx_val
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(46) @ 70400: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon got pkt_rx_val
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(51) @ 70400: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon wait for sop and eop 
+PKT_RX_MON pkt_rx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(67) @ 70400: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(40) @ 70400: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon drive pkt_rx_ren to 1
+XAC PKT_RX_MON pkt_rx_ten is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(44) @ 70400: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon wait for pkt_tx_val
+PKT_RX_MON pkt_tx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(67) @ 70400: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(40) @ 70400: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon drive pkt_tx_ren to 1
+XAC PKT_RX_MON pkt_rx_ren is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(44) @ 73600: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon wait for pkt_rx_val
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(46) @ 73600: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon got pkt_rx_val
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(51) @ 73600: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon wait for sop and eop 
+PKT_RX_MON pkt_rx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(67) @ 73600: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(40) @ 73600: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon drive pkt_rx_ren to 1
+XAC PKT_RX_MON pkt_rx_ten is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(44) @ 73600: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon wait for pkt_tx_val
+PKT_RX_MON pkt_tx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(67) @ 73600: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(40) @ 73600: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon drive pkt_tx_ren to 1
+XAC PKT_RX_MON pkt_rx_ren is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(44) @ 76800: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon wait for pkt_rx_val
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(46) @ 76800: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon got pkt_rx_val
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(51) @ 76800: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon wait for sop and eop 
+PKT_RX_MON pkt_rx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(67) @ 76800: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(40) @ 76800: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon drive pkt_rx_ren to 1
+XAC PKT_RX_MON pkt_rx_ten is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(44) @ 76800: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon wait for pkt_tx_val
+PKT_RX_MON pkt_tx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(67) @ 76800: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(40) @ 76800: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon drive pkt_tx_ren to 1
+UVM_INFO ../../testbench/uvm/driver_wb.sv(29) @ 80000: uvm_test_top.env_0.agent_wb_0.driver_wb_0 [WB DRIVER ] wait for next_item
+XAC PKT_RX_MON pkt_rx_ren is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(44) @ 80000: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon wait for pkt_rx_val
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(46) @ 80000: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon got pkt_rx_val
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(51) @ 80000: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon wait for sop and eop 
+PKT_RX_MON pkt_rx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(67) @ 80000: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(40) @ 80000: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon drive pkt_rx_ren to 1
+XAC PKT_RX_MON pkt_rx_ten is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(44) @ 80000: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon wait for pkt_tx_val
+PKT_RX_MON pkt_tx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(67) @ 80000: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(40) @ 80000: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon drive pkt_tx_ren to 1
+XAC Hey from Sequence aka Generator start_item producing addr=cd data=33001122
+UVM_INFO ../../testbench/uvm/driver_wb.sv(31) @ 80000: uvm_test_top.env_0.agent_wb_0.driver_wb_0 [WB DRIVER ] got next_item
+UVM_INFO ../../testbench/uvm/driver_wb.sv(33) @ 80000: uvm_test_top.env_0.agent_wb_0.driver_wb_0 [WB DRIVER run_phase received this packet ] ---------------------------------------------------------------------------------------------------------
+Name                           Type      Size  Value                                                     
+---------------------------------------------------------------------------------------------------------
+req                            data_wb   -     @1693                                                     
+  adr                          integral  8     'hcd                                                      
+  dat_i                        integral  32    'h33001122                                                
+  dat_o                        integral  32    'h0                                                       
+  cyc                          integral  1     'h0                                                       
+  we                           integral  1     'h1                                                       
+  stb                          integral  1     'h0                                                       
+  begin_time                   time      64    80000                                                     
+  depth                        int       32    'd2                                                       
+  parent sequence (name)       string    13    sequence_wb_0                                             
+  parent sequence (full name)  string    58    uvm_test_top.env_0.agent_wb_0.sequencer_wb_0.sequence_wb_0
+  sequencer                    string    44    uvm_test_top.env_0.agent_wb_0.sequencer_wb_0              
+---------------------------------------------------------------------------------------------------------
+
+XAC PKT_RX_MON pkt_rx_ren is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(44) @ 83200: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon wait for pkt_rx_val
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(46) @ 83200: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon got pkt_rx_val
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(51) @ 83200: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon wait for sop and eop 
+PKT_RX_MON pkt_rx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(67) @ 83200: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(40) @ 83200: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon drive pkt_rx_ren to 1
+XAC PKT_RX_MON pkt_rx_ten is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(44) @ 83200: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon wait for pkt_tx_val
+PKT_RX_MON pkt_tx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(67) @ 83200: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(40) @ 83200: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon drive pkt_tx_ren to 1
+XAC PKT_RX_MON pkt_rx_ren is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(44) @ 86400: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon wait for pkt_rx_val
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(46) @ 86400: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon got pkt_rx_val
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(51) @ 86400: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon wait for sop and eop 
+PKT_RX_MON pkt_rx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(67) @ 86400: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(40) @ 86400: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon drive pkt_rx_ren to 1
+XAC PKT_RX_MON pkt_rx_ten is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(44) @ 86400: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon wait for pkt_tx_val
+PKT_RX_MON pkt_tx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(67) @ 86400: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(40) @ 86400: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon drive pkt_tx_ren to 1
+XAC PKT_RX_MON pkt_rx_ren is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(44) @ 89600: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon wait for pkt_rx_val
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(46) @ 89600: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon got pkt_rx_val
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(51) @ 89600: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon wait for sop and eop 
+PKT_RX_MON pkt_rx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(67) @ 89600: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(40) @ 89600: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon drive pkt_rx_ren to 1
+XAC PKT_RX_MON pkt_rx_ten is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(44) @ 89600: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon wait for pkt_tx_val
+PKT_RX_MON pkt_tx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(67) @ 89600: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(40) @ 89600: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon drive pkt_tx_ren to 1
+XAC PKT_RX_MON pkt_rx_ren is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(44) @ 92800: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon wait for pkt_rx_val
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(46) @ 92800: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon got pkt_rx_val
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(51) @ 92800: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon wait for sop and eop 
+PKT_RX_MON pkt_rx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(67) @ 92800: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(40) @ 92800: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon drive pkt_rx_ren to 1
+XAC PKT_RX_MON pkt_rx_ten is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(44) @ 92800: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon wait for pkt_tx_val
+PKT_RX_MON pkt_tx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(67) @ 92800: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(40) @ 92800: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon drive pkt_tx_ren to 1
+XAC PKT_RX_MON pkt_rx_ren is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(44) @ 96000: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon wait for pkt_rx_val
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(46) @ 96000: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon got pkt_rx_val
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(51) @ 96000: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon wait for sop and eop 
+PKT_RX_MON pkt_rx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(67) @ 96000: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(40) @ 96000: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon drive pkt_rx_ren to 1
+XAC PKT_RX_MON pkt_rx_ten is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(44) @ 96000: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon wait for pkt_tx_val
+PKT_RX_MON pkt_tx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(67) @ 96000: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(40) @ 96000: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon drive pkt_tx_ren to 1
+UVM_INFO ../../testbench/uvm/driver_wb.sv(29) @ 99200: uvm_test_top.env_0.agent_wb_0.driver_wb_0 [WB DRIVER ] wait for next_item
+XAC PKT_RX_MON pkt_rx_ren is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(44) @ 99200: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon wait for pkt_rx_val
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(46) @ 99200: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon got pkt_rx_val
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(51) @ 99200: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon wait for sop and eop 
+PKT_RX_MON pkt_rx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(67) @ 99200: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(40) @ 99200: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon drive pkt_rx_ren to 1
+XAC PKT_RX_MON pkt_rx_ten is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(44) @ 99200: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon wait for pkt_tx_val
+PKT_RX_MON pkt_tx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(67) @ 99200: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(40) @ 99200: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon drive pkt_tx_ren to 1
+UVM_INFO ../../testbench/uvm/sequence_reset.sv(18) @ 99200: uvm_test_top.env_0.agent_reset_0.sequencer_reset_0@@sequence_reset_0 [Hey from RESET Sequence aka Generator] producing stim in body!
+UVM_INFO ../../testbench/uvm/driver_reset.sv(31) @ 99200: uvm_test_top.env_0.agent_reset_0.driver_reset_0 [RESET DRIVER run_phase received this packet ] --------------------------------------------------------------------------------------------------------------------
+Name                           Type        Size  Value                                                              
+--------------------------------------------------------------------------------------------------------------------
+req                            data_reset  -     @1721                                                              
+  reset_                       integral    1     'h0                                                                
+  cycles                       integral    32    'h3                                                                
+  begin_time                   time        64    99200                                                              
+  depth                        int         32    'd2                                                                
+  parent sequence (name)       string      16    sequence_reset_0                                                   
+  parent sequence (full name)  string      67    uvm_test_top.env_0.agent_reset_0.sequencer_reset_0.sequence_reset_0
+  sequencer                    string      50    uvm_test_top.env_0.agent_reset_0.sequencer_reset_0                 
+--------------------------------------------------------------------------------------------------------------------
+
+UVM_INFO ../../testbench/uvm/driver_reset.sv(32) @ 99200: uvm_test_top.env_0.agent_reset_0.driver_reset_0 [RESET DRIVER] driving to active reset state
+UVM_INFO ../../testbench/uvm/driver_reset.sv(39) @ 99200: uvm_test_top.env_0.agent_reset_0.driver_reset_0 [XAC RESET DRIVER right before wait] --------------------------------------------------------------------------------------------------------------------
+Name                           Type        Size  Value                                                              
+--------------------------------------------------------------------------------------------------------------------
+req                            data_reset  -     @1721                                                              
+  reset_                       integral    1     'h0                                                                
+  cycles                       integral    32    'h3                                                                
+  begin_time                   time        64    99200                                                              
+  depth                        int         32    'd2                                                                
+  parent sequence (name)       string      16    sequence_reset_0                                                   
+  parent sequence (full name)  string      67    uvm_test_top.env_0.agent_reset_0.sequencer_reset_0.sequence_reset_0
+  sequencer                    string      50    uvm_test_top.env_0.agent_reset_0.sequencer_reset_0                 
+--------------------------------------------------------------------------------------------------------------------
+
+XAC PKT_RX_MON pkt_rx_ren is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(44) @ 102400: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon wait for pkt_rx_val
+PKT_RX_MON pkt_rx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(67) @ 102400: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(40) @ 102400: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon drive pkt_rx_ren to 1
+XAC PKT_RX_MON pkt_rx_ten is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(44) @ 102400: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon wait for pkt_tx_val
+PKT_RX_MON pkt_tx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(67) @ 102400: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(40) @ 102400: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon drive pkt_tx_ren to 1
+XAC PKT_RX_MON pkt_rx_ren is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(44) @ 105600: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon wait for pkt_rx_val
+PKT_RX_MON pkt_rx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(67) @ 105600: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(40) @ 105600: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon drive pkt_rx_ren to 1
+XAC PKT_RX_MON pkt_rx_ten is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(44) @ 105600: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon wait for pkt_tx_val
+PKT_RX_MON pkt_tx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(67) @ 105600: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(40) @ 105600: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon drive pkt_tx_ren to 1
+XAC PKT_RX_MON pkt_rx_ren is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(44) @ 108800: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon wait for pkt_rx_val
+PKT_RX_MON pkt_rx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(67) @ 108800: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(40) @ 108800: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon drive pkt_rx_ren to 1
+XAC PKT_RX_MON pkt_rx_ten is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(44) @ 108800: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon wait for pkt_tx_val
+PKT_RX_MON pkt_tx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(67) @ 108800: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(40) @ 108800: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon drive pkt_tx_ren to 1
+XAC PKT_RX_MON pkt_rx_ren is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(44) @ 112000: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon wait for pkt_rx_val
+PKT_RX_MON pkt_rx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(67) @ 112000: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(40) @ 112000: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon drive pkt_rx_ren to 1
+XAC PKT_RX_MON pkt_rx_ten is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(44) @ 112000: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon wait for pkt_tx_val
+PKT_RX_MON pkt_tx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(67) @ 112000: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(40) @ 112000: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon drive pkt_tx_ren to 1
+XAC PKT_RX_MON pkt_rx_ren is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(44) @ 115200: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon wait for pkt_rx_val
+PKT_RX_MON pkt_rx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(67) @ 115200: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(40) @ 115200: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon drive pkt_rx_ren to 1
+XAC PKT_RX_MON pkt_rx_ten is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(44) @ 115200: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon wait for pkt_tx_val
+PKT_RX_MON pkt_tx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(67) @ 115200: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(40) @ 115200: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon drive pkt_tx_ren to 1
+XAC PKT_RX_MON pkt_rx_ren is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(44) @ 118400: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon wait for pkt_rx_val
+PKT_RX_MON pkt_rx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(67) @ 118400: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(40) @ 118400: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon drive pkt_rx_ren to 1
+XAC PKT_RX_MON pkt_rx_ten is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(44) @ 118400: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon wait for pkt_tx_val
+PKT_RX_MON pkt_tx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(67) @ 118400: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(40) @ 118400: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon drive pkt_tx_ren to 1
+UVM_INFO ../../testbench/uvm/driver_reset.sv(43) @ 118400: uvm_test_top.env_0.agent_reset_0.driver_reset_0 [RESET DRIVER] driving to de-active reset state
+UVM_INFO ../../testbench/uvm/driver_reset.sv(49) @ 118400: uvm_test_top.env_0.agent_reset_0.driver_reset_0 [XAC RESET DRIVER right after wait] --------------------------------------------------------------------------------------------------------------------
+Name                           Type        Size  Value                                                              
+--------------------------------------------------------------------------------------------------------------------
+req                            data_reset  -     @1721                                                              
+  reset_                       integral    1     'h0                                                                
+  cycles                       integral    32    'h3                                                                
+  begin_time                   time        64    99200                                                              
+  depth                        int         32    'd2                                                                
+  parent sequence (name)       string      16    sequence_reset_0                                                   
+  parent sequence (full name)  string      67    uvm_test_top.env_0.agent_reset_0.sequencer_reset_0.sequence_reset_0
+  sequencer                    string      50    uvm_test_top.env_0.agent_reset_0.sequencer_reset_0                 
+--------------------------------------------------------------------------------------------------------------------
+
+XAC PKT_RX_MON pkt_rx_ren is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(44) @ 121600: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon wait for pkt_rx_val
+PKT_RX_MON pkt_rx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(67) @ 121600: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(40) @ 121600: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon drive pkt_rx_ren to 1
+XAC PKT_RX_MON pkt_rx_ten is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(44) @ 121600: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon wait for pkt_tx_val
+PKT_RX_MON pkt_tx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(67) @ 121600: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(40) @ 121600: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon drive pkt_tx_ren to 1
+XAC PKT_RX_MON pkt_rx_ren is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(44) @ 124800: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon wait for pkt_rx_val
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(46) @ 124800: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon got pkt_rx_val
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(51) @ 124800: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon wait for sop and eop 
+PKT_RX_MON pkt_rx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(67) @ 124800: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(40) @ 124800: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon drive pkt_rx_ren to 1
+XAC PKT_RX_MON pkt_rx_ten is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(44) @ 124800: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon wait for pkt_tx_val
+PKT_RX_MON pkt_tx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(67) @ 124800: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(40) @ 124800: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon drive pkt_tx_ren to 1
+XAC PKT_RX_MON pkt_rx_ren is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(44) @ 128000: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon wait for pkt_rx_val
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(46) @ 128000: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon got pkt_rx_val
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(51) @ 128000: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon wait for sop and eop 
+PKT_RX_MON pkt_rx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(67) @ 128000: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(40) @ 128000: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon drive pkt_rx_ren to 1
+XAC PKT_RX_MON pkt_rx_ten is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(44) @ 128000: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon wait for pkt_tx_val
+PKT_RX_MON pkt_tx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(67) @ 128000: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(40) @ 128000: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon drive pkt_tx_ren to 1
+XAC PKT_RX_MON pkt_rx_ren is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(44) @ 131200: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon wait for pkt_rx_val
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(46) @ 131200: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon got pkt_rx_val
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(51) @ 131200: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon wait for sop and eop 
+PKT_RX_MON pkt_rx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(67) @ 131200: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(40) @ 131200: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon drive pkt_rx_ren to 1
+XAC PKT_RX_MON pkt_rx_ten is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(44) @ 131200: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon wait for pkt_tx_val
+PKT_RX_MON pkt_tx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(67) @ 131200: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(40) @ 131200: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon drive pkt_tx_ren to 1
+XAC PKT_RX_MON pkt_rx_ren is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(44) @ 134400: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon wait for pkt_rx_val
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(46) @ 134400: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon got pkt_rx_val
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(51) @ 134400: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon wait for sop and eop 
+PKT_RX_MON pkt_rx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(67) @ 134400: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(40) @ 134400: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon drive pkt_rx_ren to 1
+XAC PKT_RX_MON pkt_rx_ten is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(44) @ 134400: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon wait for pkt_tx_val
+PKT_RX_MON pkt_tx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(67) @ 134400: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(40) @ 134400: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon drive pkt_tx_ren to 1
+XAC PKT_RX_MON pkt_rx_ren is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(44) @ 137600: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon wait for pkt_rx_val
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(46) @ 137600: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon got pkt_rx_val
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(51) @ 137600: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon wait for sop and eop 
+PKT_RX_MON pkt_rx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(67) @ 137600: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(40) @ 137600: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon drive pkt_rx_ren to 1
+XAC PKT_RX_MON pkt_rx_ten is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(44) @ 137600: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon wait for pkt_tx_val
+PKT_RX_MON pkt_tx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(67) @ 137600: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(40) @ 137600: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon drive pkt_tx_ren to 1
+XAC PKT_RX_MON pkt_rx_ren is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(44) @ 140800: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon wait for pkt_rx_val
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(46) @ 140800: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon got pkt_rx_val
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(51) @ 140800: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon wait for sop and eop 
+PKT_RX_MON pkt_rx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(67) @ 140800: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(40) @ 140800: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon drive pkt_rx_ren to 1
+XAC PKT_RX_MON pkt_rx_ten is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(44) @ 140800: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon wait for pkt_tx_val
+PKT_RX_MON pkt_tx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(67) @ 140800: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(40) @ 140800: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon drive pkt_tx_ren to 1
+XAC PKT_RX_MON pkt_rx_ren is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(44) @ 144000: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon wait for pkt_rx_val
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(46) @ 144000: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon got pkt_rx_val
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(51) @ 144000: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon wait for sop and eop 
+PKT_RX_MON pkt_rx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(67) @ 144000: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(40) @ 144000: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon drive pkt_rx_ren to 1
+XAC PKT_RX_MON pkt_rx_ten is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(44) @ 144000: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon wait for pkt_tx_val
+PKT_RX_MON pkt_tx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(67) @ 144000: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(40) @ 144000: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon drive pkt_tx_ren to 1
+XAC PKT_RX_MON pkt_rx_ren is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(44) @ 147200: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon wait for pkt_rx_val
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(46) @ 147200: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon got pkt_rx_val
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(51) @ 147200: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon wait for sop and eop 
+PKT_RX_MON pkt_rx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(67) @ 147200: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(40) @ 147200: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon drive pkt_rx_ren to 1
+XAC PKT_RX_MON pkt_rx_ten is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(44) @ 147200: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon wait for pkt_tx_val
+PKT_RX_MON pkt_tx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(67) @ 147200: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(40) @ 147200: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon drive pkt_tx_ren to 1
+XAC PKT_RX_MON pkt_rx_ren is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(44) @ 150400: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon wait for pkt_rx_val
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(46) @ 150400: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon got pkt_rx_val
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(51) @ 150400: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon wait for sop and eop 
+PKT_RX_MON pkt_rx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(67) @ 150400: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(40) @ 150400: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon drive pkt_rx_ren to 1
+XAC PKT_RX_MON pkt_rx_ten is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(44) @ 150400: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon wait for pkt_tx_val
+PKT_RX_MON pkt_tx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(67) @ 150400: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(40) @ 150400: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon drive pkt_tx_ren to 1
+XAC PKT_RX_MON pkt_rx_ren is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(44) @ 153600: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon wait for pkt_rx_val
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(46) @ 153600: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon got pkt_rx_val
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(51) @ 153600: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon wait for sop and eop 
+PKT_RX_MON pkt_rx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(67) @ 153600: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(40) @ 153600: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon drive pkt_rx_ren to 1
+XAC PKT_RX_MON pkt_rx_ten is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(44) @ 153600: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon wait for pkt_tx_val
+PKT_RX_MON pkt_tx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(67) @ 153600: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(40) @ 153600: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon drive pkt_tx_ren to 1
+XAC PKT_RX_MON pkt_rx_ren is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(44) @ 156800: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon wait for pkt_rx_val
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(46) @ 156800: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon got pkt_rx_val
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(51) @ 156800: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon wait for sop and eop 
+PKT_RX_MON pkt_rx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(67) @ 156800: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(40) @ 156800: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon drive pkt_rx_ren to 1
+XAC PKT_RX_MON pkt_rx_ten is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(44) @ 156800: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon wait for pkt_tx_val
+PKT_RX_MON pkt_tx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(67) @ 156800: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(40) @ 156800: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon drive pkt_tx_ren to 1
+XAC PKT_RX_MON pkt_rx_ren is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(44) @ 160000: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon wait for pkt_rx_val
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(46) @ 160000: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon got pkt_rx_val
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(51) @ 160000: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon wait for sop and eop 
+PKT_RX_MON pkt_rx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(67) @ 160000: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(40) @ 160000: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon drive pkt_rx_ren to 1
+XAC PKT_RX_MON pkt_rx_ten is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(44) @ 160000: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon wait for pkt_tx_val
+PKT_RX_MON pkt_tx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(67) @ 160000: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(40) @ 160000: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon drive pkt_tx_ren to 1
+XAC PKT_RX_MON pkt_rx_ren is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(44) @ 163200: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon wait for pkt_rx_val
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(46) @ 163200: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon got pkt_rx_val
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(51) @ 163200: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon wait for sop and eop 
+PKT_RX_MON pkt_rx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(67) @ 163200: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(40) @ 163200: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon drive pkt_rx_ren to 1
+XAC PKT_RX_MON pkt_rx_ten is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(44) @ 163200: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon wait for pkt_tx_val
+PKT_RX_MON pkt_tx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(67) @ 163200: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(40) @ 163200: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon drive pkt_tx_ren to 1
+XAC PKT_RX_MON pkt_rx_ren is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(44) @ 166400: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon wait for pkt_rx_val
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(46) @ 166400: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon got pkt_rx_val
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(51) @ 166400: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon wait for sop and eop 
+PKT_RX_MON pkt_rx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(67) @ 166400: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(40) @ 166400: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon drive pkt_rx_ren to 1
+XAC PKT_RX_MON pkt_rx_ten is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(44) @ 166400: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon wait for pkt_tx_val
+PKT_RX_MON pkt_tx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(67) @ 166400: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(40) @ 166400: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon drive pkt_tx_ren to 1
+XAC PKT_RX_MON pkt_rx_ren is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(44) @ 169600: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon wait for pkt_rx_val
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(46) @ 169600: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon got pkt_rx_val
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(51) @ 169600: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon wait for sop and eop 
+PKT_RX_MON pkt_rx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(67) @ 169600: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(40) @ 169600: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon drive pkt_rx_ren to 1
+XAC PKT_RX_MON pkt_rx_ten is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(44) @ 169600: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon wait for pkt_tx_val
+PKT_RX_MON pkt_tx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(67) @ 169600: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(40) @ 169600: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon drive pkt_tx_ren to 1
+XAC PKT_RX_MON pkt_rx_ren is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(44) @ 172800: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon wait for pkt_rx_val
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(46) @ 172800: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon got pkt_rx_val
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(51) @ 172800: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon wait for sop and eop 
+PKT_RX_MON pkt_rx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(67) @ 172800: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(40) @ 172800: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon drive pkt_rx_ren to 1
+XAC PKT_RX_MON pkt_rx_ten is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(44) @ 172800: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon wait for pkt_tx_val
+PKT_RX_MON pkt_tx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(67) @ 172800: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(40) @ 172800: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon drive pkt_tx_ren to 1
+XAC PKT_RX_MON pkt_rx_ren is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(44) @ 176000: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon wait for pkt_rx_val
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(46) @ 176000: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon got pkt_rx_val
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(51) @ 176000: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon wait for sop and eop 
+PKT_RX_MON pkt_rx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(67) @ 176000: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(40) @ 176000: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon drive pkt_rx_ren to 1
+XAC PKT_RX_MON pkt_rx_ten is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(44) @ 176000: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon wait for pkt_tx_val
+PKT_RX_MON pkt_tx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(67) @ 176000: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(40) @ 176000: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon drive pkt_tx_ren to 1
+XAC PKT_RX_MON pkt_rx_ren is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(44) @ 179200: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon wait for pkt_rx_val
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(46) @ 179200: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon got pkt_rx_val
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(51) @ 179200: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon wait for sop and eop 
+PKT_RX_MON pkt_rx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(67) @ 179200: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(40) @ 179200: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon drive pkt_rx_ren to 1
+XAC PKT_RX_MON pkt_rx_ten is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(44) @ 179200: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon wait for pkt_tx_val
+PKT_RX_MON pkt_tx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(67) @ 179200: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(40) @ 179200: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon drive pkt_tx_ren to 1
+XAC PKT_RX_MON pkt_rx_ren is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(44) @ 182400: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon wait for pkt_rx_val
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(46) @ 182400: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon got pkt_rx_val
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(51) @ 182400: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon wait for sop and eop 
+PKT_RX_MON pkt_rx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(67) @ 182400: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(40) @ 182400: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon drive pkt_rx_ren to 1
+XAC PKT_RX_MON pkt_rx_ten is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(44) @ 182400: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon wait for pkt_tx_val
+PKT_RX_MON pkt_tx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(67) @ 182400: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(40) @ 182400: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon drive pkt_tx_ren to 1
+XAC PKT_RX_MON pkt_rx_ren is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(44) @ 185600: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon wait for pkt_rx_val
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(46) @ 185600: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon got pkt_rx_val
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(51) @ 185600: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon wait for sop and eop 
+PKT_RX_MON pkt_rx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(67) @ 185600: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(40) @ 185600: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon drive pkt_rx_ren to 1
+XAC PKT_RX_MON pkt_rx_ten is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(44) @ 185600: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon wait for pkt_tx_val
+PKT_RX_MON pkt_tx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(67) @ 185600: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(40) @ 185600: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon drive pkt_tx_ren to 1
+XAC PKT_RX_MON pkt_rx_ren is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(44) @ 188800: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon wait for pkt_rx_val
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(46) @ 188800: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon got pkt_rx_val
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(51) @ 188800: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon wait for sop and eop 
+PKT_RX_MON pkt_rx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(67) @ 188800: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(40) @ 188800: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon drive pkt_rx_ren to 1
+XAC PKT_RX_MON pkt_rx_ten is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(44) @ 188800: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon wait for pkt_tx_val
+PKT_RX_MON pkt_tx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(67) @ 188800: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(40) @ 188800: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon drive pkt_tx_ren to 1
+XAC PKT_RX_MON pkt_rx_ren is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(44) @ 192000: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon wait for pkt_rx_val
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(46) @ 192000: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon got pkt_rx_val
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(51) @ 192000: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon wait for sop and eop 
+PKT_RX_MON pkt_rx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(67) @ 192000: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(40) @ 192000: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon drive pkt_rx_ren to 1
+XAC PKT_RX_MON pkt_rx_ten is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(44) @ 192000: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon wait for pkt_tx_val
+PKT_RX_MON pkt_tx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(67) @ 192000: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(40) @ 192000: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon drive pkt_tx_ren to 1
+XAC PKT_RX_MON pkt_rx_ren is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(44) @ 195200: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon wait for pkt_rx_val
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(46) @ 195200: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon got pkt_rx_val
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(51) @ 195200: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon wait for sop and eop 
+PKT_RX_MON pkt_rx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(67) @ 195200: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(40) @ 195200: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon drive pkt_rx_ren to 1
+XAC PKT_RX_MON pkt_rx_ten is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(44) @ 195200: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon wait for pkt_tx_val
+PKT_RX_MON pkt_tx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(67) @ 195200: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(40) @ 195200: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon drive pkt_tx_ren to 1
+XAC PKT_RX_MON pkt_rx_ren is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(44) @ 198400: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon wait for pkt_rx_val
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(46) @ 198400: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon got pkt_rx_val
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(51) @ 198400: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon wait for sop and eop 
+PKT_RX_MON pkt_rx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(67) @ 198400: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(40) @ 198400: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon drive pkt_rx_ren to 1
+XAC PKT_RX_MON pkt_rx_ten is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(44) @ 198400: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon wait for pkt_tx_val
+PKT_RX_MON pkt_tx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(67) @ 198400: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(40) @ 198400: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon drive pkt_tx_ren to 1
+XAC PKT_RX_MON pkt_rx_ren is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(44) @ 201600: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon wait for pkt_rx_val
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(46) @ 201600: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon got pkt_rx_val
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(51) @ 201600: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon wait for sop and eop 
+PKT_RX_MON pkt_rx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(67) @ 201600: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(40) @ 201600: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon drive pkt_rx_ren to 1
+XAC PKT_RX_MON pkt_rx_ten is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(44) @ 201600: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon wait for pkt_tx_val
+PKT_RX_MON pkt_tx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(67) @ 201600: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(40) @ 201600: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon drive pkt_tx_ren to 1
+XAC PKT_RX_MON pkt_rx_ren is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(44) @ 204800: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon wait for pkt_rx_val
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(46) @ 204800: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon got pkt_rx_val
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(51) @ 204800: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon wait for sop and eop 
+PKT_RX_MON pkt_rx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(67) @ 204800: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(40) @ 204800: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon drive pkt_rx_ren to 1
+XAC PKT_RX_MON pkt_rx_ten is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(44) @ 204800: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon wait for pkt_tx_val
+PKT_RX_MON pkt_tx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(67) @ 204800: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(40) @ 204800: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon drive pkt_tx_ren to 1
+XAC PKT_RX_MON pkt_rx_ren is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(44) @ 208000: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon wait for pkt_rx_val
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(46) @ 208000: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon got pkt_rx_val
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(51) @ 208000: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon wait for sop and eop 
+PKT_RX_MON pkt_rx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(67) @ 208000: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(40) @ 208000: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon drive pkt_rx_ren to 1
+XAC PKT_RX_MON pkt_rx_ten is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(44) @ 208000: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon wait for pkt_tx_val
+PKT_RX_MON pkt_tx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(67) @ 208000: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(40) @ 208000: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon drive pkt_tx_ren to 1
+XAC PKT_RX_MON pkt_rx_ren is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(44) @ 211200: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon wait for pkt_rx_val
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(46) @ 211200: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon got pkt_rx_val
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(51) @ 211200: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon wait for sop and eop 
+PKT_RX_MON pkt_rx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(67) @ 211200: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(40) @ 211200: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon drive pkt_rx_ren to 1
+XAC PKT_RX_MON pkt_rx_ten is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(44) @ 211200: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon wait for pkt_tx_val
+PKT_RX_MON pkt_tx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(67) @ 211200: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(40) @ 211200: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon drive pkt_tx_ren to 1
+XAC PKT_RX_MON pkt_rx_ren is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(44) @ 214400: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon wait for pkt_rx_val
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(46) @ 214400: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon got pkt_rx_val
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(51) @ 214400: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon wait for sop and eop 
+PKT_RX_MON pkt_rx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(67) @ 214400: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(40) @ 214400: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon drive pkt_rx_ren to 1
+XAC PKT_RX_MON pkt_rx_ten is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(44) @ 214400: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon wait for pkt_tx_val
+PKT_RX_MON pkt_tx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(67) @ 214400: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(40) @ 214400: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon drive pkt_tx_ren to 1
+XAC PKT_RX_MON pkt_rx_ren is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(44) @ 217600: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon wait for pkt_rx_val
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(46) @ 217600: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon got pkt_rx_val
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(51) @ 217600: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon wait for sop and eop 
+PKT_RX_MON pkt_rx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(67) @ 217600: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(40) @ 217600: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [MON_PKT_RX ] pkt_rx_mon drive pkt_rx_ren to 1
+XAC PKT_RX_MON pkt_rx_ten is : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(44) @ 217600: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon wait for pkt_tx_val
+PKT_RX_MON pkt_tx_ren is now : 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(67) @ 217600: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [PKT_RX_MON ] going back 
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(40) @ 217600: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [MON_PKT_RX ] pkt_tx_mon drive pkt_tx_ren to 1
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(73) @ 218400: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [monitor_pkt_rx_0] REPORT: PKT RX Captured 0 packets
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(73) @ 218400: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [monitor_pkt_tx_0] REPORT: PKT RX Captured 0 packets
+Scoreboard Report : Matches : 0. Mismatches : 0
+
+--- UVM Report Summary ---
+
+** Report counts by severity
+UVM_INFO :  559
+UVM_WARNING :    0
+UVM_ERROR :    0
+UVM_FATAL :    0
+** Report counts by id
+[DRIVER CLASS]     1
+[DRIVER_PKT_TX]     2
+[Hey from RESET Sequence aka Generator]     2
+[MON_PKT_RX ]   384
+[PKT_RX_MON ]   136
+[RESET DRIVER]     4
+[RESET DRIVER run_phase received this packet ]     2
+[RNTST]     1
+[UVMTOP]     2
+[WB DRIVER ]     9
+[WB DRIVER CLASS]     1
+[WB DRIVER run_phase received this packet ]     4
+[XAC Hey from WB Sequence aka Generator]     2
+[XAC RESET DRIVER right after wait]     2
+[XAC RESET DRIVER right before wait]     2
+[monitor_pkt_rx_0]     2
+[monitor_pkt_tx_0]     2
+[virtual_sequence_wb]     1
+$finish called from file "/usr/synopsys/vcs/U-2023.03-SP2/etc/uvm-1.1/base/uvm_root.svh", line 437.
+$finish at simulation time               218400
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 218400 ps
+CPU Time:      0.540 seconds;       Data structure size:   0.7Mb
+Tue Jun 18 07:50:57 2024

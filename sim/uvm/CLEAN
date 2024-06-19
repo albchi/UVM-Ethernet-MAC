@@ -1,1 +1,1 @@
-rm -rf csrc simv simv.daidir simv.log ucli.key vc_hdrs.h vcs.log novas.conf novas_dump.log novas.fsdb novas.rc simv.log.no_reset simv.log.ref verdi_config_file verdiLog
+rm -rf csrc simv simv.daidir simv.log ucli.key vc_hdrs.h vcs.log novas.conf novas_dump.log novas.fsdb novas.rc simv.log.no_reset simv.log.ref verdi_config_file verdiLog novas_dump.log simv_testcase_loopbac_reset.log simv_testcase_reset.log simv_testcase_wb.log vcs.log

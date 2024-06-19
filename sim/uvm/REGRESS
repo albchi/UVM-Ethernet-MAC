@@ -1,0 +1,15 @@
+CLEAN
+
+COMP
+
+simv \
+-l simv_testcase_loopback_reset.log \
++UVM_TESTNAME=testcase_loopback_reset
+
+simv \
+-l simv_testcase_wb.log \
++UVM_TESTNAME=testcase_wb
+
+simv \
+-l simv_testcase_reset.log \
++UVM_TESTNAME=testcase_reset

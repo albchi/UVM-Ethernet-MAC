@@ -1,0 +1,14 @@
+vcs \
+-full64 \
++vcs+lic+wait \
+-sverilog  \
+-l vcs.log \
+-override_timescale=1ps/1ps \
+-ntb_opts uvm-1.1 \
+../../rtl/verilog/*.v \
++incdir+../../rtl/include \
++incdir+../../testcases \
+../../testbench/uvm/tb_prog.sv \
+../../testbench/uvm/tb_xge_mac.sv 
+
+simv -l simv.log +UVM_TESTNAME=testcase1

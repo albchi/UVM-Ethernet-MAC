@@ -1,15 +1,28 @@
+To setup environment:
+
+   source SETUP
+
 To compile:
 
    COMP
 
 
-To simulate:
-   SIM
-
 To pick test
 
-   edit SIM
+   1) edit file SIM
 
-   +UVM_TESTNAME=testcase_loopbac
-   +UVM_TESTNAME=testcase_wb.
+   2) uncomment one of these
 
+
+   +UVM_TESTNAME=testcase_loopback_reset
+   +UVM_TESTNAME=testcase_wb
+   +UVM_TESTNAME=testcase_reset
+
+To simulate (tests are already pre-compiled):
+
+   SIM
+
+
+To check results:
+
+   %grep -i match simv.log # should see Mismatches : 0
