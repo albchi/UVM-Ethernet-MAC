@@ -24,6 +24,8 @@ class driver_pkt_tx extends uvm_driver #(data_pkt);
 
    virtual task run_phase(input uvm_phase phase);
        int pkt_remain = 0;
+       int i; // loop count
+       int len; // len of data array
 
       `uvm_info("DRIVER_PKT_TX", "HIERARCHY: %m", UVM_HIGH);
 
@@ -40,37 +42,37 @@ class driver_pkt_tx extends uvm_driver #(data_pkt);
 
          // phase.0
          vi.pkt_tx_sop <= 1'b0;
-         vi.pkt_tx_eop <= 1'b0;
          vi.pkt_tx_val <= 1'b0;
+         vi.pkt_tx_eop <= 1'b0;
          @(posedge vi.clk);
+         $display("XAC PKT TX DRIVER drove sop=%b val=%b eop=%b data=%h \n",vi.pkt_tx_sop, vi.pkt_tx_val, vi.pkt_tx_eop, vi.pkt_tx_data);
 
          // phase1
          vi.pkt_tx_sop <= 1'b1;
-         vi.pkt_tx_eop <= 1'b0;
          vi.pkt_tx_val <= 1'b1;
+         vi.pkt_tx_eop <= 1'b0;
          vi.pkt_tx_data <= req.data; 
          vi.pkt_tx_mod <= req.mod; 
          @(posedge vi.clk);
 
+         $display("XAC PKT TX DRIVER drove sop=%b val=%b eop=%b data=%h \n",vi.pkt_tx_sop, vi.pkt_tx_val, vi.pkt_tx_eop, vi.pkt_tx_data);
          // phase2
          vi.pkt_tx_sop <= 1'b0;
-         vi.pkt_tx_eop <= 1'b1;
          vi.pkt_tx_val <= 1'b1;
-         vi.pkt_tx_data <= req.data + 64'h1000; 
+         vi.pkt_tx_eop <= 1'b0;
+         vi.pkt_tx_data <= req.data2[0]; 
          vi.pkt_tx_mod <= req.mod; 
          @(posedge vi.clk);
 
+         $display("XAC PKT TX DRIVER drove sop=%b val=%b eop=%b data=%h \n",vi.pkt_tx_sop, vi.pkt_tx_val, vi.pkt_tx_eop, vi.pkt_tx_data);
          // phase3
          vi.pkt_tx_val <= 1'b0;
-         vi.pkt_tx_eop <= 1'b0;
-         vi.pkt_tx_data <= req.data + 64'h1000; 
+         vi.pkt_tx_eop <= 1'b1;
+         vi.pkt_tx_val <= 1'b1;
          vi.pkt_tx_mod <= req.mod; 
          @(posedge vi.clk);
 
-
-         repeat(1)
-            @(posedge vi.clk);
-
+         $display("XAC PKT TX DRIVER drove sop=%b val=%b eop=%b  data=%h \n",vi.pkt_tx_sop, vi.pkt_tx_val, vi.pkt_tx_eop, vi.pkt_tx_data);
          seq_item_port.item_done();
  
 
