@@ -1,6 +1,7 @@
 simv \
 -l simv.log \
-+UVM_VERBOSITY=HIGH \
-+UVM_TESTNAME=testcase_loopback_reset
-#+UVM_TESTNAME=testcase_wb
++UVM_TESTNAME=testcase_long
+# +UVM_TESTNAME=testcase_loopback_reset
+#+UVM_VERBOSITY=HIGH \
+# +UVM_TESTNAME=testcase_wb
 # +UVM_TESTNAME=testcase_reset

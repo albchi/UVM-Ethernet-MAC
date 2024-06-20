@@ -22,10 +22,14 @@ class agent_pkt_tx extends uvm_agent;
 
    virtual function void build_phase(uvm_phase phase);
       super.build_phase(phase);
-      sequencer_pkt_tx_0 = sequencer_pkt_tx::type_id::create("sequencer_pkt_tx_0", this);
-      driver_pkt_tx_0 = driver_pkt_tx::type_id::create("driver_pkt_tx_0", this);
-      monitor_pkt_tx_0 = monitor_pkt_tx::type_id::create("monitor_pkt_tx_0", this);
+      if (is_active == UVM_ACTIVE) begin
+         sequencer_pkt_tx_0 = sequencer_pkt_tx::type_id::create("sequencer_pkt_tx_0", this);
+         driver_pkt_tx_0 = driver_pkt_tx::type_id::create("driver_pkt_tx_0", this);
+      end
+      else
+         `uvm_fatal("AGENT_PKT_TX", "this agent is not active, so no driver and sequencer will be created");
       analysis_port = new("analysis_port", this);
+      monitor_pkt_tx_0 = monitor_pkt_tx::type_id::create("monitor_pkt_tx_0", this);
    endfunction 
    
    virtual function void connect_phase(uvm_phase phase);

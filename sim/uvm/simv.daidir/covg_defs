@@ -1,7 +1,7 @@
-global coverage_group 0 $unit::coverage::cg_pkt_tx __coverage_coverage.cg_pkt_tx unused_coverage_cg_pkt_tx_loop_label $unit 0 1 0 1 $unit::../../rtl/include/defines.v::../../rtl/include/timescale.v...@870061364 0  ( 0 
+global coverage_group 0 $unit::coverage_pkt_tx::cg_pkt_tx __coverage_coverage_pkt_tx.cg_pkt_tx unused_coverage_pkt_tx_cg_pkt_tx_loop_label $unit 0 1 0 1 $unit::../../rtl/include/defines.v::../../rtl/include/timescale.v...@870061364 0  ( 0 
 )
  1 1
- 0 103 /home/sf10274/AlbertLand/0UVMgetinfo/lab-project-10gEthernetMAC/sim/uvm/../../testbench/uvm/coverage.sv
+ 0 110 /home/sf10274/AlbertLand/0UVMgetinfo/lab-project-10gEthernetMAC/sim/uvm/../../testbench/uvm/coverage_pkt_tx.sv
  7 0 0 0 1 0 0 0 0  1
 0
 0 0
@@ -32,11 +32,11 @@ global coverage_group 0 $unit::coverage::cg_pkt_tx __coverage_coverage.cg_pkt_tx
 0
  0
 
-1
+2
 0
 0
 0
- 3 ifg 8 0 0 0 0 0 118 _vcs_unit__870061364_coverage_11_0::_vcs_unit__870061364_coverage_11_0__vcs_unit__870061364_coverage_11_0_cg_pkt_tx_fn 118 _vcs_unit__870061364_coverage_11_0::_vcs_unit__870061364_coverage_11_0__vcs_unit__870061364_coverage_11_0_cg_pkt_tx_fn 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 0 -1 1 32 0 0 1 0 0 0 0
+ 3 ifg 8 0 0 0 0 0 139 _vcs_unit__870061364_coverage_pkt_tx_11_0::_vcs_unit__870061364_coverage_pkt_tx_11_0__vcs_unit__870061364_coverage_pkt_tx_11_0_cg_pkt_tx_fn 139 _vcs_unit__870061364_coverage_pkt_tx_11_0::_vcs_unit__870061364_coverage_pkt_tx_11_0__vcs_unit__870061364_coverage_pkt_tx_11_0_cg_pkt_tx_fn 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 0 -1 1 32 0 0 1 0 0 0 0
  0
  0
  0
@@ -51,9 +51,29 @@ global coverage_group 0 $unit::coverage::cg_pkt_tx __coverage_coverage.cg_pkt_tx
  0
  0
  0
- 2 1 1 0 0 1 1 11 bin_low_ifg 9 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 120 _vcs_unit__870061364_coverage_11_0::_vcs_unit__870061364_coverage_11_0__vcs_unit__870061364_coverage_11_0_cg_pkt_tx_fn_0 0 120 _vcs_unit__870061364_coverage_11_0::_vcs_unit__870061364_coverage_11_0__vcs_unit__870061364_coverage_11_0_cg_pkt_tx_fn_1 0 0 0 0 0
+ 2 1 1 0 0 1 1 11 bin_low_ifg 9 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 141 _vcs_unit__870061364_coverage_pkt_tx_11_0::_vcs_unit__870061364_coverage_pkt_tx_11_0__vcs_unit__870061364_coverage_pkt_tx_11_0_cg_pkt_tx_fn_0 0 141 _vcs_unit__870061364_coverage_pkt_tx_11_0::_vcs_unit__870061364_coverage_pkt_tx_11_0__vcs_unit__870061364_coverage_pkt_tx_11_0_cg_pkt_tx_fn_1 0 0 0 0 0
  0
- 1 1 0 0 1 1 12 bin_high_ifg 10 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 120 _vcs_unit__870061364_coverage_11_0::_vcs_unit__870061364_coverage_11_0__vcs_unit__870061364_coverage_11_0_cg_pkt_tx_fn_2 0 120 _vcs_unit__870061364_coverage_11_0::_vcs_unit__870061364_coverage_11_0__vcs_unit__870061364_coverage_11_0_cg_pkt_tx_fn_3 0 0 0 0 0
+ 1 1 0 0 1 1 12 bin_high_ifg 10 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 141 _vcs_unit__870061364_coverage_pkt_tx_11_0::_vcs_unit__870061364_coverage_pkt_tx_11_0__vcs_unit__870061364_coverage_pkt_tx_11_0_cg_pkt_tx_fn_2 0 141 _vcs_unit__870061364_coverage_pkt_tx_11_0::_vcs_unit__870061364_coverage_pkt_tx_11_0__vcs_unit__870061364_coverage_pkt_tx_11_0_cg_pkt_tx_fn_3 0 0 0 0 0
+ 0
+
+ 3 len 12 0 0 0 0 0 141 _vcs_unit__870061364_coverage_pkt_tx_11_0::_vcs_unit__870061364_coverage_pkt_tx_11_0__vcs_unit__870061364_coverage_pkt_tx_11_0_cg_pkt_tx_fn_4 141 _vcs_unit__870061364_coverage_pkt_tx_11_0::_vcs_unit__870061364_coverage_pkt_tx_11_0__vcs_unit__870061364_coverage_pkt_tx_11_0_cg_pkt_tx_fn_4 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 0 -1 1 32 0 0 1 0 0 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 2 1 1 0 0 1 1 11 bin_low_len 13 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 141 _vcs_unit__870061364_coverage_pkt_tx_11_0::_vcs_unit__870061364_coverage_pkt_tx_11_0__vcs_unit__870061364_coverage_pkt_tx_11_0_cg_pkt_tx_fn_0 0 141 _vcs_unit__870061364_coverage_pkt_tx_11_0::_vcs_unit__870061364_coverage_pkt_tx_11_0__vcs_unit__870061364_coverage_pkt_tx_11_0_cg_pkt_tx_fn_5 0 0 0 0 0
+ 0
+ 1 1 0 0 1 1 12 bin_high_ifg 14 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 141 _vcs_unit__870061364_coverage_pkt_tx_11_0::_vcs_unit__870061364_coverage_pkt_tx_11_0__vcs_unit__870061364_coverage_pkt_tx_11_0_cg_pkt_tx_fn_6 0 141 _vcs_unit__870061364_coverage_pkt_tx_11_0::_vcs_unit__870061364_coverage_pkt_tx_11_0__vcs_unit__870061364_coverage_pkt_tx_11_0_cg_pkt_tx_fn_7 0 0 0 0 0
  0
 
 end_coverage_group

@@ -1,0 +1,28 @@
+execute_command() {
+    command=$*
+    echo "Executing: $command"
+    eval $command
+    if [ $? -ne 0 ]; then
+        echo "Error: Command '$command' failed. Exiting."
+        exit 1
+    fi
+}
+
+
+#execute_command  CLEAN
+
+#execute_command  COMP
+
+#execute_command ls
+
+#execute_command "ls"
+
+#execute "ls -ltar"
+
+#execute_command "simv -l simv_testcase_wb.log  +UVM_TESTNAME=testcase_wb"
+
+execute_command "grep 'REPORT: PKT RX Captured 20 packets'  simv_testcase_loopback_reset.log" 
+
+#execute simv -l simv_testcase_reset.log +UVM_TESTNAME=testcase_reset
+
+

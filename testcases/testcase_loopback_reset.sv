@@ -27,7 +27,7 @@ class testcase_loopback_reset extends testcase_base;
         virtual_sequencer_0  = virtual_sequencer::type_id::create("virtual_sequencer_0", this);
         // virtual_sequencer_0 = virtual_sequencer::type_id::create("virtual_sequencer",this);
     
-    // phase.phase_done.set_drain_time(this, 100ns); // Set drain time to 100ns
+        // phase.phase_done.set_drain_time(this, 1000us); // without drain: 717600 ps, with drain : same!
   endfunction 
 
    virtual function void connect_phase(uvm_phase phase);
@@ -60,14 +60,26 @@ virtual function void start_of_simulation_phase(input uvm_phase phase);
   endtask
 
   virtual task main_phase(uvm_phase phase) ;
+
+     uvm_objection objection;
+
      super.main_phase(phase) ;
+
      phase.raise_objection(this);
      // sequence_pkt_tx_0.start(env_0.agent_pkt_tx_0.sequencer_pkt_tx_0);
      sequence_pkt_tx_0.start(virtual_sequencer_0.sequencer_pkt_tx_0);
      // sequence_reset_0.start(env_0.agent_reset_0.sequencer_reset_0);
      sequence_reset_0.start(virtual_sequencer_0.sequencer_reset_0);
      phase.drop_objection(this);
-     phase.phase_done.set_drain_time(this, 100ns); // Set drain time to 100ns
+     // phase.phase_done.set_drain_time(this, 100us); // didn't do much
+
+     // from Benjamin's book
+     objection = phase.get_objection();
+     objection.set_drain_time(this, 90us);  // works!
+                                            // 100us  ->Time: 100617600 ps
+                                            // 90us -> Time: 90617600 ps
+
+
 
   endtask 
 

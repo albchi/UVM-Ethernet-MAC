@@ -34,48 +34,66 @@ class driver_pkt_tx extends uvm_driver #(data_pkt);
 
          `uvm_info("DRIVER_PKT_TX", "before get_next", UVM_HIGH);
          seq_item_port.get_next_item(req);
-         // pkt_remain = req.data.size();
+         len = req.data2.size();
          `uvm_info("DRIVER_PKT_TX", "after get_next", UVM_HIGH);
 
          `uvm_info("XAC PKT TX DRIVER run_phase received this packet ", req.sprint(), UVM_HIGH);
 
+          repeat(req.ifg) begin
+              vi.pkt_tx_sop <= 1'b0;
+              vi.pkt_tx_val <= 1'b0;
+              vi.pkt_tx_eop <= 1'b0;
+              @(posedge vi.clk);
+          end // repeat(req.ifg) begin
+        
 
-         // phase.0
-         vi.pkt_tx_sop <= 1'b0;
-         vi.pkt_tx_val <= 1'b0;
-         vi.pkt_tx_eop <= 1'b0;
-         @(posedge vi.clk);
-         $display("XAC PKT TX DRIVER drove sop=%b val=%b eop=%b data=%h \n",vi.pkt_tx_sop, vi.pkt_tx_val, vi.pkt_tx_eop, vi.pkt_tx_data);
+          // $display("XAC PKT TX DRIVER - after IFG - drove sop=%b val=%b eop=%b data=%h \n",vi.pkt_tx_sop, vi.pkt_tx_val, vi.pkt_tx_eop, vi.pkt_tx_data);
+         // `uvm_info("XAC PKT TX DRIVER run_phase received this packet ", req.sprint(), UVM_HIGH);
+         
+         for(i = 0 ; i < len ; i++)  begin
 
-         // phase1
-         vi.pkt_tx_sop <= 1'b1;
-         vi.pkt_tx_val <= 1'b1;
-         vi.pkt_tx_eop <= 1'b0;
-         vi.pkt_tx_data <= req.data; 
-         vi.pkt_tx_mod <= req.mod; 
-         @(posedge vi.clk);
+            // $display("XAC PKT TX DRIVER - in Phase 0 \n");
+         // `uvm_info("XAC PKT TX DRIVER run_phase received this packet ", req.sprint(), UVM_HIGH);
+            if ( i == 0) begin
+               // phase 0
+               vi.pkt_tx_sop <= 1'b1;
+               vi.pkt_tx_val <= 1'b1;
+               vi.pkt_tx_eop <= 1'b0;
+               vi.pkt_tx_data <= req.data; 
+               // vi.pkt_tx_data <= req.data2[i]; 
+            end // if ( i == 0) begin
+            else if (i == (len - 1)) begin
+               // $display("XAC PKT TX DRIVER - in Phase 2");
+         // `uvm_info("XAC PKT TX DRIVER run_phase received this packet ", req.sprint(), UVM_HIGH);
 
-         $display("XAC PKT TX DRIVER drove sop=%b val=%b eop=%b data=%h \n",vi.pkt_tx_sop, vi.pkt_tx_val, vi.pkt_tx_eop, vi.pkt_tx_data);
-         // phase2
-         vi.pkt_tx_sop <= 1'b0;
-         vi.pkt_tx_val <= 1'b1;
-         vi.pkt_tx_eop <= 1'b0;
-         vi.pkt_tx_data <= req.data2[0]; 
-         vi.pkt_tx_mod <= req.mod; 
-         @(posedge vi.clk);
+               // phase2
+               vi.pkt_tx_sop <= 1'b0;
+               vi.pkt_tx_val <= 1'b1;
+               vi.pkt_tx_eop <= 1'b1;
+               // vi.pkt_tx_data <= req.data; 
+               vi.pkt_tx_data <= req.data2[i]; 
+               vi.pkt_tx_mod <= req.mod; 
 
-         $display("XAC PKT TX DRIVER drove sop=%b val=%b eop=%b data=%h \n",vi.pkt_tx_sop, vi.pkt_tx_val, vi.pkt_tx_eop, vi.pkt_tx_data);
-         // phase3
-         vi.pkt_tx_val <= 1'b0;
-         vi.pkt_tx_eop <= 1'b1;
-         vi.pkt_tx_val <= 1'b1;
-         vi.pkt_tx_mod <= req.mod; 
-         @(posedge vi.clk);
+            end // else if (i == (len - 1)) begin
+            else begin
 
-         $display("XAC PKT TX DRIVER drove sop=%b val=%b eop=%b  data=%h \n",vi.pkt_tx_sop, vi.pkt_tx_val, vi.pkt_tx_eop, vi.pkt_tx_data);
-         seq_item_port.item_done();
+               // $display("XAC PKT TX DRIVER - in Phase 1 \n");
+         // `uvm_info("XAC PKT TX DRIVER run_phase received this packet ", req.sprint(), UVM_HIGH);
+               // phase1
+               vi.pkt_tx_sop <= 1'b0;
+               vi.pkt_tx_val <= 1'b1;
+               vi.pkt_tx_eop <= 1'b0;
+               vi.pkt_tx_data <= req.data2[i]; 
+               vi.pkt_tx_mod <= req.mod; 
+
+            end
+            @(posedge vi.clk);
+            // $display("XAC PKT TX DRIVER drove sop=%b val=%b eop=%b  data=%h \n",vi.pkt_tx_sop, vi.pkt_tx_val, vi.pkt_tx_eop, vi.pkt_tx_data);
+         // `uvm_info("XAC PKT TX DRIVER run_phase received this packet ", req.sprint(), UVM_HIGH);
  
 
+      end // for
+      seq_item_port.item_done();
    end // forever
 
    endtask

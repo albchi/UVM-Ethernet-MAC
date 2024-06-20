@@ -1,0 +1,31 @@
+Hello! You are in Albert Chiang's UVM top level directory.
+
+
+Quick start:
+
+  1) cd sim/uvm
+  2) source SETUP (sets up VCS and Verdi)
+  3) CLEAN (delete previous simulation files)
+  4) COMP (this will compile all files and testcases, outputs vcs.log)
+  5) edit SIM (uncomment the +UVM_TESTNAME of interested)
+  6) SIM (this will run simv, produce simv.log )
+  7) examine simv.log for "Matches", "Mismatches", "Fatal"
+
+
+
+Quick directory walk through (nothing exciting):
+
+   1) doc       : design and verification document
+   2) rtl       : the Verilog design
+   3) testbench : all non-test UVM here (env, driver, monitor, sb, cov, sequences, ...)
+   4) testcases : UVM tests are here, use with +UVM_TESTNAME
+   5) sim       : compile (using COMP) and simulate (using SIM) here
+                  compile log, simulation log, and waveforms are here
+                  all the excitement is here!
+
+
+To run a regression
+  1) cd sim/uvm
+  2) source SETUP (sets up VCS and Verdi)
+  3) REGRESS (will compile and simulate all tests)
+  4) each test will create its own simv.log

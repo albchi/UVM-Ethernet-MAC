@@ -20,7 +20,8 @@ vcs \
 ../../testcases/testcase_base.sv \
 ../../testcases/testcase_wb.sv \
 ../../testcases/testcase_reset.sv  \
-../../testcases/testcase_loopback_reset.sv 
+../../testcases/testcase_loopback_reset.sv  \
+../../testcases/testcase_long.sv
 
 
 

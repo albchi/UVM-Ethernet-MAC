@@ -1,0 +1,300 @@
+Command: /home/sf10274/AlbertLand/0UVMgetinfo/lab-project-10gEthernetMAC/sim/uvm/./simv -l simv_testcase_reset.log +UVM_TESTNAME=testcase_reset
+Chronologic VCS simulator copyright 1991-2023
+Contains Synopsys proprietary information.
+Compiler version U-2023.03-SP2_Full64; Runtime version U-2023.03-SP2_Full64;  Jun 19 16:20 2024
+----------------------------------------------------------------
+UVM-1.1d.Synopsys
+(C) 2007-2013 Mentor Graphics Corporation
+(C) 2007-2013 Cadence Design Systems, Inc.
+(C) 2006-2013 Synopsys, Inc.
+(C) 2011-2013 Cypress Semiconductor Corp.
+----------------------------------------------------------------
+
+  ***********       IMPORTANT RELEASE NOTES         ************
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_NO_DEPRECATED undefined.
+  See http://www.eda.org/svdb/view.php?id=3313 for more details.
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+  See http://www.eda.org/svdb/view.php?id=3770 for more details.
+
+      (Specify +UVM_NO_RELNOTES to turn off this notice)
+
+not using ORIG_RESET
+*Verdi* Loading libsscore_vcs202303.so
+FSDB Dumper for VCS, Release Verdi_U-2023.03-SP2-2, Linux x86_64/64bit, 11/22/2023
+(C) 1996 - 2023 by Synopsys, Inc.
+*Verdi* FSDB WARNING: The FSDB file already exists. Overwriting the FSDB file may crash the programs that are using this file.
+*Verdi* : Create FSDB file 'novas.fsdb'
+*Verdi* : Begin traversing the scopes, layer (0).
+*Verdi* : End of traversing.
+XAC hello from tb_prog
+UVM_INFO @ 0: reporter [RNTST] Running test testcase_reset...
+UVM_INFO @ 0: reporter [UVMTOP] UVM testbench topology:
+--------------------------------------------------------------------------
+Name                       Type                                Size  Value
+--------------------------------------------------------------------------
+uvm_test_top               testcase_reset                      -     @460 
+  env_0                    env                                 -     @468 
+    agent_pkt_rx_0         agent_pkt_rx                        -     @516 
+      analysis_port        uvm_analysis_port                   -     @684 
+      monitor_pkt_rx_0     monitor_pkt_rx                      -     @676 
+        ap                 uvm_analysis_port                   -     @693 
+      sequencer_pkt_rx_0   uvm_sequencer                       -     @553 
+        rsp_export         uvm_analysis_export                 -     @561 
+        seq_item_export    uvm_seq_item_pull_imp               -     @667 
+        arbitration_queue  array                               0     -    
+        lock_queue         array                               0     -    
+        num_last_reqs      integral                            32    'd1  
+        num_last_rsps      integral                            32    'd1  
+    agent_pkt_tx_0         agent_pkt_tx                        -     @508 
+      analysis_port        uvm_analysis_port                   -     @861 
+      driver_pkt_tx_0      driver_pkt_tx                       -     @835 
+        rsp_port           uvm_analysis_port                   -     @852 
+        seq_item_port      uvm_seq_item_pull_port              -     @843 
+      monitor_pkt_tx_0     monitor_pkt_tx                      -     @870 
+        ap                 uvm_analysis_port                   -     @879 
+      sequencer_pkt_tx_0   uvm_sequencer                       -     @712 
+        rsp_export         uvm_analysis_export                 -     @720 
+        seq_item_export    uvm_seq_item_pull_imp               -     @826 
+        arbitration_queue  array                               0     -    
+        lock_queue         array                               0     -    
+        num_last_reqs      integral                            32    'd1  
+        num_last_rsps      integral                            32    'd1  
+    agent_reset_0          agent_reset                         -     @492 
+      driver_reset_0       driver_reset                        -     @1021
+        rsp_port           uvm_analysis_port                   -     @1038
+        seq_item_port      uvm_seq_item_pull_port              -     @1029
+      sequencer_reset_0    uvm_sequencer                       -     @898 
+        rsp_export         uvm_analysis_export                 -     @906 
+        seq_item_export    uvm_seq_item_pull_imp               -     @1012
+        arbitration_queue  array                               0     -    
+        lock_queue         array                               0     -    
+        num_last_reqs      integral                            32    'd1  
+        num_last_rsps      integral                            32    'd1  
+    agent_wb_0             agent_wb                            -     @500 
+      driver_wb_0          driver_wb                           -     @1180
+        rsp_port           uvm_analysis_port                   -     @1197
+        seq_item_port      uvm_seq_item_pull_port              -     @1188
+      monitor_wb_0         monitor_wb                          -     @1206
+        ap                 uvm_analysis_port                   -     @1215
+      sequencer_wb_0       uvm_sequencer                       -     @1057
+        rsp_export         uvm_analysis_export                 -     @1065
+        seq_item_export    uvm_seq_item_pull_imp               -     @1171
+        arbitration_queue  array                               0     -    
+        lock_queue         array                               0     -    
+        num_last_reqs      integral                            32    'd1  
+        num_last_rsps      integral                            32    'd1  
+    coverage_pkt_tx_0      coverage_pkt_tx                     -     @532 
+      analysis_imp         uvm_analysis_imp                    -     @540 
+    scoreboard_pkt_0       scoreboard_pkt                      -     @524 
+      comparator           uvm_in_order_class_comparator #(T)  -     @1234
+        after              uvm_tlm_analysis_fifo #(T)          -     @1322
+          analysis_export  uvm_analysis_imp                    -     @1366
+          get_ap           uvm_analysis_port                   -     @1357
+          get_peek_export  uvm_get_peek_imp                    -     @1339
+          put_ap           uvm_analysis_port                   -     @1348
+          put_export       uvm_put_imp                         -     @1330
+        after_export       uvm_analysis_export                 -     @1251
+        before             uvm_tlm_analysis_fifo #(T)          -     @1269
+          analysis_export  uvm_analysis_imp                    -     @1313
+          get_ap           uvm_analysis_port                   -     @1304
+          get_peek_export  uvm_get_peek_imp                    -     @1286
+          put_ap           uvm_analysis_port                   -     @1295
+          put_export       uvm_put_imp                         -     @1277
+        before_export      uvm_analysis_export                 -     @1242
+        pair_ap            uvm_analysis_port                   -     @1260
+      from_agent_in        uvm_analysis_export                 -     @1384
+      from_agent_out       uvm_analysis_export                 -     @1375
+--------------------------------------------------------------------------
+
+
+#### Factory Configuration (*)
+
+  No instance or type overrides are registered with this factory
+
+All types registered with the factory: 73 total
+(types without type names will not be printed)
+
+  Type Name
+  ---------
+  agent_pkt_rx
+  agent_pkt_tx
+  agent_reset
+  agent_wb
+  coverage_pkt_tx
+  data_pkt
+  data_reset
+  data_wb
+  driver_pkt_tx
+  driver_reset
+  driver_wb
+  env
+  monitor_pkt_rx
+  monitor_pkt_tx
+  monitor_wb
+  scoreboard_pkt
+  sequence_pkt_rx
+  sequence_pkt_tx
+  sequence_reset
+  sequence_wb
+  snps_uvm_reg_bank_group
+  snps_uvm_reg_map
+  testcase_base
+  testcase_loopback_reset
+  testcase_reset
+  testcase_wb
+  virtual_sequence
+  virtual_sequence_wb
+  virtual_sequencer
+(*) Types with no associated type name will be printed as <unknown>
+
+####
+
+UVM_INFO @ 0: reporter [UVMTOP] UVM testbench topology:
+--------------------------------------------------------------------------
+Name                       Type                                Size  Value
+--------------------------------------------------------------------------
+uvm_test_top               testcase_reset                      -     @460 
+  env_0                    env                                 -     @468 
+    agent_pkt_rx_0         agent_pkt_rx                        -     @516 
+      analysis_port        uvm_analysis_port                   -     @684 
+      monitor_pkt_rx_0     monitor_pkt_rx                      -     @676 
+        ap                 uvm_analysis_port                   -     @693 
+      sequencer_pkt_rx_0   uvm_sequencer                       -     @553 
+        rsp_export         uvm_analysis_export                 -     @561 
+        seq_item_export    uvm_seq_item_pull_imp               -     @667 
+        arbitration_queue  array                               0     -    
+        lock_queue         array                               0     -    
+        num_last_reqs      integral                            32    'd1  
+        num_last_rsps      integral                            32    'd1  
+    agent_pkt_tx_0         agent_pkt_tx                        -     @508 
+      analysis_port        uvm_analysis_port                   -     @861 
+      driver_pkt_tx_0      driver_pkt_tx                       -     @835 
+        rsp_port           uvm_analysis_port                   -     @852 
+        seq_item_port      uvm_seq_item_pull_port              -     @843 
+      monitor_pkt_tx_0     monitor_pkt_tx                      -     @870 
+        ap                 uvm_analysis_port                   -     @879 
+      sequencer_pkt_tx_0   uvm_sequencer                       -     @712 
+        rsp_export         uvm_analysis_export                 -     @720 
+        seq_item_export    uvm_seq_item_pull_imp               -     @826 
+        arbitration_queue  array                               0     -    
+        lock_queue         array                               0     -    
+        num_last_reqs      integral                            32    'd1  
+        num_last_rsps      integral                            32    'd1  
+    agent_reset_0          agent_reset                         -     @492 
+      driver_reset_0       driver_reset                        -     @1021
+        rsp_port           uvm_analysis_port                   -     @1038
+        seq_item_port      uvm_seq_item_pull_port              -     @1029
+      sequencer_reset_0    uvm_sequencer                       -     @898 
+        rsp_export         uvm_analysis_export                 -     @906 
+        seq_item_export    uvm_seq_item_pull_imp               -     @1012
+        arbitration_queue  array                               0     -    
+        lock_queue         array                               0     -    
+        num_last_reqs      integral                            32    'd1  
+        num_last_rsps      integral                            32    'd1  
+    agent_wb_0             agent_wb                            -     @500 
+      driver_wb_0          driver_wb                           -     @1180
+        rsp_port           uvm_analysis_port                   -     @1197
+        seq_item_port      uvm_seq_item_pull_port              -     @1188
+      monitor_wb_0         monitor_wb                          -     @1206
+        ap                 uvm_analysis_port                   -     @1215
+      sequencer_wb_0       uvm_sequencer                       -     @1057
+        rsp_export         uvm_analysis_export                 -     @1065
+        seq_item_export    uvm_seq_item_pull_imp               -     @1171
+        arbitration_queue  array                               0     -    
+        lock_queue         array                               0     -    
+        num_last_reqs      integral                            32    'd1  
+        num_last_rsps      integral                            32    'd1  
+    coverage_pkt_tx_0      coverage_pkt_tx                     -     @532 
+      analysis_imp         uvm_analysis_imp                    -     @540 
+    scoreboard_pkt_0       scoreboard_pkt                      -     @524 
+      comparator           uvm_in_order_class_comparator #(T)  -     @1234
+        after              uvm_tlm_analysis_fifo #(T)          -     @1322
+          analysis_export  uvm_analysis_imp                    -     @1366
+          get_ap           uvm_analysis_port                   -     @1357
+          get_peek_export  uvm_get_peek_imp                    -     @1339
+          put_ap           uvm_analysis_port                   -     @1348
+          put_export       uvm_put_imp                         -     @1330
+        after_export       uvm_analysis_export                 -     @1251
+        before             uvm_tlm_analysis_fifo #(T)          -     @1269
+          analysis_export  uvm_analysis_imp                    -     @1313
+          get_ap           uvm_analysis_port                   -     @1304
+          get_peek_export  uvm_get_peek_imp                    -     @1286
+          put_ap           uvm_analysis_port                   -     @1295
+          put_export       uvm_put_imp                         -     @1277
+        before_export      uvm_analysis_export                 -     @1242
+        pair_ap            uvm_analysis_port                   -     @1260
+      from_agent_in        uvm_analysis_export                 -     @1384
+      from_agent_out       uvm_analysis_export                 -     @1375
+--------------------------------------------------------------------------
+
+
+#### Factory Configuration (*)
+
+  No instance or type overrides are registered with this factory
+
+All types registered with the factory: 73 total
+(types without type names will not be printed)
+
+  Type Name
+  ---------
+  agent_pkt_rx
+  agent_pkt_tx
+  agent_reset
+  agent_wb
+  coverage_pkt_tx
+  data_pkt
+  data_reset
+  data_wb
+  driver_pkt_tx
+  driver_reset
+  driver_wb
+  env
+  monitor_pkt_rx
+  monitor_pkt_tx
+  monitor_wb
+  scoreboard_pkt
+  sequence_pkt_rx
+  sequence_pkt_tx
+  sequence_reset
+  sequence_wb
+  snps_uvm_reg_bank_group
+  snps_uvm_reg_map
+  testcase_base
+  testcase_loopback_reset
+  testcase_reset
+  testcase_wb
+  virtual_sequence
+  virtual_sequence_wb
+  virtual_sequencer
+(*) Types with no associated type name will be printed as <unknown>
+
+####
+
+UVM_INFO ../../testbench/uvm/monitor_pkt_rx.sv(75) @ 5016000: uvm_test_top.env_0.agent_pkt_rx_0.monitor_pkt_rx_0 [monitor_pkt_rx_0] REPORT: PKT RX Captured 0 packets
+UVM_INFO ../../testbench/uvm/monitor_pkt_tx.sv(73) @ 5016000: uvm_test_top.env_0.agent_pkt_tx_0.monitor_pkt_tx_0 [monitor_pkt_tx_0] REPORT: PKT TX Captured 0 packets
+UVM_INFO ../../testbench/uvm/monitor_wb.sv(51) @ 5016000: uvm_test_top.env_0.agent_wb_0.monitor_wb_0 [monitor_wb_0] REPORT: WB Trans Captured 0 packets
+Scoreboard Report : Matches : 0. Mismatches : 0
+
+--- UVM Report Summary ---
+
+** Report counts by severity
+UVM_INFO :    6
+UVM_WARNING :    0
+UVM_ERROR :    0
+UVM_FATAL :    0
+** Report counts by id
+[RNTST]     1
+[UVMTOP]     2
+[monitor_pkt_rx_0]     1
+[monitor_pkt_tx_0]     1
+[monitor_wb_0]     1
+$finish called from file "/usr/synopsys/vcs/U-2023.03-SP2/etc/uvm-1.1/base/uvm_root.svh", line 437.
+$finish at simulation time              5016000
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 5016000 ps
+CPU Time:      0.560 seconds;       Data structure size:   0.7Mb
+Wed Jun 19 16:20:03 2024

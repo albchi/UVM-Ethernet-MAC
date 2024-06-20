@@ -21,8 +21,10 @@ class agent_wb extends uvm_agent;
 
    virtual function void build_phase(uvm_phase phase);
       super.build_phase(phase);
-      sequencer_wb_0 = sequencer_wb::type_id::create("sequencer_wb_0", this);
-      driver_wb_0 = driver_wb::type_id::create("driver_wb_0", this);
+      if (is_active == UVM_ACTIVE) begin
+         sequencer_wb_0 = sequencer_wb::type_id::create("sequencer_wb_0", this);
+         driver_wb_0 = driver_wb::type_id::create("driver_wb_0", this);
+      end
       monitor_wb_0 = monitor_wb::type_id::create("monitor_wb_0", this);
    endfunction 
    

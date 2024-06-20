@@ -35,6 +35,12 @@ class sequence_pkt_tx extends uvm_sequence#(data_pkt);
 
       // `uvm_do_with(req, {src_addr != 48'h1234; src_data != 32'h5678;})
 
+      `uvm_do_with(req, {data == 64'h5A5ABABA;data2.size() > 10; data2.size() < 50; });
+      `uvm_do_with(req, {data == 64'hDEADCAFE;data2.size() > 200; data2.size () < 500; ifg == 1; });
+      `uvm_do_with(req, {data == 64'hBEEFFACE;data2.size() > 40; data2.size() < 45; ifg == 30; });
+      `uvm_do_with(req, {data == 64'hBAD00100; data2.size() == 3; ifg == 3; });
+      `uvm_do_with(req, {data == 64'hA1B00B1A;data2.size() < 70; ifg == 18; });
+/*
       `uvm_do_with(req, {data == 64'h11223344;});
       `uvm_do_with(req, {data == 64'haabbccdd;});
       `uvm_do_with(req, {data == 64'hfacebeef;});
@@ -43,6 +49,7 @@ class sequence_pkt_tx extends uvm_sequence#(data_pkt);
       `uvm_do_with(req, {data == 64'hffeeddcc;});
       `uvm_do_with(req, {data == 64'h11335577;});
       `uvm_do_with(req, {data == 64'h88664422;});
+*/
          
 
 

@@ -171,9 +171,10 @@ VCS compile option:
  option[79]: ../../testcases/testcase_wb.sv
  option[80]: ../../testcases/testcase_reset.sv
  option[81]: ../../testcases/testcase_loopback_reset.sv
- option[82]: +define+UVM_DIRECTC_OPTS
- option[83]: -load
- option[84]: /usr/synopsys/verdi/U-2023.03-SP2-2/share/PLI/VCS/LINUX64/libnovas.so:FSDBDumpCmd
+ option[82]: ../../testcases/testcase_long.sv
+ option[83]: +define+UVM_DIRECTC_OPTS
+ option[84]: -load
+ option[85]: /usr/synopsys/verdi/U-2023.03-SP2-2/share/PLI/VCS/LINUX64/libnovas.so:FSDBDumpCmd
 Chronologic Simulation VCS Release U-2023.03-SP2_Full64
 Linux 3.10.0-1160.105.1.el7.x86_64 #1 SMP Mon Nov 6 06:58:51 EST 2023 x86_64
 CPU cores: 8
@@ -182,7 +183,7 @@ Limit information:
 cputime		unlimited
 filesize		unlimited
 datasize		unlimited
-stacksize		8307 kbytes
+stacksize		8312 kbytes
 coredumpsize		0 kbytes
 memoryuse		unlimited
 vmemoryuse		unlimited
@@ -193,7 +194,7 @@ maxproc		4096
 (Special)Runtime environment variables:
 
 Runtime environment variables:
-XDG_SESSION_ID=30878
+XDG_SESSION_ID=30997
 HOSTNAME=VLSI04.ucsc-extension.edu
 SYNOPSYS_TMAX=/usr/synopsys/syn/U-2022.12-SP7-1/
 SELINUX_ROLE_REQUESTED=
@@ -202,13 +203,13 @@ TERM=xterm-256color
 JASPERPATH=/usr/cadence/JASPER/bin
 HISTSIZE=1000
 SKIP_CDS_DIALOG=
-SSH_CLIENT=172.17.17.167 54314 22
+SSH_CLIENT=172.17.17.167 57934 22
 SIGRITYHOME=/usr/cadence/SIGRITY20211
 SELINUX_USE_CURRENT_RANGE=
 QTDIR=/usr/lib64/qt-3.3
 MVSHOME=/usr/cadence/MVS211
 QTINC=/usr/lib64/qt-3.3/include
-SSH_TTY=/dev/pts/48
+SSH_TTY=/dev/pts/46
 Formality_ESP=/usr/synopsys/esp/U-2022.12-SP5-2/
 QT_GRAPHICSSYSTEM_CHECKED=1
 USER=sf10274
@@ -243,7 +244,7 @@ XCELIUMPATH=/usr/cadence/XCELIUM2009/tools/bin:/usr/cadence/XCELIUM2009/tools/df
 LOGNAME=sf10274
 CVS_RSH=ssh
 QTLIB=/usr/lib64/qt-3.3/lib
-SSH_CONNECTION=172.17.17.167 54314 10.20.250.17 22
+SSH_CONNECTION=172.17.17.167 57934 10.20.250.17 22
 SSVHOME=/usr/cadence/SSV211
 XDG_DATA_DIRS=/home/sf10274/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share
 CDS_LIC_FILE=27000@license.soe.ucsc.edu
@@ -251,7 +252,7 @@ LESSOPEN=||/usr/bin/lesspipe.sh %s
 OA_UNSUPPORTED_PLAT=linux_rhel50_gcc48x
 SYNPLIFYPRO_LICENSE_TYPE=synplifypremierdp
 SKIP_CDSLIB_MANAGER=
-DISPLAY=localhost:12.0
+DISPLAY=localhost:11.0
 XDG_RUNTIME_DIR=/run/user/2703
 XCELIUMHOME=/usr/cadence/XCELIUM2009
 MVSPATH=/usr/cadence/MVS211/tools/bin:/usr/cadence/MVS211/tools/dfII/bin
@@ -268,82 +269,82 @@ argv[0]=simv
 argv[1]=-l
 argv[2]=simv_testcase_reset.log
 argv[3]=+UVM_TESTNAME=testcase_reset
-270 profile - 100
-          CPU/Mem usage: 0.060 sys,  0.350 user,  332.14M mem
-271 Elapsed time:    0:00:01    Tue Jun 18 17:05:21 2024
-272 User CPU time used: 0 seconds
-273 System CPU time used: 0 seconds
-274 pliAppInit
-275 [SC]Init: MemoryConsumed=0.00MB ElapsedTime=0hour 0min. 0sec.
-276 FSDB_GATE is set.
-277 FSDB_RTL is set.
-278 FSDB_ALIAS_ARRAY_ELEM is set to 4294967295.
-279 Enable Parallel Dumping.
-280 pliAppMiscSet: New Sim Round
-281 pliEntryInit
-282 LIBSSCORE=found /usr/synopsys/verdi/U-2023.03-SP2-2/share/PLI/lib/LINUXAMD64/libsscore_vcs202303.so through $NOVAS_HOME setting.
-283 FSDB Dumper for VCS, Release Verdi_U-2023.03-SP2-2, Linux x86_64/64bit, 11/22/2023
-284 (C) 1996 - 2023 by Synopsys, Inc.
-285 DVDI_is_vir_unload_enabled is enable
-286 FSDB_VCS_ENABLE_NATIVE_VC is enable
-287 sps_call_fsdbDumpvars_vd_main at 0 : ../../testbench/uvm/tb_top_xge_mac.v(254)
-288 *Verdi* FSDB WARNING: The FSDB file already exists. Overwriting the FSDB file may crash the programs that are using this file.
-289 *Verdi* : Create FSDB file 'novas.fsdb'
-290 [spi_vcs_vd_ppi_create_root]: no upf option
-291 compile option from '/home/sf10274/AlbertLand/0UVMgetinfo/lab-project-10gEthernetMAC/sim/uvm/simv.daidir/vcs_rebuild'.
-292   "vcs '-full64' '+vcs+lic+wait' '-sverilog' '-l' 'vcs.log' '-override_timescale=1ps/1ps' '-ntb_opts' 'uvm-1.1' '-debug_access+all' '-kdb' '../../rtl/verilog/fault_sm.v' '../../rtl/verilog/generic_fifo_ctrl.v' '../../rtl/verilog/generic_fifo.v' '../../rtl/verilog/generic_mem_medium.v' '../../rtl/verilog/generic_mem_small.v' '../../rtl/verilog/meta_sync_single.v' '../../rtl/verilog/meta_sync.v' '../../rtl/verilog/rx_data_fifo.v' '../../rtl/verilog/rx_dequeue.v' '../../rtl/verilog/rx_enqueue.v' '../../rtl/verilog/rx_hold_fifo.v' '../../rtl/verilog/sync_clk_core.v' '../../rtl/verilog/sync_clk_wb.v' '../../rtl/verilog/sync_clk_xgmii_tx.v' '../../rtl/verilog/tx_data_fifo.v' '../../rtl/verilog/tx_dequeue.v' '../../rtl/verilog/tx_enqueue.v' '../../rtl/verilog/tx_hold_fifo.v' '../../rtl/verilog/wishbone_if.v' '../../rtl/verilog/xge_mac.v' '+incdir+../../rtl/include' '+incdir+../../testcases' '+incdir+../../testbench/uvm' '../../testbench/uvm/intf_rst.sv' '../../testbench/uvm/intf_wb.sv' '../../testbench/uvm/intf_pkt_tx.sv' '../../testbench/uvm/intf_pkt_rx.sv' '../../testbench/uvm/tb_top_xge_mac.v' '../../testbench/uvm/tb_prog.sv' '../../testcases/testcase_base.sv' '../../testcases/testcase_wb.sv' '../../testcases/testcase_reset.sv' '../../testcases/testcase_loopback_reset.sv' 2>&1"
-293 *Verdi* : Begin traversing the scopes, layer (0).
-294 *Verdi* : End of traversing.
-295 pliAppHDL_DumpVarComplete traverse var: profile - 
-          CPU/Mem usage: 0.070 sys,  0.390 user,  432.93M mem
-                   incr: 0.010 sys,  0.030 user,  9.15M mem
-                   accu: 0.010 sys,  0.030 user,  9.15M mem
-              accu incr: 0.010 sys,  0.030 user,  9.15M mem
+271 profile - 100
+          CPU/Mem usage: 0.070 sys,  0.340 user,  332.26M mem
+272 Elapsed time:    0:00:01    Wed Jun 19 17:17:28 2024
+273 User CPU time used: 0 seconds
+274 System CPU time used: 0 seconds
+275 pliAppInit
+276 [SC]Init: MemoryConsumed=0.00MB ElapsedTime=0hour 0min. 0sec.
+277 FSDB_GATE is set.
+278 FSDB_RTL is set.
+279 FSDB_ALIAS_ARRAY_ELEM is set to 4294967295.
+280 Enable Parallel Dumping.
+281 pliAppMiscSet: New Sim Round
+282 pliEntryInit
+283 LIBSSCORE=found /usr/synopsys/verdi/U-2023.03-SP2-2/share/PLI/lib/LINUXAMD64/libsscore_vcs202303.so through $NOVAS_HOME setting.
+284 FSDB Dumper for VCS, Release Verdi_U-2023.03-SP2-2, Linux x86_64/64bit, 11/22/2023
+285 (C) 1996 - 2023 by Synopsys, Inc.
+286 DVDI_is_vir_unload_enabled is enable
+287 FSDB_VCS_ENABLE_NATIVE_VC is enable
+288 sps_call_fsdbDumpvars_vd_main at 0 : ../../testbench/uvm/tb_top_xge_mac.v(254)
+289 *Verdi* FSDB WARNING: The FSDB file already exists. Overwriting the FSDB file may crash the programs that are using this file.
+290 *Verdi* : Create FSDB file 'novas.fsdb'
+291 [spi_vcs_vd_ppi_create_root]: no upf option
+292 compile option from '/home/sf10274/AlbertLand/0UVMgetinfo/lab-project-10gEthernetMAC/sim/uvm/simv.daidir/vcs_rebuild'.
+293   "vcs '-full64' '+vcs+lic+wait' '-sverilog' '-l' 'vcs.log' '-override_timescale=1ps/1ps' '-ntb_opts' 'uvm-1.1' '-debug_access+all' '-kdb' '../../rtl/verilog/fault_sm.v' '../../rtl/verilog/generic_fifo_ctrl.v' '../../rtl/verilog/generic_fifo.v' '../../rtl/verilog/generic_mem_medium.v' '../../rtl/verilog/generic_mem_small.v' '../../rtl/verilog/meta_sync_single.v' '../../rtl/verilog/meta_sync.v' '../../rtl/verilog/rx_data_fifo.v' '../../rtl/verilog/rx_dequeue.v' '../../rtl/verilog/rx_enqueue.v' '../../rtl/verilog/rx_hold_fifo.v' '../../rtl/verilog/sync_clk_core.v' '../../rtl/verilog/sync_clk_wb.v' '../../rtl/verilog/sync_clk_xgmii_tx.v' '../../rtl/verilog/tx_data_fifo.v' '../../rtl/verilog/tx_dequeue.v' '../../rtl/verilog/tx_enqueue.v' '../../rtl/verilog/tx_hold_fifo.v' '../../rtl/verilog/wishbone_if.v' '../../rtl/verilog/xge_mac.v' '+incdir+../../rtl/include' '+incdir+../../testcases' '+incdir+../../testbench/uvm' '../../testbench/uvm/intf_rst.sv' '../../testbench/uvm/intf_wb.sv' '../../testbench/uvm/intf_pkt_tx.sv' '../../testbench/uvm/intf_pkt_rx.sv' '../../testbench/uvm/tb_top_xge_mac.v' '../../testbench/uvm/tb_prog.sv' '../../testcases/testcase_base.sv' '../../testcases/testcase_wb.sv' '../../testcases/testcase_reset.sv' '../../testcases/testcase_loopback_reset.sv' '../../testcases/testcase_long.sv' 2>&1"
+294 *Verdi* : Begin traversing the scopes, layer (0).
+295 *Verdi* : End of traversing.
+296 pliAppHDL_DumpVarComplete traverse var: profile - 
+          CPU/Mem usage: 0.080 sys,  0.380 user,  433.05M mem
+                   incr: 0.010 sys,  0.040 user,  9.15M mem
+                   accu: 0.010 sys,  0.040 user,  9.15M mem
+              accu incr: 0.010 sys,  0.040 user,  9.15M mem
 
-          Count usage: 831 var,  522 idcode,  373 callback
-                 incr: 831 var,  522 idcode,  373 callback
-                 accu: 831 var,  522 idcode,  373 callback
-            accu incr: 831 var,  522 idcode,  373 callback
-296 Elapsed time:    0:00:02    Tue Jun 18 17:05:22 2024
-297 User CPU time used: 0 seconds
-298 System CPU time used: 0 seconds
-299 pliAppHDL_DumpVarComplete: profile - 
-          CPU/Mem usage: 0.070 sys,  0.390 user,  433.99M mem
+          Count usage: 838 var,  529 idcode,  380 callback
+                 incr: 838 var,  529 idcode,  380 callback
+                 accu: 838 var,  529 idcode,  380 callback
+            accu incr: 838 var,  529 idcode,  380 callback
+297 Elapsed time:    0:00:01    Wed Jun 19 17:17:28 2024
+298 User CPU time used: 0 seconds
+299 System CPU time used: 0 seconds
+300 pliAppHDL_DumpVarComplete: profile - 
+          CPU/Mem usage: 0.080 sys,  0.380 user,  434.10M mem
                    incr: 0.000 sys,  0.000 user,  1.05M mem
-                   accu: 0.010 sys,  0.030 user,  10.21M mem
+                   accu: 0.010 sys,  0.040 user,  10.21M mem
               accu incr: 0.000 sys,  0.000 user,  1.05M mem
 
-          Count usage: 831 var,  522 idcode,  373 callback
+          Count usage: 838 var,  529 idcode,  380 callback
                  incr: 0 var,  0 idcode,  0 callback
-                 accu: 831 var,  522 idcode,  373 callback
+                 accu: 838 var,  529 idcode,  380 callback
             accu incr: 0 var,  0 idcode,  0 callback
-300 Elapsed time:    0:00:02    Tue Jun 18 17:05:22 2024
-301 User CPU time used: 0 seconds
-302 System CPU time used: 0 seconds
-303 End of simulation at 5016000
-304 Memory usage: 435.458 M
-305 Maximum resident set size: 121 MB
-306 Hard page faults: 0
-307 Soft page faults: 44496
-308 Elapsed time:    0:00:02    Tue Jun 18 17:05:22 2024
-309 User CPU time used: 0 seconds
-310 System CPU time used: 0 seconds
-311 Begin FSDB profile info:
-312 FSDB Writer : bc1(23833) bcn(341) mtf/stf(0/0)
-FSDB Writer elapsed time : flush(0.002658) io wait(0.000000) theadpool wait(0.000000)
+301 Elapsed time:    0:00:01    Wed Jun 19 17:17:28 2024
+302 User CPU time used: 0 seconds
+303 System CPU time used: 0 seconds
+304 End of simulation at 5016000
+305 Memory usage: 435.573 M
+306 Maximum resident set size: 121 MB
+307 Hard page faults: 0
+308 Soft page faults: 44562
+309 Elapsed time:    0:00:02    Wed Jun 19 17:17:29 2024
+310 User CPU time used: 0 seconds
+311 System CPU time used: 0 seconds
+312 Begin FSDB profile info:
+313 FSDB Writer : bc1(23838) bcn(343) mtf/stf(0/0)
+FSDB Writer elapsed time : flush(0.098244) io wait(0.000000) theadpool wait(0.000000)
 FSDB Writer cpu time : MT Compression : 0
-313 End FSDB profile info
-314 FSDB closed. Name: novas.fsdb Size: 42809
-315 Parallel profile     - ProducerThread:1 ConsumerThread:1 Buffer:64MB
-316                      - BlockUsed:1 Acquire:0 BufferUsed:292785
-317                      - Flush:2 Expand:0 ProducerWait:0 ConsumerWait:0
-318                      - MainProducerTime:0.593544144 TotalConsumerTime:0.000000000
-319                      - ElapsedTime:1.072502000
-320 Producer   0 profile - BlockUsed:2 Acquire:0 BufferUsed:292785
-321 Consumer   0 profile - Affinity:-1 CPUTime:0.000000000 LifeTime:0.000000000 (-nan%)
-322                      - BlockUsed:2 Acquire:0 BufferUsed:292785
-323 SimExit
-324 Elapsed time:    0:00:03    Tue Jun 18 17:05:23 2024
-325 User CPU time used: 0 seconds
-326 System CPU time used: 0 seconds
-327 Sim process exit
+314 End FSDB profile info
+315 FSDB closed. Name: novas.fsdb Size: 42889
+316 Parallel profile     - ProducerThread:1 ConsumerThread:1 Buffer:64MB
+317                      - BlockUsed:1 Acquire:0 BufferUsed:292785
+318                      - Flush:2 Expand:0 ProducerWait:0 ConsumerWait:0
+319                      - MainProducerTime:0.563524321 TotalConsumerTime:0.000000000
+320                      - ElapsedTime:1.207212000
+321 Producer   0 profile - BlockUsed:2 Acquire:0 BufferUsed:292785
+322 Consumer   0 profile - Affinity:-1 CPUTime:0.000000000 LifeTime:0.000000000 (-nan%)
+323                      - BlockUsed:2 Acquire:0 BufferUsed:292785
+324 SimExit
+325 Elapsed time:    0:00:02    Wed Jun 19 17:17:29 2024
+326 User CPU time used: 0 seconds
+327 System CPU time used: 0 seconds
+328 Sim process exit

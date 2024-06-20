@@ -27,7 +27,7 @@
 /home/sf10274/AlbertLand/0UVMgetinfo/lab-project-10gEthernetMAC/testbench/uvm/agent_pkt_tx.sv
 /home/sf10274/AlbertLand/0UVMgetinfo/lab-project-10gEthernetMAC/testbench/uvm/agent_reset.sv
 /home/sf10274/AlbertLand/0UVMgetinfo/lab-project-10gEthernetMAC/testbench/uvm/agent_wb.sv
-/home/sf10274/AlbertLand/0UVMgetinfo/lab-project-10gEthernetMAC/testbench/uvm/coverage.sv
+/home/sf10274/AlbertLand/0UVMgetinfo/lab-project-10gEthernetMAC/testbench/uvm/coverage_pkt_tx.sv
 /home/sf10274/AlbertLand/0UVMgetinfo/lab-project-10gEthernetMAC/testbench/uvm/data_pkt.sv
 /home/sf10274/AlbertLand/0UVMgetinfo/lab-project-10gEthernetMAC/testbench/uvm/data_reset.sv
 /home/sf10274/AlbertLand/0UVMgetinfo/lab-project-10gEthernetMAC/testbench/uvm/data_wb.sv
@@ -45,6 +45,7 @@
 /home/sf10274/AlbertLand/0UVMgetinfo/lab-project-10gEthernetMAC/testbench/uvm/scoreboard_pkt.sv
 /home/sf10274/AlbertLand/0UVMgetinfo/lab-project-10gEthernetMAC/testbench/uvm/sequence_pkt_rx.sv
 /home/sf10274/AlbertLand/0UVMgetinfo/lab-project-10gEthernetMAC/testbench/uvm/sequence_pkt_tx.sv
+/home/sf10274/AlbertLand/0UVMgetinfo/lab-project-10gEthernetMAC/testbench/uvm/sequence_pkt_tx_long.sv
 /home/sf10274/AlbertLand/0UVMgetinfo/lab-project-10gEthernetMAC/testbench/uvm/sequence_reset.sv
 /home/sf10274/AlbertLand/0UVMgetinfo/lab-project-10gEthernetMAC/testbench/uvm/sequence_wb.sv
 /home/sf10274/AlbertLand/0UVMgetinfo/lab-project-10gEthernetMAC/testbench/uvm/tb_prog.sv
@@ -53,6 +54,7 @@
 /home/sf10274/AlbertLand/0UVMgetinfo/lab-project-10gEthernetMAC/testbench/uvm/virtual_sequence_wb.sv
 /home/sf10274/AlbertLand/0UVMgetinfo/lab-project-10gEthernetMAC/testbench/uvm/virtual_sequencer.sv
 /home/sf10274/AlbertLand/0UVMgetinfo/lab-project-10gEthernetMAC/testcases/testcase_base.sv
+/home/sf10274/AlbertLand/0UVMgetinfo/lab-project-10gEthernetMAC/testcases/testcase_long.sv
 /home/sf10274/AlbertLand/0UVMgetinfo/lab-project-10gEthernetMAC/testcases/testcase_loopback_reset.sv
 /home/sf10274/AlbertLand/0UVMgetinfo/lab-project-10gEthernetMAC/testcases/testcase_reset.sv
 /home/sf10274/AlbertLand/0UVMgetinfo/lab-project-10gEthernetMAC/testcases/testcase_wb.sv

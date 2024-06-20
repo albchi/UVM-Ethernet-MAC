@@ -1,7 +1,13 @@
+#!/bin/bash
+
+echo "REGRESS start!"
+echo "Cleaning..."
 CLEAN
 
+echo "Compiling..."
 COMP
 
+echo "Simulating ..."
 simv \
 -l simv_testcase_loopback_reset.log \
 +UVM_TESTNAME=testcase_loopback_reset
@@ -13,3 +19,14 @@ simv \
 simv \
 -l simv_testcase_reset.log \
 +UVM_TESTNAME=testcase_reset
+
+#simv \
+#-l simv_testcase_long.log \
+#+UVM_TESTNAME=testcase_long
+
+echo "REGRESS done!"
+
+
+grep "REPORT: PKT RX Captured 20 packets"  simv_testcase_loopback_reset.log 
+grep "Scoreboard Report : Matches : 20. Mismatches : 0" simv_testcase_loopback_reset.log 
+

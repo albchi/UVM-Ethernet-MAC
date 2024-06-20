@@ -5,7 +5,7 @@
 class monitor_wb extends uvm_monitor;
 
   virtual intf_wb vi;
-  int pkt_captured;
+  int wb_trans_captured;
   uvm_analysis_port #(data_pkt)   ap; // send info out, prob to wb
 
   `uvm_component_utils( monitor_wb )
@@ -18,7 +18,7 @@ class monitor_wb extends uvm_monitor;
   virtual function void build_phase(input uvm_phase phase);
 
     super.build_phase(phase);
-    pkt_captured = 0;
+    wb_trans_captured = 0;
     ap = new ( "ap", this );
     uvm_config_db#(virtual intf_wb)::get(this, "", "vi", vi);
     if ( vi==null )
@@ -39,6 +39,7 @@ class monitor_wb extends uvm_monitor;
       `uvm_info("MON_WB", "looking for valid transfer", UVM_HIGH);
        if (vi.cyc == 1'b1 && vi.stb == 1'b1) begin
           $display(" wb_adr = %0h, wb_we = %h, wb_dat_i = %h, wb_dat_o = %h", vi.adr, vi.we, vi.dat_i, vi.dat_o);
+          wb_trans_captured = wb_trans_captured  + 1;
        end
        @(posedge vi.clk);  
       `uvm_info("MON_WB", "looping back", UVM_HIGH);
@@ -47,7 +48,7 @@ class monitor_wb extends uvm_monitor;
 
 
   function void report_phase( uvm_phase phase );
-    `uvm_info( get_name( ), $sformatf( "REPORT: PKT RX Captured %0d packets", pkt_captured ), UVM_LOW )
+    `uvm_info( get_name( ), $sformatf( "REPORT: WB Trans Captured %0d packets", wb_trans_captured ), UVM_LOW )
   endfunction : report_phase
 
 endclass : monitor_wb

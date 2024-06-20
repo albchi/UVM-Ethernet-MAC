@@ -2658,11 +2658,11 @@ static inline U asm_bsf (U in)
 #ifdef __cplusplus
 extern "C" {
 #endif
-void  rmaPropagate18_p_simv_daidir (UB  * pcode, scalar  val);
-void  rmaPropagate18_simv_daidir (UB  * pcode, scalar  val);
-void  rmaPropagate18_f_simv_daidir (UB  * pcode, scalar  val, U  I614, scalar  * I1420, U  did);
-void  rmaPropagate18_r_simv_daidir (UB  * pcode);
-void  rmaPropagate18_wn_simv_daidir (UB  * pcode, scalar  val);
+void  rmaPropagate16_p_simv_daidir (UB  * pcode, scalar  val);
+void  rmaPropagate16_simv_daidir (UB  * pcode, scalar  val);
+void  rmaPropagate16_f_simv_daidir (UB  * pcode, scalar  val, U  I614, scalar  * I1420, U  did);
+void  rmaPropagate16_r_simv_daidir (UB  * pcode);
+void  rmaPropagate16_wn_simv_daidir (UB  * pcode, scalar  val);
 void  rmaPropagate19_p_simv_daidir (UB  * pcode, scalar  val);
 void  rmaPropagate19_simv_daidir (UB  * pcode, scalar  val);
 void  rmaPropagate19_f_simv_daidir (UB  * pcode, scalar  val, U  I614, scalar  * I1420, U  did);
@@ -2687,18 +2687,17 @@ void  rmaPropagate23_p_simv_daidir (UB  * pcode, scalar  val);
 void  rmaPropagate23_simv_daidir (UB  * pcode, scalar  val);
 void  rmaPropagate23_f_simv_daidir (UB  * pcode, scalar  val, U  I614, scalar  * I1420, U  did);
 void  rmaPropagate23_r_simv_daidir (UB  * pcode);
-void  rmaPropagate23_t0_simv_daidir (UB  * pcode, UB  val);
 void  rmaPropagate23_wn_simv_daidir (UB  * pcode, scalar  val);
-void  rmaPropagate26_p_simv_daidir (UB  * pcode, scalar  val);
-void  rmaPropagate26_simv_daidir (UB  * pcode, scalar  val);
-void  rmaPropagate26_f_simv_daidir (UB  * pcode, scalar  val, U  I614, scalar  * I1420, U  did);
-void  rmaPropagate26_r_simv_daidir (UB  * pcode);
-void  rmaPropagate26_wn_simv_daidir (UB  * pcode, scalar  val);
+void  rmaPropagate24_p_simv_daidir (UB  * pcode, scalar  val);
+void  rmaPropagate24_simv_daidir (UB  * pcode, scalar  val);
+void  rmaPropagate24_f_simv_daidir (UB  * pcode, scalar  val, U  I614, scalar  * I1420, U  did);
+void  rmaPropagate24_r_simv_daidir (UB  * pcode);
+void  rmaPropagate24_t0_simv_daidir (UB  * pcode, UB  val);
+void  rmaPropagate24_wn_simv_daidir (UB  * pcode, scalar  val);
 void  rmaPropagate27_p_simv_daidir (UB  * pcode, scalar  val);
 void  rmaPropagate27_simv_daidir (UB  * pcode, scalar  val);
 void  rmaPropagate27_f_simv_daidir (UB  * pcode, scalar  val, U  I614, scalar  * I1420, U  did);
 void  rmaPropagate27_r_simv_daidir (UB  * pcode);
-void  rmaPropagate27_t0_simv_daidir (UB  * pcode, UB  val);
 void  rmaPropagate27_wn_simv_daidir (UB  * pcode, scalar  val);
 void  rmaPropagate28_p_simv_daidir (UB  * pcode, scalar  val);
 void  rmaPropagate28_simv_daidir (UB  * pcode, scalar  val);
@@ -2722,6 +2721,7 @@ void  rmaPropagate31_p_simv_daidir (UB  * pcode, scalar  val);
 void  rmaPropagate31_simv_daidir (UB  * pcode, scalar  val);
 void  rmaPropagate31_f_simv_daidir (UB  * pcode, scalar  val, U  I614, scalar  * I1420, U  did);
 void  rmaPropagate31_r_simv_daidir (UB  * pcode);
+void  rmaPropagate31_t0_simv_daidir (UB  * pcode, UB  val);
 void  rmaPropagate31_wn_simv_daidir (UB  * pcode, scalar  val);
 void  rmaPropagate32_p_simv_daidir (UB  * pcode, scalar  val);
 void  rmaPropagate32_simv_daidir (UB  * pcode, scalar  val);
@@ -2733,7 +2733,12 @@ void  rmaPropagate33_simv_daidir (UB  * pcode, scalar  val);
 void  rmaPropagate33_f_simv_daidir (UB  * pcode, scalar  val, U  I614, scalar  * I1420, U  did);
 void  rmaPropagate33_r_simv_daidir (UB  * pcode);
 void  rmaPropagate33_wn_simv_daidir (UB  * pcode, scalar  val);
+void  rmaPropagate34_p_simv_daidir (UB  * pcode, scalar  val);
 void  rmaPropagate34_simv_daidir (UB  * pcode, scalar  val);
+void  rmaPropagate34_f_simv_daidir (UB  * pcode, scalar  val, U  I614, scalar  * I1420, U  did);
+void  rmaPropagate34_r_simv_daidir (UB  * pcode);
+void  rmaPropagate34_wn_simv_daidir (UB  * pcode, scalar  val);
+void  rmaPropagate35_simv_daidir (UB  * pcode, scalar  val);
 void  schedNewEvent (struct dummyq_struct * I1405, EBLK  * I1400, U  I622);
 #ifdef __cplusplus
 }

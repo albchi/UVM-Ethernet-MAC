@@ -1,0 +1,51 @@
+verdiSetActWin -dock widgetDock_<Decl._Tree>
+verdiSetActWin -dock widgetDock_MTB_SOURCE_TAB_1
+verdiWindowResize -win $_Verdi_1 "83" "62" "900" "700"
+simSetSimulator "-vcssv" -exec \
+           "/home/sf10274/AlbertLand/0UVMgetinfo/lab-project-10gEthernetMAC/sim/verilog/simv" \
+           -args "+vcs+lic+wait -a vcs.log"
+debImport "-dbdir" \
+          "/home/sf10274/AlbertLand/0UVMgetinfo/lab-project-10gEthernetMAC/sim/verilog/simv.daidir"
+debLoadSimResult \
+           /home/sf10274/AlbertLand/0UVMgetinfo/lab-project-10gEthernetMAC/sim/verilog/novas.fsdb
+wvCreateWindow
+verdiSetActWin -dock widgetDock_MTB_SOURCE_TAB_1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "pkt_tx_data" -line 64 -pos 1 -win $_nTrace1
+srcAddSelectedToWave -clipboard -win $_nTrace1
+wvDrop -win $_nWave2
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "pkt_tx_val" -line 65 -pos 1 -win $_nTrace1
+srcAddSelectedToWave -clipboard -win $_nTrace1
+wvDrop -win $_nWave2
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "pkt_tx_sop" -line 66 -pos 1 -win $_nTrace1
+srcAddSelectedToWave -clipboard -win $_nTrace1
+wvDrop -win $_nWave2
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "pkt_tx_eop" -line 67 -pos 1 -win $_nTrace1
+srcAddSelectedToWave -clipboard -win $_nTrace1
+wvDrop -win $_nWave2
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "pkt_tx_mod" -line 68 -pos 1 -win $_nTrace1
+srcAddSelectedToWave -clipboard -win $_nTrace1
+wvDrop -win $_nWave2
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "pkt_tx_full" -line 82 -pos 1 -win $_nTrace1
+srcAddSelectedToWave -clipboard -win $_nTrace1
+wvDrop -win $_nWave2
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "xgmii_txc" -line 86 -pos 1 -win $_nTrace1
+srcAddSelectedToWave -clipboard -win $_nTrace1
+wvDrop -win $_nWave2
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "xgmii_txd" -line 87 -pos 1 -win $_nTrace1
+srcAddSelectedToWave -clipboard -win $_nTrace1
+wvDrop -win $_nWave2
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "xgmii_txc" -line 86 -pos 1 -win $_nTrace1
+srcAddSelectedToWave -clipboard -win $_nTrace1
+wvDrop -win $_nWave2
+debExit

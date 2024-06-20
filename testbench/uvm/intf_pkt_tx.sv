@@ -12,8 +12,7 @@ interface intf_pkt_tx( input bit clk); // clk_156m25);
    // output 
    logic pkt_tx_full;
 
- 
-   clocking cb_driver @(posedge clk);
+    clocking cb_driver @(posedge clk);
       output pkt_tx_data;            
       output pkt_tx_eop;            
       output pkt_tx_mod;           
@@ -21,6 +20,19 @@ interface intf_pkt_tx( input bit clk); // clk_156m25);
       output pkt_tx_val;         
       input pkt_tx_full;
       input pkt_tx_ren;
+   endclocking 
+
+
+   clocking cb_monitor @(posedge clk);
+
+      input pkt_tx_data;            
+      input pkt_tx_eop;            
+      input pkt_tx_mod;           
+      input pkt_tx_sop;          
+      input pkt_tx_val;         
+
+      output pkt_tx_full;
+      output pkt_tx_ren;
    endclocking 
 
 endinterface

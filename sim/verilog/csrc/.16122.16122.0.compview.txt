@@ -1,0 +1,9 @@
+{"vcs1":{"timestamp_begin":1717890113.843201132, "rt":1.01, "ut":0.92, "st":0.20}}
+{"vcselab":{"timestamp_begin":1717890114.919595033, "rt":0.36, "ut":0.28, "st":0.06}}
+{"link":{"timestamp_begin":1717890115.336144075, "rt":0.20, "ut":0.14, "st":0.05}}
+{"SNPS_VCS_INTERNAL_ROOT_START_TIME": 1717890113.153321330}
+{"VCS_COMP_START_TIME": 1717890113.153321330}
+{"VCS_COMP_END_TIME": 1717890116.078686625}
+{"VCS_USER_OPTIONS": "-full64 +vcs+lic+wait -sverilog -R -l vcs.log -kdb -debug_access+all -override_timescale=1ps/1ps ../../rtl/verilog/fault_sm.v ../../rtl/verilog/generic_fifo_ctrl.v ../../rtl/verilog/generic_fifo.v ../../rtl/verilog/generic_mem_medium.v ../../rtl/verilog/generic_mem_small.v ../../rtl/verilog/meta_sync_single.v ../../rtl/verilog/meta_sync.v ../../rtl/verilog/rx_data_fifo.v ../../rtl/verilog/rx_dequeue.v ../../rtl/verilog/rx_enqueue.v ../../rtl/verilog/rx_hold_fifo.v ../../rtl/verilog/sync_clk_core.v ../../rtl/verilog/sync_clk_wb.v ../../rtl/verilog/sync_clk_xgmii_tx.v ../../rtl/verilog/tx_data_fifo.v ../../rtl/verilog/tx_dequeue.v ../../rtl/verilog/tx_enqueue.v ../../rtl/verilog/tx_hold_fifo.v ../../rtl/verilog/wishbone_if.v ../../rtl/verilog/xge_mac.v +incdir+../../rtl/include ../../testbench/verilog/tb_xge_mac.sv"}
+{"vcs1": {"peak_mem": 511680}}
+{"vcselab": {"peak_mem": 223268}}

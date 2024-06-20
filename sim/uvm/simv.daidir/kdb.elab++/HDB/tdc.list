@@ -27,7 +27,7 @@
 ../../testbench/uvm/agent_pkt_tx.sv
 ../../testbench/uvm/agent_reset.sv
 ../../testbench/uvm/agent_wb.sv
-../../testbench/uvm/coverage.sv
+../../testbench/uvm/coverage_pkt_tx.sv
 ../../testbench/uvm/data_pkt.sv
 ../../testbench/uvm/data_reset.sv
 ../../testbench/uvm/data_wb.sv
@@ -45,6 +45,7 @@
 ../../testbench/uvm/scoreboard_pkt.sv
 ../../testbench/uvm/sequence_pkt_rx.sv
 ../../testbench/uvm/sequence_pkt_tx.sv
+../../testbench/uvm/sequence_pkt_tx_long.sv
 ../../testbench/uvm/sequence_reset.sv
 ../../testbench/uvm/sequence_wb.sv
 ../../testbench/uvm/tb_prog.sv
@@ -53,6 +54,7 @@
 ../../testbench/uvm/virtual_sequence_wb.sv
 ../../testbench/uvm/virtual_sequencer.sv
 ../../testcases/testcase_base.sv
+../../testcases/testcase_long.sv
 ../../testcases/testcase_loopback_reset.sv
 ../../testcases/testcase_reset.sv
 ../../testcases/testcase_wb.sv

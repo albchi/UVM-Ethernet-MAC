@@ -60,43 +60,43 @@ class sequence_wb extends uvm_sequence#(data_wb);
 
       req = data_wb::type_id::create("req");
       start_item(req);
-      req.adr = 8'h0x8;
+      req.adr = 8'h8;
       req.we = 0;
       finish_item(req);
 
       req = data_wb::type_id::create("req");
       start_item(req);
-      req.adr = 8'h0xc;
+      req.adr = 8'hc;
       req.we = 0;
       finish_item(req);
 
       req = data_wb::type_id::create("req");
       start_item(req);
-      req.adr = 8'h0x10;
+      req.adr = 8'h10;
       req.we = 0;
       finish_item(req);
 
       req = data_wb::type_id::create("req");
       start_item(req);
-      req.adr = 8'h0x80;
+      req.adr = 8'h80;
       req.we = 0;
       finish_item(req);
 
       req = data_wb::type_id::create("req");
       start_item(req);
-      req.adr = 8'h0x84;
+      req.adr = 8'h84;
       req.we = 0;
       finish_item(req);
 
       req = data_wb::type_id::create("req");
       start_item(req);
-      req.adr = 8'h0x90;
+      req.adr = 8'h90;
       req.we = 0;
       finish_item(req);
 
       req = data_wb::type_id::create("req");
       start_item(req);
-      req.adr = 8'h0x94;
+      req.adr = 8'h94;
       req.we = 0;
       finish_item(req);
 

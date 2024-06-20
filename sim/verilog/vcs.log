@@ -8,7 +8,7 @@ Command: vcs -full64 +vcs+lic+wait -sverilog -R -l vcs.log -kdb -debug_access+al
 ../../rtl/verilog/tx_hold_fifo.v ../../rtl/verilog/wishbone_if.v ../../rtl/verilog/xge_mac.v \
 +incdir+../../rtl/include ../../testbench/verilog/tb_xge_mac.sv
                          Chronologic VCS (TM)
-       Version U-2023.03-SP2_Full64 -- Tue Jun  4 10:42:11 2024
+       Version U-2023.03-SP2_Full64 -- Sat Jun  8 16:41:53 2024
 
                     Copyright (c) 1991 - 2023 Synopsys, Inc.
    This software and the associated documentation are proprietary to Synopsys,
@@ -118,7 +118,7 @@ rm -f _cuarc*.so _csrc*.so pre_vcsobj_*.so share_vcsobj_*.so
 if [ -x ../simv ]; then chmod a-x ../simv; fi
 g++  -o ../simv      -rdynamic  -Wl,-rpath='$ORIGIN'/simv.daidir -Wl,-rpath=./simv.daidir \
 -Wl,-rpath=/usr/synopsys/vcs/U-2023.03-SP2/linux64/lib -L/usr/synopsys/vcs/U-2023.03-SP2/linux64/lib \
--Wl,-rpath-link=./  /usr/lib64/libnuma.so.1   objs/amcQw_d.o   _12585_archive_1.so \
+-Wl,-rpath-link=./  /usr/lib64/libnuma.so.1   objs/amcQw_d.o   _17146_archive_1.so \
 SIM_l.o      rmapats_mop.o rmapats.o rmar.o rmar_nd.o  rmar_llvm_0_1.o rmar_llvm_0_0.o \
 -lvirsim -lerrorinf -lsnpsmalloc -lvfs    -lvcsnew -lsimprofile -luclinative /usr/synopsys/vcs/U-2023.03-SP2/linux64/lib/vcs_tls.o \
 -Wl,-whole-archive  -lvcsucli    -Wl,-no-whole-archive        _vcs_pli_stub_.o   \
@@ -128,7 +128,7 @@ SIM_l.o      rmapats_mop.o rmapats.o rmar.o rmar_nd.o  rmar_llvm_0_1.o rmar_llvm
 Command: /home/sf10274/AlbertLand/0UVMgetinfo/lab-project-10gEthernetMAC/sim/verilog/./simv +vcs+lic+wait -a vcs.log
 Chronologic VCS simulator copyright 1991-2023
 Contains Synopsys proprietary information.
-Compiler version U-2023.03-SP2_Full64; Runtime version U-2023.03-SP2_Full64;  Jun  4 10:42 2024
+Compiler version U-2023.03-SP2_Full64; Runtime version U-2023.03-SP2_Full64;  Jun  8 16:41 2024
 *Verdi* Loading libsscore_vcs202303.so
 FSDB Dumper for VCS, Release Verdi_U-2023.03-SP2-2, Linux x86_64/64bit, 11/22/2023
 (C) 1996 - 2023 by Synopsys, Inc.
@@ -145,187 +145,21 @@ CMD SEND_PKT
 Transmit packet with length:          62
 CMD SEND_PKT
 Transmit packet with length:          63
-
-
-------------------------
-Received Packet
-------------------------
-0000010000010010
-9400000288b50001
 CMD SEND_PKT
 Transmit packet with length:          64
-0203040506070809
-0a0b0c0d0e0f1011
-1213141516171819
-1a1b1c1d1e1f2021
-2223242526272829
-2a2b2c000e3d4784
-------------------------
-
-
 CMD SEND_PKT
 Transmit packet with length:          65
-
-
-------------------------
-Received Packet
-------------------------
-0000010000010010
-9400000288b50001
-0203040506070809
-0a0b0c0d0e0f1011
-1213141516171819
-1a1b1c1d1e1f2021
-2223242526272829
-2a2b2c2d7b6198c1
-------------------------
-
-
 CMD SEND_PKT
 Transmit packet with length:          66
-
-
-------------------------
-Received Packet
-------------------------
-0000010000010010
-9400000288b50001
-0203040506070809
-0a0b0c0d0e0f1011
-1213141516171819
-1a1b1c1d1e1f2021
-2223242526272829
-2a2b2c2d2e97d2c2
-------------------------
-
-
 CMD SEND_PKT
 Transmit packet with length:          67
-
-
-------------------------
-Received Packet
-------------------------
-0000010000010010
-9400000288b50001
-0203040506070809
-0a0b0c0d0e0f1011
-1213141516171819
-1a1b1c1d1e1f2021
-2223242526272829
-2a2b2c2d2e2fe116
-------------------------
-
-
 CMD SEND_PKT
 Transmit packet with length:          68
-
-
-------------------------
-Received Packet
-------------------------
-0000010000010010
-9400000288b50001
-0203040506070809
-0a0b0c0d0e0f1011
-1213141516171819
-1a1b1c1d1e1f2021
-2223242526272829
-2a2b2c2d2e2f30d9
-------------------------
-
-
-
-
-------------------------
-Received Packet
-------------------------
-0000010000010010
-9400000288b50001
-0203040506070809
-0a0b0c0d0e0f1011
-1213141516171819
-1a1b1c1d1e1f2021
-2223242526272829
-2a2b2c2d2e2f3031
-------------------------
-
-
-
-
-------------------------
-Received Packet
-------------------------
-0000010000010010
-9400000288b50001
-0203040506070809
-0a0b0c0d0e0f1011
-1213141516171819
-1a1b1c1d1e1f2021
-2223242526272829
-2a2b2c2d2e2f3031
-324d241a46fd0707
-------------------------
-
-
-
-
-------------------------
-Received Packet
-------------------------
-0000010000010010
-9400000288b50001
-0203040506070809
-0a0b0c0d0e0f1011
-1213141516171819
-1a1b1c1d1e1f2021
-2223242526272829
-2a2b2c2d2e2f3031
-323392a9f965fd07
-------------------------
-
-
-
-
-------------------------
-Received Packet
-------------------------
-0000010000010010
-9400000288b50001
-0203040506070809
-0a0b0c0d0e0f1011
-1213141516171819
-1a1b1c1d1e1f2021
-2223242526272829
-2a2b2c2d2e2f3031
-323334f910d2edfd
-------------------------
-
-
-
-
-------------------------
-Received Packet
-------------------------
-0000010000010010
-9400000288b50001
-0203040506070809
-0a0b0c0d0e0f1011
-1213141516171819
-1a1b1c1d1e1f2021
-2223242526272829
-2a2b2c2d2e2f3031
-3233343506b33d40
-------------------------
-
-
-All packets received. Sumulation done!!!
-
 $finish called from file "../../testbench/verilog/tb_xge_mac.sv", line 456.
 $finish at simulation time             55597800
            V C S   S i m u l a t i o n   R e p o r t 
 Time: 55597800 ps
-CPU Time:      0.360 seconds;       Data structure size:   0.1Mb
-Tue Jun  4 10:42:13 2024
-CPU time: 1.176 seconds to compile + .362 seconds to elab + .258 seconds to link + .384 seconds in simulation
+CPU Time:      0.330 seconds;       Data structure size:   0.1Mb
+Sat Jun  8 16:41:55 2024
+CPU time: 1.168 seconds to compile + .367 seconds to elab + .251 seconds to link + .367 seconds in simulation
 Verdi KDB elaboration done and the database successfully generated: 0 error(s), 0 warning(s)
